@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "J&K Explorer | Discover Jammu & Kashmir" },
+      { name: "description", content: "Your passport to the valleys, shrines, lakes and stories of Jammu & Kashmir." },
+      { name: "author", content: "J&K Explorer" },
+      { property: "og:title", content: "J&K Explorer | Discover Jammu & Kashmir" },
+      { property: "og:description", content: "Your passport to the valleys, shrines, lakes and stories of Jammu & Kashmir." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
