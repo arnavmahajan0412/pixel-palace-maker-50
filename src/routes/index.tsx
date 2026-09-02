@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -13,6 +13,7 @@ import {
   Instagram,
   MapPin,
   Menu,
+  MessageCircle,
   Navigation,
   PackageOpen,
   QrCode,
@@ -51,10 +52,36 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const WHATSAPP_URL = "https://wa.me/910000000000"; // TODO: replace with your WhatsApp number
+const MEMBER_KEY = "jk-explorer-member";
+
+type Member = { name: string; phone: string; email: string; city: string };
+
+function loadMember(): Member | null {
+  try {
+    const raw = window.localStorage.getItem(MEMBER_KEY);
+    return raw ? (JSON.parse(raw) as Member) : null;
+  } catch {
+    return null;
+  }
+}
+
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [registered, setRegistered] = useState(false);
   const [selected, setSelected] = useState<Destination | null>(null);
+  const [joinOpen, setJoinOpen] = useState(false);
+  const [member, setMember] = useState<Member | null>(null);
+
+  useEffect(() => {
+    setMember(loadMember());
+  }, []);
+
+  const joinCommunity = (m: Member) => {
+    window.localStorage.setItem(MEMBER_KEY, JSON.stringify(m));
+    setMember(m);
+    setJoinOpen(false);
+  };
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground paper-texture">
@@ -171,10 +198,10 @@ function Index() {
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <button
-                  onClick={() => document.getElementById("passport")?.scrollIntoView()}
+                  onClick={() => setJoinOpen(true)}
                   className="bg-burgundy px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-lg transition-colors hover:bg-burgundy/80"
                 >
-                  Get your passport
+                  {member ? `Welcome, ${member.name.split(" ")[0]}` : "Join the community"}
                 </button>
                 <a
                   href="#destinations"
@@ -401,6 +428,147 @@ function Index() {
         <MobileNav icon={<Stamp />} label="Passport" href="#passport" />
         <MobileNav icon={<UserRound />} label="Profile" href="#about" />
       </nav>
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className="fixed bottom-20 right-4 z-40 grid h-13 w-13 place-items-center rounded-full bg-[#25D366] p-3.5 text-white shadow-xl transition-transform hover:scale-105 lg:bottom-6 lg:right-6"
+      >
+        <MessageCircle className="h-6 w-6" />
+      </a>
+      {joinOpen && (
+        <JoinModal
+          onClose={() => setJoinOpen(false)}
+          onJoin={joinCommunity}
+          existing={member}
+        />
+      )}
+    </div>
+  );
+}
+
+function JoinModal({
+  onClose,
+  onJoin,
+  existing,
+}: {
+  onClose: () => void;
+  onJoin: (m: Member) => void;
+  existing: Member | null;
+}) {
+  const [name, setName] = useState(existing?.name ?? "");
+  const [phone, setPhone] = useState(existing?.phone ?? "");
+  const [email, setEmail] = useState(existing?.email ?? "");
+  const [city, setCity] = useState(existing?.city ?? "");
+  const [error, setError] = useState("");
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const clean = {
+      name: name.trim().slice(0, 60),
+      phone: phone.trim().slice(0, 20),
+      email: email.trim().slice(0, 120),
+      city: city.trim().slice(0, 60),
+    };
+    if (!clean.name) return setError("Please tell us your name.");
+    if (!/^[0-9+\-\s]{8,15}$/.test(clean.phone)) return setError("Enter a valid phone number.");
+    if (clean.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean.email))
+      return setError("Enter a valid email address.");
+    onJoin(clean);
+  };
+
+  const inputCls =
+    "w-full border border-border bg-background px-3.5 py-2.5 text-sm text-ink outline-none transition-colors focus:border-burgundy";
+
+  return (
+    <div
+      className="fixed inset-0 z-50 grid place-items-center bg-burgundy-deep/70 px-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <form
+        onClick={(e) => e.stopPropagation()}
+        onSubmit={submit}
+        className="w-full max-w-md border border-border bg-paper p-7 shadow-2xl sm:p-9"
+      >
+        <div className="flex items-start justify-between">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-burgundy">
+              Explorer community
+            </p>
+            <h3 className="display-serif mt-1.5 text-3xl text-ink">Join the journey</h3>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="p-1 text-ink-soft transition-colors hover:text-burgundy"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <div className="mt-6 space-y-4">
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              Full name *
+            </span>
+            <input
+              className={inputCls}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Asha Verma"
+              maxLength={60}
+            />
+          </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              Phone (WhatsApp) *
+            </span>
+            <input
+              className={inputCls}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+91 98765 43210"
+              maxLength={20}
+            />
+          </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              Email
+            </span>
+            <input
+              className={inputCls}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              maxLength={120}
+            />
+          </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              City
+            </span>
+            <input
+              className={inputCls}
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              placeholder="Srinagar"
+              maxLength={60}
+            />
+          </label>
+        </div>
+        {error && <p className="mt-4 text-xs font-semibold text-burgundy">{error}</p>}
+        <button
+          type="submit"
+          className="mt-7 flex w-full items-center justify-center gap-2 bg-burgundy px-5 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-burgundy-deep"
+        >
+          Join the community <ArrowRight className="h-4 w-4" />
+        </button>
+        <p className="mt-3 text-center text-[10px] text-ink-soft/70">
+          Your details stay on this device — no account needed.
+        </p>
+      </form>
     </div>
   );
 }
