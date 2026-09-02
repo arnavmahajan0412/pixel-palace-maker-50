@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -71,9 +71,11 @@ function Index() {
   const [registered, setRegistered] = useState(false);
   const [selected, setSelected] = useState<Destination | null>(null);
   const [joinOpen, setJoinOpen] = useState(false);
-  const [member, setMember] = useState<Member | null>(() =>
-    typeof window === "undefined" ? null : loadMember(),
-  );
+  const [member, setMember] = useState<Member | null>(null);
+
+  useEffect(() => {
+    setMember(loadMember());
+  }, []);
 
   const joinCommunity = (m: Member) => {
     window.localStorage.setItem(MEMBER_KEY, JSON.stringify(m));
