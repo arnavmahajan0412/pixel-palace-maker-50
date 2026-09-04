@@ -259,14 +259,14 @@ function Index() {
           <div className="mx-auto flex max-w-[1220px] flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold">
-                Your passport journey
+                Your journey begins
               </p>
               <h2 className="display-serif mt-2 max-w-xl text-4xl leading-tight sm:text-5xl">
-                The first page of your story starts here.
+                Every valley has a story. Start yours today.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-6 text-primary-foreground/70">
-                Register your passport, collect stamps across the valley, and watch your explorer
-                story unfold.
+                Collect stamps across Jammu & Kashmir, track your progress, and let your explorer
+                story unfold one destination at a time.
               </p>
               <button
                 onClick={() => setRegistered(!registered)}
@@ -274,11 +274,11 @@ function Index() {
               >
                 {registered ? (
                   <>
-                    <Check className="h-4 w-4" /> Passport registered
+                    <Check className="h-4 w-4" /> Journey started
                   </>
                 ) : (
                   <>
-                    Register my passport <ArrowRight className="h-4 w-4" />
+                    Start my journey <ArrowRight className="h-4 w-4" />
                   </>
                 )}
               </button>
@@ -295,12 +295,12 @@ function Index() {
               </div>
               <div>
                 <p className="text-2xl font-semibold">
-                  {registered ? "Welcome, Explorer" : "Your passport is waiting"}
+                  {registered ? "Welcome, Explorer" : "Your journey awaits"}
                 </p>
                 <p className="mt-2 text-sm text-primary-foreground/60">
                   {registered
                     ? "Vaishno Devi is your first stop."
-                    : "One passport. Endless journeys."}
+                    : "One map. Endless memories."}
                 </p>
               </div>
             </div>
@@ -433,9 +433,9 @@ function Index() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="group fixed bottom-20 right-4 z-40 flex items-center gap-3 rounded-full border border-gold/40 bg-burgundy-deep py-2 pl-2 pr-5 shadow-2xl transition-all duration-300 hover:scale-105 hover:border-gold active:scale-95 lg:bottom-6 lg:right-6"
+        className="group fixed bottom-20 right-4 z-40 flex h-14 w-14 items-center gap-3 overflow-hidden rounded-full border border-gold/40 bg-burgundy-deep py-2 pl-2 shadow-2xl transition-all duration-300 hover:w-auto hover:pr-5 hover:border-gold active:scale-95 lg:bottom-6 lg:right-6"
       >
-        <div className="relative grid h-12 w-12 place-items-center rounded-full bg-gold shadow-inner">
+        <div className="relative grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold shadow-inner">
           <svg
             className="h-7 w-7 text-burgundy-deep"
             fill="currentColor"
@@ -447,7 +447,7 @@ function Index() {
           </svg>
           <span className="absolute inset-0 rounded-full border border-gold animate-ping opacity-25" />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col whitespace-nowrap opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-gold/80">
             Concierge
           </span>
