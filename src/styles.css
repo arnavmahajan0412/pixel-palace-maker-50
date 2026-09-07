@@ -179,3 +179,24 @@
 @utility gold-rule {
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
+
+@keyframes destination-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
+.destination-marquee-track {
+  animation: destination-marquee 110s linear infinite;
+}
+
+.destination-marquee:hover .destination-marquee-track,
+.destination-marquee:focus-within .destination-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destination-marquee-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}

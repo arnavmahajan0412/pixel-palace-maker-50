@@ -55,7 +55,16 @@ export const Route = createFileRoute("/")({
 const WHATSAPP_URL = "https://wa.me/910000000000"; // TODO: replace with your WhatsApp number
 const MEMBER_KEY = "jk-explorer-member";
 
-type Member = { name: string; phone: string; email: string; city: string };
+type Member = {
+  name: string;
+  email: string;
+  instagram: string;
+  phone: string;
+  city: string;
+  dreamDestination: string;
+  dob: string;
+  howFound: string;
+};
 
 function loadMember(): Member | null {
   try {
@@ -192,7 +201,7 @@ function Index() {
                 <em className="font-normal text-gold">like never before.</em>
               </h1>
               <p className="mt-7 max-w-md text-sm leading-7 text-primary-foreground/80 sm:text-base">
-                30 iconic destinations. One passport.
+                 38 iconic destinations. One passport.
                 <br />
                 Endless memories waiting to be collected.
               </p>
@@ -222,7 +231,7 @@ function Index() {
 
         <section className="border-b border-border bg-paper px-5 py-7 lg:px-10">
           <div className="mx-auto grid max-w-[1220px] grid-cols-2 gap-y-7 sm:grid-cols-4 lg:grid-cols-4 lg:gap-5">
-            <Feature icon={<Compass />} title="30+" label="Handpicked destinations" />
+             <Feature icon={<Compass />} title="38" label="Handpicked destinations" />
             <Feature icon={<Stamp />} title="Collect" label="Stamps at each location" />
             <Feature icon={<QrCode />} title="Scan QR code" label="Get complete details" />
             <Feature icon={<Award />} title="Track your journey" label="Earn explorer badges" />
@@ -233,20 +242,25 @@ function Index() {
           id="destinations"
           className="mx-auto max-w-[1380px] scroll-mt-20 px-5 py-20 lg:px-10 lg:py-28"
         >
-          <SectionHeading
-            eyebrow="Your next chapter"
-            title="Popular destinations"
-            action="View all destinations"
-          />
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {destinations.map((destination) => (
-              <DestinationCard
-                key={destination.name}
-                destination={destination}
-                onSelect={setSelected}
-              />
-            ))}
-          </div>
+           <SectionHeading
+             eyebrow="Your next chapter"
+             title="Popular destinations"
+             action="View all destinations"
+           />
+           <p className="mt-3 max-w-xl text-sm leading-6 text-ink-soft">
+             Thirty-eight places, trails, shrines and city stories to collect across Jammu & Kashmir.
+           </p>
+           <div className="destination-marquee mt-9 overflow-hidden" aria-label="38 popular destinations">
+             <div className="destination-marquee-track flex w-max gap-4 py-2">
+               {[...destinations, ...destinations].map((destination, index) => (
+                 <DestinationCard
+                   key={`${destination.name}-${index}`}
+                   destination={destination}
+                   onSelect={setSelected}
+                 />
+               ))}
+             </div>
+           </div>
           {selected && (
             <DestinationSpotlight destination={selected} onClose={() => setSelected(null)} />
           )}
@@ -287,7 +301,7 @@ function Index() {
               <div className="relative grid h-32 w-32 shrink-0 place-items-center rounded-full border border-gold/70">
                 <div className="absolute inset-2 rounded-full border border-gold/30" />
                 <span className="display-serif text-3xl text-gold">
-                  {registered ? "1/30" : "0/30"}
+                   {registered ? "1/38" : "0/38"}
                 </span>
                 <span className="absolute bottom-4 text-[8px] uppercase tracking-widest text-primary-foreground/60">
                   destinations
@@ -479,24 +493,36 @@ function JoinModal({
   onJoin: (m: Member) => void;
   existing: Member | null;
 }) {
-  const [name, setName] = useState(existing?.name ?? "");
-  const [phone, setPhone] = useState(existing?.phone ?? "");
-  const [email, setEmail] = useState(existing?.email ?? "");
-  const [city, setCity] = useState(existing?.city ?? "");
+   const [name, setName] = useState(existing?.name ?? "");
+   const [email, setEmail] = useState(existing?.email ?? "");
+   const [instagram, setInstagram] = useState(existing?.instagram ?? "");
+   const [phone, setPhone] = useState(existing?.phone ?? "");
+   const [city, setCity] = useState(existing?.city ?? "");
+   const [dreamDestination, setDreamDestination] = useState(existing?.dreamDestination ?? "");
+   const [dob, setDob] = useState(existing?.dob ?? "");
+   const [howFound, setHowFound] = useState(existing?.howFound ?? "");
   const [error, setError] = useState("");
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const clean = {
       name: name.trim().slice(0, 60),
-      phone: phone.trim().slice(0, 20),
       email: email.trim().slice(0, 120),
+       instagram: instagram.trim().slice(0, 60),
+       phone: phone.trim().slice(0, 20),
       city: city.trim().slice(0, 60),
+       dreamDestination: dreamDestination.trim().slice(0, 100),
+       dob: dob.trim().slice(0, 10),
+       howFound: howFound.trim().slice(0, 40),
     };
     if (!clean.name) return setError("Please tell us your name.");
+     if (!clean.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean.email))
+       return setError("Enter a valid email address.");
     if (!/^[0-9+\-\s]{8,15}$/.test(clean.phone)) return setError("Enter a valid phone number.");
-    if (clean.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean.email))
-      return setError("Enter a valid email address.");
+     if (!clean.city) return setError("Please add the city you belong to.");
+     if (!clean.dreamDestination) return setError("Tell us your dream destination.");
+     if (!clean.dob) return setError("Please add your date of birth.");
+     if (!clean.howFound) return setError("Please tell us how you found us.");
     onJoin(clean);
   };
 
@@ -529,7 +555,7 @@ function JoinModal({
             <X className="h-5 w-5" />
           </button>
         </div>
-        <div className="mt-6 space-y-4">
+         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <label className="block">
             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
               Full name *
@@ -544,19 +570,7 @@ function JoinModal({
           </label>
           <label className="block">
             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-              Phone (WhatsApp) *
-            </span>
-            <input
-              className={inputCls}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="+91 98765 43210"
-              maxLength={20}
-            />
-          </label>
-          <label className="block">
-            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-              Email
+               Email ID *
             </span>
             <input
               className={inputCls}
@@ -567,9 +581,33 @@ function JoinModal({
               maxLength={120}
             />
           </label>
+           <label className="block">
+             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+               Instagram handle
+             </span>
+             <input
+               className={inputCls}
+               value={instagram}
+               onChange={(e) => setInstagram(e.target.value)}
+               placeholder="@yourhandle"
+               maxLength={60}
+             />
+           </label>
+           <label className="block">
+             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+               Phone number *
+             </span>
+             <input
+               className={inputCls}
+               value={phone}
+               onChange={(e) => setPhone(e.target.value)}
+               placeholder="+91 98765 43210"
+               maxLength={20}
+             />
+           </label>
           <label className="block">
             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-              City
+               City you belong to *
             </span>
             <input
               className={inputCls}
@@ -579,6 +617,42 @@ function JoinModal({
               maxLength={60}
             />
           </label>
+           <label className="block">
+             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+               Dream destination *
+             </span>
+             <input
+               className={inputCls}
+               value={dreamDestination}
+               onChange={(e) => setDreamDestination(e.target.value)}
+               placeholder="Gurez Valley"
+               maxLength={100}
+             />
+           </label>
+           <label className="block">
+             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+               Date of birth *
+             </span>
+             <input
+               className={inputCls}
+               type="date"
+               value={dob}
+               onChange={(e) => setDob(e.target.value)}
+             />
+           </label>
+           <label className="block sm:col-span-2">
+             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+               How did you find us? *
+             </span>
+             <select className={inputCls} value={howFound} onChange={(e) => setHowFound(e.target.value)}>
+               <option value="">Choose one</option>
+               <option value="Instagram">Instagram</option>
+               <option value="WhatsApp">WhatsApp</option>
+               <option value="Friend or family">Friend or family</option>
+               <option value="Search">Search</option>
+               <option value="Other">Other</option>
+             </select>
+           </label>
         </div>
         {error && <p className="mt-4 text-xs font-semibold text-burgundy">{error}</p>}
         <button
@@ -612,18 +686,39 @@ const destinations: Destination[] = [
     time: "Mar – Oct",
   },
   {
+    name: "Patnitop",
+    place: "Ramban",
+    image: sonamargImage,
+    description: "A pine-fringed hill station for crisp air, long walks and winter escapes.",
+    time: "Apr – Jun",
+  },
+  {
+    name: "Mansar Lake (Surinsar)",
+    place: "Jammu",
+    image: dalImage,
+    description: "Sacred twin lakes surrounded by forest, folklore and peaceful lakeside paths.",
+    time: "Mar – Jun",
+  },
+  {
+    name: "Dal Lake (Shankaracharya)",
+    place: "Srinagar",
+    image: dalImage,
+    description: "Shikaras, houseboats and the hilltop Shankaracharya view over Srinagar.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Mughal Gardens",
+    place: "Srinagar",
+    image: pahalgamImage,
+    description: "Terraced gardens, spring water and centuries of Mughal design beside Dal Lake.",
+    time: "Mar – Jun",
+  },
+  {
     name: "Gulmarg",
     place: "Baramulla",
     image: gulmargImage,
     description: "A meadow of flowers in summer and a snow-draped playground in winter.",
     time: "Dec – Feb",
-  },
-  {
-    name: "Dal Lake",
-    place: "Srinagar",
-    image: dalImage,
-    description: "Wake up on the water, with shikaras gliding past a mirror of the Himalayas.",
-    time: "Apr – Oct",
   },
   {
     name: "Sonamarg",
@@ -638,6 +733,216 @@ const destinations: Destination[] = [
     image: pahalgamImage,
     description: "A river valley of pine forests, wooden cabins and unhurried mountain days.",
     time: "Apr – Nov",
+  },
+  {
+    name: "Gurez Valley",
+    place: "Bandipora",
+    image: sonamargImage,
+    description: "A remote valley of wooden homes, rushing rivers and wide Himalayan skies.",
+    time: "May – Sep",
+  },
+  {
+    name: "Peer Ki Gali",
+    place: "Mughal Road",
+    image: gulmargImage,
+    description: "A high mountain pass where the Mughal Road opens into sweeping alpine views.",
+    time: "May – Oct",
+  },
+  {
+    name: "Bhaderwah (Jai & Chinta Valleys)",
+    place: "Doda",
+    image: pahalgamImage,
+    description: "Green valleys, cedar forests and quiet mountain villages in the Chenab region.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Paddar (Machail Mata)",
+    place: "Kishtwar",
+    image: sonamargImage,
+    description: "A dramatic pilgrimage route through high valleys to the revered Machail Mata shrine.",
+    time: "Jul – Sep",
+  },
+  {
+    name: "Bawa Wali Mata & Jammu City Walk",
+    place: "Jammu",
+    image: vaishnoImage,
+    description: "Temple bells, Gondola views, Aquarium, Bagh-e-Bahu, Hari Niwas Palace and Manda.",
+    time: "Oct – Mar",
+  },
+  {
+    name: "Warwan Valley",
+    place: "Kishtwar",
+    image: sonamargImage,
+    description: "A hidden valley of meadows, glaciers and villages for the adventurous traveller.",
+    time: "Jun – Sep",
+  },
+  {
+    name: "Doodpathri",
+    place: "Budgam",
+    image: pahalgamImage,
+    description: "A meadowland of silver streams, wildflowers and slow afternoons in the mountains.",
+    time: "May – Oct",
+  },
+  {
+    name: "Sarthal Valley (Bani, Basohli)",
+    place: "Kathua",
+    image: gulmargImage,
+    description: "Forest roads, hill meadows and the art-rich landscapes around Bani and Basohli.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Verinag",
+    place: "Anantnag",
+    image: dalImage,
+    description: "A spring of clear blue water framed by an elegant Mughal-era garden.",
+    time: "Mar – Oct",
+  },
+  {
+    name: "Sanasar",
+    place: "Ramban",
+    image: sonamargImage,
+    description: "A peaceful cup-shaped meadow for paragliding, camping and cedar-scented walks.",
+    time: "Apr – Jun",
+  },
+  {
+    name: "Shiv Khori",
+    place: "Reasi",
+    image: vaishnoImage,
+    description: "A sacred cave shrine with a naturally formed lingam and a memorable forest approach.",
+    time: "Feb – Apr",
+  },
+  {
+    name: "Aharbal Waterfall",
+    place: "Kulgam",
+    image: pahalgamImage,
+    description: "The roaring Niagara of Kashmir, tucked among pine forests and mountain streams.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Darhal Waterfall & Shadra Sharief",
+    place: "Rajouri",
+    image: sonamargImage,
+    description: "Noori Chamb waterfall and the spiritual calm of Shadra Sharief in one journey.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Surinsar Lake",
+    place: "Jammu",
+    image: dalImage,
+    description: "A tranquil forest lake for birdwatching, picnics and unhurried mornings.",
+    time: "Mar – Jun",
+  },
+  {
+    name: "Tulip Garden (Seasonal)",
+    place: "Srinagar",
+    image: gulmargImage,
+    description: "Rows of colour at Asia's largest tulip garden beneath the Zabarwan range.",
+    time: "Mar – Apr",
+  },
+  {
+    name: "Purthu",
+    place: "Doda",
+    image: pahalgamImage,
+    description: "An open highland escape where mountain air and meadow views set the pace.",
+    time: "May – Oct",
+  },
+  {
+    name: "Sudh Mahadev Temple",
+    place: "Chenani",
+    image: vaishnoImage,
+    description: "An ancient hill temple surrounded by pine forests, legend and quiet devotion.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Srinagar City Walk",
+    place: "Srinagar",
+    image: dalImage,
+    description: "Lal Chowk, Hazratbal, Sunday Market and the everyday stories of the city.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Dudu Valley",
+    place: "Udhampur",
+    image: sonamargImage,
+    description: "A lesser-known valley of streams, villages and green mountain roads.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Bangus Valley",
+    place: "Kupwara",
+    image: gulmargImage,
+    description: "A vast meadow basin of wildflowers, forest trails and open northern horizons.",
+    time: "May – Sep",
+  },
+  {
+    name: "Yusmarg",
+    place: "Budgam",
+    image: pahalgamImage,
+    description: "A quiet meadow retreat of tall deodars, pony trails and river-side picnics.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Amarnath Yatra (Seasonal)",
+    place: "Pahalgam / Baltal",
+    image: vaishnoImage,
+    description: "A seasonal pilgrimage through high-altitude landscapes to the holy cave.",
+    time: "Jul – Aug",
+  },
+  {
+    name: "Chinka Valley",
+    place: "Doda",
+    image: sonamargImage,
+    description: "A mountain valley of clear air, forest edges and peaceful rural trails.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Keran Border",
+    place: "Kupwara",
+    image: gulmargImage,
+    description: "A scenic border village journey through green valleys and the Kishanganga river.",
+    time: "May – Sep",
+  },
+  {
+    name: "Suchetgarh Border",
+    place: "Jammu",
+    image: vaishnoImage,
+    description: "A frontier experience with wide fields, local history and an evening retreat.",
+    time: "Oct – Mar",
+  },
+  {
+    name: "Panchari",
+    place: "Udhampur",
+    image: pahalgamImage,
+    description: "A forested hill escape with village life, fresh streams and slow mountain days.",
+    time: "Apr – Oct",
+  },
+  {
+    name: "Kailash Kund",
+    place: "Doda",
+    image: sonamargImage,
+    description: "A high-altitude lake trek for pilgrims and hikers seeking a true mountain challenge.",
+    time: "Aug – Sep",
+  },
+  {
+    name: "Devi Pindi Trek & Mandir",
+    place: "Jammu",
+    image: vaishnoImage,
+    description: "A beautiful forest trek leading to a peaceful hill shrine and local traditions.",
+    time: "Oct – Mar",
+  },
+  {
+    name: "Deva Mai",
+    place: "Katra",
+    image: vaishnoImage,
+    description: "A serene hilltop temple trail with sweeping views and a deeply local spirit.",
+    time: "Mar – Oct",
+  },
+  {
+    name: "Sukrala Mata Mandir",
+    place: "Billawar",
+    image: gulmargImage,
+    description: "A revered hill shrine wrapped in forest, faith and panoramic foothill views.",
+    time: "Mar – Oct",
   },
 ];
 
