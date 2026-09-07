@@ -991,7 +991,7 @@ function DestinationCard({
   onSelect: (destination: Destination) => void;
 }) {
   return (
-    <button onClick={() => onSelect(destination)} className="group text-left">
+    <button onClick={() => onSelect(destination)} className="group w-[220px] shrink-0 text-left sm:w-[250px]">
       <div className="relative aspect-[0.88] overflow-hidden rounded-sm bg-muted">
         <img
           src={destination.image}
