@@ -163,8 +163,13 @@
     font-family: var(--font-sans);
   }
 
-  html { scroll-behavior: smooth; }
-  button, a { -webkit-tap-highlight-color: transparent; }
+  html {
+    scroll-behavior: smooth;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @utility display-serif {
@@ -180,23 +185,139 @@
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
-@keyframes destination-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-50% - 0.5rem)); }
+.destination-carousel {
+  overflow: hidden;
 }
 
-.destination-marquee-track {
-  animation: destination-marquee 110s linear infinite;
+.destination-carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  padding: 0.15rem 0 0.75rem;
+  animation: destination-carousel 45s linear infinite;
 }
 
-.destination-marquee:hover .destination-marquee-track,
-.destination-marquee:focus-within .destination-marquee-track {
+.destination-carousel:hover .destination-carousel-track,
+.destination-carousel:focus-within .destination-carousel-track {
   animation-play-state: paused;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .destination-marquee-track {
+@keyframes destination-carousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.destination-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) transparent;
+  scroll-snap-type: x mandatory;
+}
+
+.destination-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.destination-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+}
+
+.badge-card {
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  padding: 0.85rem 0.4rem;
+}
+
+.badge-medallion {
+  position: relative;
+  isolation: isolate;
+  border: 2px solid currentColor;
+  box-shadow:
+    inset 0 0 0 3px var(--color-background),
+    inset 0 0 0 5px currentColor,
+    0 3px 8px oklch(0.2 0.03 30 / 0.18);
+}
+
+.badge-medallion::before,
+.badge-medallion::after {
+  position: absolute;
+  inset: 8px;
+  content: "";
+  border: 1px solid currentColor;
+  border-radius: inherit;
+  opacity: 0.7;
+}
+
+.badge-medallion::after {
+  inset: 3px;
+  border-style: dashed;
+  opacity: 0.45;
+}
+
+.badge-monogram {
+  position: absolute;
+  bottom: 7px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.badge-card-bronze {
+  color: oklch(0.5 0.09 53);
+  background: linear-gradient(145deg, oklch(0.97 0.012 88), oklch(0.9 0.035 62));
+}
+.badge-card-silver {
+  color: oklch(0.57 0.018 255);
+  background: linear-gradient(145deg, oklch(0.98 0.005 255), oklch(0.87 0.015 255));
+}
+.badge-card-gold {
+  color: oklch(0.68 0.12 78);
+  background: linear-gradient(145deg, oklch(0.98 0.018 88), oklch(0.91 0.07 80));
+}
+
+@media (min-width: 1024px) {
+  .destination-scroll {
+    scrollbar-width: none;
+  }
+
+  .destination-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .destination-carousel {
+    overflow: visible;
+  }
+
+  .destination-carousel-track {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    padding: 0;
     animation: none;
+  }
+
+  .destination-carousel-track > button {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .destination-carousel-track > :nth-child(n + 6) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destination-carousel {
     overflow-x: auto;
+  }
+
+  .destination-carousel-track {
+    animation: none;
   }
 }

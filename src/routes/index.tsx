@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
@@ -13,7 +13,6 @@ import {
   Instagram,
   MapPin,
   Menu,
-  
   Navigation,
   PackageOpen,
   QrCode,
@@ -22,6 +21,7 @@ import {
   TentTree,
   TrainFront,
   UserRound,
+  UsersRound,
   X,
 } from "lucide-react";
 import heroImage from "@/assets/kashmir-hero.jpg";
@@ -30,6 +30,7 @@ import gulmargImage from "@/assets/gulmarg.jpg";
 import dalImage from "@/assets/dal-lake.jpg";
 import sonamargImage from "@/assets/sonamarg.jpg";
 import pahalgamImage from "@/assets/pahalgam.jpg";
+import passportImage from "@/assets/jk-explorer-passport.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -190,7 +191,14 @@ function Index() {
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-burgundy-deep/90 via-burgundy-deep/50 to-burgundy-deep/10" />
           <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-burgundy-deep/75 to-transparent" />
-          <div className="mx-auto w-full max-w-[1380px] px-5 lg:px-10">
+          <img
+            src={passportImage}
+            alt="J&K Explorer passport"
+            width={1024}
+            height={1365}
+            className="pointer-events-none absolute bottom-20 right-[-8vw] z-0 w-[43vw] max-w-[440px] object-contain drop-shadow-2xl sm:bottom-14 sm:right-[3%] sm:w-[34vw] lg:bottom-8 lg:right-[7%] lg:w-[29vw]"
+          />
+          <div className="relative z-10 mx-auto w-full max-w-[1380px] px-5 lg:px-10">
             <div className="max-w-2xl">
               <p className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-gold">
                 <span className="h-px w-10 bg-gold" />
@@ -201,7 +209,7 @@ function Index() {
                 <em className="font-normal text-gold">like never before.</em>
               </h1>
               <p className="mt-7 max-w-md text-sm leading-7 text-primary-foreground/80 sm:text-base">
-                 38 iconic destinations. One passport.
+                38 iconic destinations. One passport.
                 <br />
                 Endless memories waiting to be collected.
               </p>
@@ -231,7 +239,7 @@ function Index() {
 
         <section className="border-b border-border bg-paper px-5 py-7 lg:px-10">
           <div className="mx-auto grid max-w-[1220px] grid-cols-2 gap-y-7 sm:grid-cols-4 lg:grid-cols-4 lg:gap-5">
-             <Feature icon={<Compass />} title="38" label="Handpicked destinations" />
+            <Feature icon={<Compass />} title="38" label="Handpicked destinations" />
             <Feature icon={<Stamp />} title="Collect" label="Stamps at each location" />
             <Feature icon={<QrCode />} title="Scan QR code" label="Get complete details" />
             <Feature icon={<Award />} title="Track your journey" label="Earn explorer badges" />
@@ -242,28 +250,66 @@ function Index() {
           id="destinations"
           className="mx-auto max-w-[1380px] scroll-mt-20 px-5 py-20 lg:px-10 lg:py-28"
         >
-           <SectionHeading
-             eyebrow="Your next chapter"
-             title="Popular destinations"
-             action="View all destinations"
-           />
-           <p className="mt-3 max-w-xl text-sm leading-6 text-ink-soft">
-             Thirty-eight places, trails, shrines and city stories to collect across Jammu & Kashmir.
-           </p>
-           <div className="destination-marquee mt-9 overflow-hidden" aria-label="38 popular destinations">
-             <div className="destination-marquee-track flex w-max gap-4 py-2">
-               {[...destinations, ...destinations].map((destination, index) => (
-                 <DestinationCard
-                   key={`${destination.name}-${index}`}
-                   destination={destination}
-                   onSelect={setSelected}
-                 />
-               ))}
-             </div>
-           </div>
+          <SectionHeading
+            eyebrow="Your next chapter"
+            title="Popular destinations"
+            action="View all destinations"
+            actionHref="/destinations"
+          />
+          <p className="mt-3 max-w-xl text-sm leading-6 text-ink-soft">
+            Start with the valley’s essentials, then explore the complete collection of thirty-eight
+            places, trails, shrines and city stories.
+          </p>
+          <div className="mt-8">
+            <div
+              className="grid grid-cols-2 gap-3 sm:gap-4 lg:hidden"
+              aria-label="Featured destinations"
+            >
+              {popularDestinations.map((destination) => (
+                <DestinationCard
+                  key={destination.name}
+                  destination={destination}
+                  onSelect={setSelected}
+                  compact
+                />
+              ))}
+              <Link
+                to="/destinations"
+                className="group flex aspect-[1.05] flex-col items-start justify-end overflow-hidden rounded-sm bg-burgundy-deep p-4 text-primary-foreground shadow-sm"
+              >
+                <span className="mb-auto grid h-9 w-9 place-items-center rounded-full border border-gold/60 text-gold transition-transform group-hover:scale-110">
+                  <Compass className="h-4 w-4" />
+                </span>
+                <span className="display-serif text-xl leading-tight">All 38 destinations</span>
+                <span className="mt-2 flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-gold">
+                  Explore the map <ArrowRight className="h-3 w-3" />
+                </span>
+              </Link>
+            </div>
+            <div className="hidden lg:block">
+              <div className="destination-carousel" aria-label="Popular destinations carousel">
+                <div className="destination-carousel-track">
+                  {[...popularDestinations, ...popularDestinations].map((destination, index) => (
+                    <DestinationCard
+                      key={`${destination.name}-${index}`}
+                      destination={destination}
+                      onSelect={setSelected}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
           {selected && (
             <DestinationSpotlight destination={selected} onClose={() => setSelected(null)} />
           )}
+        </section>
+
+        <section className="border-y border-border bg-paper-deep px-5 py-12 lg:px-10 lg:py-16">
+          <div className="mx-auto grid max-w-[1220px] gap-5 lg:grid-cols-[0.88fr_1.12fr]">
+            <CommunityPanel member={member} onJoin={() => setJoinOpen(true)} />
+            <ExplorerBadges registered={registered} />
+          </div>
         </section>
 
         <section
@@ -301,7 +347,7 @@ function Index() {
               <div className="relative grid h-32 w-32 shrink-0 place-items-center rounded-full border border-gold/70">
                 <div className="absolute inset-2 rounded-full border border-gold/30" />
                 <span className="display-serif text-3xl text-gold">
-                   {registered ? "1/38" : "0/38"}
+                  {registered ? "1/38" : "0/38"}
                 </span>
                 <span className="absolute bottom-4 text-[8px] uppercase tracking-widest text-primary-foreground/60">
                   destinations
@@ -312,9 +358,7 @@ function Index() {
                   {registered ? "Welcome, Explorer" : "Your journey awaits"}
                 </p>
                 <p className="mt-2 text-sm text-primary-foreground/60">
-                  {registered
-                    ? "Vaishno Devi is your first stop."
-                    : "One map. Endless memories."}
+                  {registered ? "Vaishno Devi is your first stop." : "One map. Endless memories."}
                 </p>
               </div>
             </div>
@@ -368,11 +412,12 @@ function Index() {
                   <div className="h-full w-[70%] bg-gold" />
                 </div>
               </div>
-              <div className="mt-8 flex gap-3">
-                <BadgeSeal label="Bronze" active />
-                <BadgeSeal label="Silver" />
-                <BadgeSeal label="Gold" />
-              </div>
+              <a
+                href="#explorer-badges"
+                className="mt-8 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gold hover:text-gold-soft"
+              >
+                View explorer badges <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>
@@ -474,11 +519,7 @@ function Index() {
         </div>
       </a>
       {joinOpen && (
-        <JoinModal
-          onClose={() => setJoinOpen(false)}
-          onJoin={joinCommunity}
-          existing={member}
-        />
+        <JoinModal onClose={() => setJoinOpen(false)} onJoin={joinCommunity} existing={member} />
       )}
     </div>
   );
@@ -493,14 +534,14 @@ function JoinModal({
   onJoin: (m: Member) => void;
   existing: Member | null;
 }) {
-   const [name, setName] = useState(existing?.name ?? "");
-   const [email, setEmail] = useState(existing?.email ?? "");
-   const [instagram, setInstagram] = useState(existing?.instagram ?? "");
-   const [phone, setPhone] = useState(existing?.phone ?? "");
-   const [city, setCity] = useState(existing?.city ?? "");
-   const [dreamDestination, setDreamDestination] = useState(existing?.dreamDestination ?? "");
-   const [dob, setDob] = useState(existing?.dob ?? "");
-   const [howFound, setHowFound] = useState(existing?.howFound ?? "");
+  const [name, setName] = useState(existing?.name ?? "");
+  const [email, setEmail] = useState(existing?.email ?? "");
+  const [instagram, setInstagram] = useState(existing?.instagram ?? "");
+  const [phone, setPhone] = useState(existing?.phone ?? "");
+  const [city, setCity] = useState(existing?.city ?? "");
+  const [dreamDestination, setDreamDestination] = useState(existing?.dreamDestination ?? "");
+  const [dob, setDob] = useState(existing?.dob ?? "");
+  const [howFound, setHowFound] = useState(existing?.howFound ?? "");
   const [error, setError] = useState("");
 
   const submit = (e: React.FormEvent) => {
@@ -508,21 +549,21 @@ function JoinModal({
     const clean = {
       name: name.trim().slice(0, 60),
       email: email.trim().slice(0, 120),
-       instagram: instagram.trim().slice(0, 60),
-       phone: phone.trim().slice(0, 20),
+      instagram: instagram.trim().slice(0, 60),
+      phone: phone.trim().slice(0, 20),
       city: city.trim().slice(0, 60),
-       dreamDestination: dreamDestination.trim().slice(0, 100),
-       dob: dob.trim().slice(0, 10),
-       howFound: howFound.trim().slice(0, 40),
+      dreamDestination: dreamDestination.trim().slice(0, 100),
+      dob: dob.trim().slice(0, 10),
+      howFound: howFound.trim().slice(0, 40),
     };
     if (!clean.name) return setError("Please tell us your name.");
-     if (!clean.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean.email))
-       return setError("Enter a valid email address.");
+    if (!clean.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean.email))
+      return setError("Enter a valid email address.");
     if (!/^[0-9+\-\s]{8,15}$/.test(clean.phone)) return setError("Enter a valid phone number.");
-     if (!clean.city) return setError("Please add the city you belong to.");
-     if (!clean.dreamDestination) return setError("Tell us your dream destination.");
-     if (!clean.dob) return setError("Please add your date of birth.");
-     if (!clean.howFound) return setError("Please tell us how you found us.");
+    if (!clean.city) return setError("Please add the city you belong to.");
+    if (!clean.dreamDestination) return setError("Tell us your dream destination.");
+    if (!clean.dob) return setError("Please add your date of birth.");
+    if (!clean.howFound) return setError("Please tell us how you found us.");
     onJoin(clean);
   };
 
@@ -555,7 +596,7 @@ function JoinModal({
             <X className="h-5 w-5" />
           </button>
         </div>
-         <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <label className="block">
             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
               Full name *
@@ -570,7 +611,7 @@ function JoinModal({
           </label>
           <label className="block">
             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-               Email ID *
+              Email ID *
             </span>
             <input
               className={inputCls}
@@ -581,33 +622,33 @@ function JoinModal({
               maxLength={120}
             />
           </label>
-           <label className="block">
-             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-               Instagram handle
-             </span>
-             <input
-               className={inputCls}
-               value={instagram}
-               onChange={(e) => setInstagram(e.target.value)}
-               placeholder="@yourhandle"
-               maxLength={60}
-             />
-           </label>
-           <label className="block">
-             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-               Phone number *
-             </span>
-             <input
-               className={inputCls}
-               value={phone}
-               onChange={(e) => setPhone(e.target.value)}
-               placeholder="+91 98765 43210"
-               maxLength={20}
-             />
-           </label>
           <label className="block">
             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-               City you belong to *
+              Instagram handle
+            </span>
+            <input
+              className={inputCls}
+              value={instagram}
+              onChange={(e) => setInstagram(e.target.value)}
+              placeholder="@yourhandle"
+              maxLength={60}
+            />
+          </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              Phone number *
+            </span>
+            <input
+              className={inputCls}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+91 98765 43210"
+              maxLength={20}
+            />
+          </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              City you belong to *
             </span>
             <input
               className={inputCls}
@@ -617,42 +658,46 @@ function JoinModal({
               maxLength={60}
             />
           </label>
-           <label className="block">
-             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-               Dream destination *
-             </span>
-             <input
-               className={inputCls}
-               value={dreamDestination}
-               onChange={(e) => setDreamDestination(e.target.value)}
-               placeholder="Gurez Valley"
-               maxLength={100}
-             />
-           </label>
-           <label className="block">
-             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-               Date of birth *
-             </span>
-             <input
-               className={inputCls}
-               type="date"
-               value={dob}
-               onChange={(e) => setDob(e.target.value)}
-             />
-           </label>
-           <label className="block sm:col-span-2">
-             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
-               How did you find us? *
-             </span>
-             <select className={inputCls} value={howFound} onChange={(e) => setHowFound(e.target.value)}>
-               <option value="">Choose one</option>
-               <option value="Instagram">Instagram</option>
-               <option value="WhatsApp">WhatsApp</option>
-               <option value="Friend or family">Friend or family</option>
-               <option value="Search">Search</option>
-               <option value="Other">Other</option>
-             </select>
-           </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              Dream destination *
+            </span>
+            <input
+              className={inputCls}
+              value={dreamDestination}
+              onChange={(e) => setDreamDestination(e.target.value)}
+              placeholder="Gurez Valley"
+              maxLength={100}
+            />
+          </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              Date of birth *
+            </span>
+            <input
+              className={inputCls}
+              type="date"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
+            />
+          </label>
+          <label className="block sm:col-span-2">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              How did you find us? *
+            </span>
+            <select
+              className={inputCls}
+              value={howFound}
+              onChange={(e) => setHowFound(e.target.value)}
+            >
+              <option value="">Choose one</option>
+              <option value="Instagram">Instagram</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Friend or family">Friend or family</option>
+              <option value="Search">Search</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
         </div>
         {error && <p className="mt-4 text-xs font-semibold text-burgundy">{error}</p>}
         <button
@@ -669,14 +714,14 @@ function JoinModal({
   );
 }
 
-type Destination = {
+export type Destination = {
   name: string;
   place: string;
   image: string;
   description: string;
   time: string;
 };
-const destinations: Destination[] = [
+export const destinations: Destination[] = [
   {
     name: "Vaishno Devi",
     place: "Katra",
@@ -759,7 +804,8 @@ const destinations: Destination[] = [
     name: "Paddar (Machail Mata)",
     place: "Kishtwar",
     image: sonamargImage,
-    description: "A dramatic pilgrimage route through high valleys to the revered Machail Mata shrine.",
+    description:
+      "A dramatic pilgrimage route through high valleys to the revered Machail Mata shrine.",
     time: "Jul – Sep",
   },
   {
@@ -780,7 +826,8 @@ const destinations: Destination[] = [
     name: "Doodpathri",
     place: "Budgam",
     image: pahalgamImage,
-    description: "A meadowland of silver streams, wildflowers and slow afternoons in the mountains.",
+    description:
+      "A meadowland of silver streams, wildflowers and slow afternoons in the mountains.",
     time: "May – Oct",
   },
   {
@@ -808,7 +855,8 @@ const destinations: Destination[] = [
     name: "Shiv Khori",
     place: "Reasi",
     image: vaishnoImage,
-    description: "A sacred cave shrine with a naturally formed lingam and a memorable forest approach.",
+    description:
+      "A sacred cave shrine with a naturally formed lingam and a memorable forest approach.",
     time: "Feb – Apr",
   },
   {
@@ -920,7 +968,8 @@ const destinations: Destination[] = [
     name: "Kailash Kund",
     place: "Doda",
     image: sonamargImage,
-    description: "A high-altitude lake trek for pilgrims and hikers seeking a true mountain challenge.",
+    description:
+      "A high-altitude lake trek for pilgrims and hikers seeking a true mountain challenge.",
     time: "Aug – Sep",
   },
   {
@@ -946,6 +995,19 @@ const destinations: Destination[] = [
   },
 ];
 
+const popularDestinationNames = [
+  "Vaishno Devi",
+  "Gulmarg",
+  "Dal Lake (Shankaracharya)",
+  "Sonamarg",
+  "Pahalgam",
+];
+const popularDestinations = popularDestinationNames.map((name) => {
+  const destination = destinations.find((item) => item.name === name);
+  if (!destination) throw new Error(`Missing popular destination: ${name}`);
+  return destination;
+});
+
 function Feature({ icon, title, label }: { icon: React.ReactNode; title: string; label: string }) {
   return (
     <div className="flex items-center gap-3 border-r border-border px-1 last:border-0 sm:justify-center">
@@ -963,10 +1025,14 @@ function SectionHeading({
   eyebrow,
   title,
   action,
+  onAction,
+  actionHref,
 }: {
   eyebrow: string;
   title: string;
   action: string;
+  onAction?: () => void;
+  actionHref?: string;
 }) {
   return (
     <div className="flex items-end justify-between gap-4">
@@ -974,25 +1040,42 @@ function SectionHeading({
         <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-burgundy">{eyebrow}</p>
         <h2 className="display-serif mt-2 text-4xl text-ink sm:text-5xl">{title}</h2>
       </div>
-      <a
-        href="#about"
-        className="hidden items-center gap-2 pb-1 text-[10px] font-bold uppercase tracking-widest text-ink-soft hover:text-burgundy sm:flex"
-      >
-        {action} <ArrowRight className="h-4 w-4" />
-      </a>
+      {actionHref ? (
+        <Link
+          to={actionHref}
+          className="flex shrink-0 items-center gap-1.5 pb-1 text-[10px] font-bold uppercase tracking-wider text-ink-soft transition-colors hover:text-burgundy sm:gap-2 sm:tracking-widest"
+        >
+          {action} <ArrowRight className="h-4 w-4" />
+        </Link>
+      ) : (
+        <button
+          type="button"
+          onClick={onAction}
+          className="hidden shrink-0 items-center gap-1.5 pb-1 text-[10px] font-bold uppercase tracking-wider text-ink-soft transition-colors hover:text-burgundy lg:flex lg:gap-2 lg:tracking-widest"
+        >
+          {action} <ArrowRight className="h-4 w-4" />
+        </button>
+      )}
     </div>
   );
 }
 function DestinationCard({
   destination,
   onSelect,
+  compact = false,
 }: {
   destination: Destination;
   onSelect: (destination: Destination) => void;
+  compact?: boolean;
 }) {
   return (
-    <button onClick={() => onSelect(destination)} className="group w-[220px] shrink-0 text-left sm:w-[250px]">
-      <div className="relative aspect-[0.88] overflow-hidden rounded-sm bg-muted">
+    <button
+      onClick={() => onSelect(destination)}
+      className={`group shrink-0 snap-start text-left ${compact ? "w-full" : "w-[42vw] min-w-[138px] sm:w-[210px]"}`}
+    >
+      <div
+        className={`relative overflow-hidden rounded-sm bg-muted ${compact ? "aspect-[1.05]" : "aspect-[0.92]"}`}
+      >
         <img
           src={destination.image}
           alt={`${destination.name}, ${destination.place}`}
@@ -1002,8 +1085,14 @@ function DestinationCard({
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/90 via-transparent to-transparent" />
-        <span className="absolute bottom-4 left-4 text-primary-foreground">
-          <strong className="display-serif block text-2xl">{destination.name}</strong>
+        <span
+          className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-burgundy-deep/80 p-3 pt-10 text-primary-foreground ${compact ? "sm:p-4" : "sm:p-4 sm:pt-12"}`}
+        >
+          <strong
+            className={`display-serif block leading-tight ${compact ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"}`}
+          >
+            {destination.name}
+          </strong>
           <span className="mt-1 flex items-center gap-1 text-[10px] uppercase tracking-wider text-primary-foreground/75">
             <MapPin className="h-3 w-3" />
             {destination.place}
@@ -1011,6 +1100,98 @@ function DestinationCard({
         </span>
       </div>
     </button>
+  );
+}
+
+function CommunityPanel({ member, onJoin }: { member: Member | null; onJoin: () => void }) {
+  return (
+    <div
+      className="relative isolate min-h-[250px] overflow-hidden rounded-sm bg-burgundy-deep p-7 text-primary-foreground sm:p-9"
+      style={{ backgroundImage: `url(${pahalgamImage})`, backgroundPosition: "center" }}
+    >
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-burgundy-deep via-burgundy-deep/85 to-burgundy-deep/25" />
+      <UsersRound className="h-8 w-8 text-gold" strokeWidth={1.25} />
+      <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+        Travel together
+      </p>
+      <h2 className="display-serif mt-2 max-w-sm text-3xl leading-tight sm:text-4xl">
+        Join the Explorer Community
+      </h2>
+      <p className="mt-3 max-w-sm text-sm leading-6 text-primary-foreground/75">
+        Share your journey, discover new corners of J&K, and collect memories with fellow explorers.
+      </p>
+      <button
+        type="button"
+        onClick={onJoin}
+        className="mt-6 inline-flex items-center gap-2 bg-gold px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-burgundy-deep transition-colors hover:bg-gold-soft"
+      >
+        {member ? "Update your profile" : "Register yourself"} <ArrowRight className="h-4 w-4" />
+      </button>
+    </div>
+  );
+}
+
+function ExplorerBadges({ registered }: { registered: boolean }) {
+  return (
+    <div id="explorer-badges" className="rounded-sm border border-border bg-paper p-6 sm:p-8">
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Collect your story
+          </p>
+          <h2 className="display-serif mt-1 text-3xl text-ink sm:text-4xl">Explorer badges</h2>
+        </div>
+        <span className="hidden text-[10px] font-bold uppercase tracking-widest text-ink-soft sm:block">
+          3 badges to earn
+        </span>
+      </div>
+      <p className="mt-2 text-sm text-ink-soft">
+        Each destination takes you one step closer to the next seal.
+      </p>
+      <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-4">
+        <ExplorerBadge
+          icon={<Award />}
+          label="Bronze"
+          goal="10 places"
+          progress={registered ? "1/10" : "0/10"}
+          tone="bronze"
+        />
+        <ExplorerBadge
+          icon={<Stamp />}
+          label="Silver"
+          goal="20 places"
+          progress="0/20"
+          tone="silver"
+        />
+        <ExplorerBadge icon={<Crown />} label="Gold" goal="30 places" progress="0/30" tone="gold" />
+      </div>
+    </div>
+  );
+}
+
+function ExplorerBadge({
+  icon,
+  label,
+  goal,
+  progress,
+  tone,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  goal: string;
+  progress: string;
+  tone: "bronze" | "silver" | "gold";
+}) {
+  return (
+    <div className={`badge-card badge-card-${tone} text-center`}>
+      <span className="badge-medallion mx-auto grid h-14 w-14 place-items-center rounded-full sm:h-[76px] sm:w-[76px]">
+        <span className="relative z-10">{icon}</span>
+        <span className="badge-monogram">J&amp;K</span>
+      </span>
+      <strong className="mt-2 block text-xs text-ink sm:text-sm">{label}</strong>
+      <span className="mt-0.5 block text-[9px] text-ink-soft sm:text-[10px]">Explore {goal}</span>
+      <span className="mt-1 block text-[10px] font-bold text-ink">{progress}</span>
+    </div>
   );
 }
 function DestinationSpotlight({
@@ -1021,40 +1202,49 @@ function DestinationSpotlight({
   onClose: () => void;
 }) {
   return (
-    <div className="relative mt-8 grid overflow-hidden border border-border bg-paper sm:grid-cols-[1fr_1.3fr]">
-      <img
-        src={destination.image}
-        alt=""
-        width={900}
-        height={620}
-        className="h-56 w-full object-cover sm:h-full"
-      />
-      <div className="p-7 sm:p-10">
-        <button
-          onClick={onClose}
-          aria-label="Close destination details"
-          className="absolute right-4 top-4 rounded-full border border-border p-1.5 text-ink-soft hover:text-burgundy"
-        >
-          <X className="h-4 w-4" />
-        </button>
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-burgundy">
-          Destination details
-        </p>
-        <h3 className="display-serif mt-2 text-4xl text-ink">{destination.name}</h3>
-        <p className="mt-4 max-w-md text-sm leading-7 text-ink-soft">{destination.description}</p>
-        <div className="mt-6 flex flex-wrap gap-6 border-t border-border pt-5 text-xs text-ink-soft">
-          <span className="flex items-center gap-2">
-            <CalendarDays className="h-4 w-4 text-burgundy" />
-            Best time: {destination.time}
-          </span>
-          <span className="flex items-center gap-2">
-            <Footprints className="h-4 w-4 text-burgundy" />
-            Stamp available
-          </span>
+    <div className="fixed inset-0 z-[70] flex items-end bg-burgundy-deep/65 p-0 backdrop-blur-sm sm:items-center sm:justify-center sm:p-6">
+      <div
+        className="relative grid max-h-[92dvh] w-full overflow-y-auto bg-paper shadow-2xl sm:max-w-4xl sm:grid-cols-[0.9fr_1.1fr] sm:overflow-hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="destination-title"
+      >
+        <img
+          src={destination.image}
+          alt={`${destination.name}, ${destination.place}`}
+          width={900}
+          height={620}
+          className="h-48 w-full object-cover sm:h-full"
+        />
+        <div className="p-6 pb-9 sm:p-10">
+          <button
+            onClick={onClose}
+            aria-label="Close destination details"
+            className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full border border-primary-foreground/35 bg-burgundy-deep/85 text-primary-foreground shadow-lg transition-colors hover:bg-burgundy sm:border-border sm:bg-paper sm:text-ink-soft"
+          >
+            <X className="h-4 w-4" />
+          </button>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-burgundy">
+            Destination details
+          </p>
+          <h3 id="destination-title" className="display-serif mt-2 text-4xl text-ink">
+            {destination.name}
+          </h3>
+          <p className="mt-4 max-w-md text-sm leading-7 text-ink-soft">{destination.description}</p>
+          <div className="mt-6 flex flex-wrap gap-6 border-t border-border pt-5 text-xs text-ink-soft">
+            <span className="flex items-center gap-2">
+              <CalendarDays className="h-4 w-4 text-burgundy" />
+              Best time: {destination.time}
+            </span>
+            <span className="flex items-center gap-2">
+              <Footprints className="h-4 w-4 text-burgundy" />
+              Stamp available
+            </span>
+          </div>
+          <button className="mt-7 inline-flex items-center gap-2 border border-burgundy px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest text-burgundy hover:bg-burgundy hover:text-primary-foreground">
+            <Stamp className="h-4 w-4" /> Collect this stamp
+          </button>
         </div>
-        <button className="mt-7 inline-flex items-center gap-2 border border-burgundy px-5 py-2.5 text-[10px] font-bold uppercase tracking-widest text-burgundy hover:bg-burgundy hover:text-primary-foreground">
-          <Stamp className="h-4 w-4" /> Collect this stamp
-        </button>
       </div>
     </div>
   );
@@ -1067,15 +1257,6 @@ function PlanItem({ icon, title, text }: { icon: React.ReactNode; title: string;
         <strong className="block text-xs font-bold text-ink">{title}</strong>
         <span className="text-[10px] text-ink-soft">{text}</span>
       </span>
-    </div>
-  );
-}
-function BadgeSeal({ label, active = false }: { label: string; active?: boolean }) {
-  return (
-    <div
-      className={`grid h-12 w-12 place-items-center rounded-full border ${active ? "border-gold text-gold" : "border-primary-foreground/30 text-primary-foreground/35"}`}
-    >
-      <span className="text-[8px] font-bold uppercase tracking-widest">{label}</span>
     </div>
   );
 }
