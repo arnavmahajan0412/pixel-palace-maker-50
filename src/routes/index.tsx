@@ -53,7 +53,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/910000000000"; // TODO: replace with your WhatsApp number
+const WHATSAPP_MESSAGE =
+  "Hi J&K Explorer, I'd like to buy the J&K Explorer Passport. Please share the details.";
+// Add a business number after wa.me/ to open a direct conversation rather than the WhatsApp picker.
+const WHATSAPP_URL = `https://wa.me/?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 const MEMBER_KEY = "jk-explorer-member";
 
 type Member = {
@@ -214,12 +217,14 @@ function Index() {
                 Endless memories waiting to be collected.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <button
-                  onClick={() => setJoinOpen(true)}
-                  className="bg-burgundy px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-lg transition-colors hover:bg-burgundy/80"
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 bg-burgundy px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-lg transition-colors hover:bg-burgundy/80"
                 >
-                  {member ? `Welcome, ${member.name.split(" ")[0]}` : "Join the community"}
-                </button>
+                  Buy passport <ArrowRight className="h-4 w-4" />
+                </a>
                 <a
                   href="#destinations"
                   className="flex items-center gap-2 border border-primary-foreground/70 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:border-gold hover:text-gold"
@@ -1150,20 +1155,26 @@ function ExplorerBadges({ registered }: { registered: boolean }) {
       </p>
       <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-4">
         <ExplorerBadge
-          icon={<Award />}
+          icon={<Award className="h-6 w-6" strokeWidth={1.35} />}
           label="Bronze"
           goal="10 places"
           progress={registered ? "1/10" : "0/10"}
           tone="bronze"
         />
         <ExplorerBadge
-          icon={<Stamp />}
+          icon={<Stamp className="h-6 w-6" strokeWidth={1.35} />}
           label="Silver"
           goal="20 places"
           progress="0/20"
           tone="silver"
         />
-        <ExplorerBadge icon={<Crown />} label="Gold" goal="30 places" progress="0/30" tone="gold" />
+        <ExplorerBadge
+          icon={<Crown className="h-6 w-6" strokeWidth={1.35} />}
+          label="Gold"
+          goal="30 places"
+          progress="0/30"
+          tone="gold"
+        />
       </div>
     </div>
   );
@@ -1184,8 +1195,12 @@ function ExplorerBadge({
 }) {
   return (
     <div className={`badge-card badge-card-${tone} text-center`}>
-      <span className="badge-medallion mx-auto grid h-14 w-14 place-items-center rounded-full sm:h-[76px] sm:w-[76px]">
-        <span className="relative z-10">{icon}</span>
+      <span className="badge-medallion mx-auto grid h-16 w-16 place-items-center rounded-full sm:h-[82px] sm:w-[82px]">
+        <span className="badge-rays" aria-hidden="true" />
+        <span className="badge-inner-ring" aria-hidden="true" />
+        <span className="relative z-10 grid h-8 w-8 place-items-center rounded-full border border-current/55 sm:h-10 sm:w-10">
+          {icon}
+        </span>
         <span className="badge-monogram">J&amp;K</span>
       </span>
       <strong className="mt-2 block text-xs text-ink sm:text-sm">{label}</strong>
