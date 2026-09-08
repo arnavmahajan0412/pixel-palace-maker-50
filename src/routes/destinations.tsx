@@ -10,7 +10,7 @@ export const Route = createFileRoute("/destinations")({
       { title: "All Destinations | J&K Explorer" },
       {
         name: "description",
-        content: "Explore all 38 handpicked destinations across Jammu & Kashmir.",
+        content: "Explore 30+ handpicked destinations across Jammu & Kashmir.",
       },
     ],
   }),
@@ -52,7 +52,7 @@ function DestinationsPage() {
             Choose your next chapter
           </p>
           <h1 className="display-serif mt-2 max-w-2xl text-5xl leading-[1.02] text-ink sm:text-6xl">
-            All 38 destinations
+            All 30+ destinations
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-ink-soft">
             Search the valleys, shrines, trails and city stories that make Jammu &amp; Kashmir
@@ -74,7 +74,9 @@ function DestinationsPage() {
       <section className="mx-auto max-w-[1380px] px-5 py-10 lg:px-10 lg:py-14">
         <div className="mb-6 flex items-center justify-between">
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-soft">
-            {matches.length} {matches.length === 1 ? "destination" : "destinations"} found
+            {query
+              ? `${matches.length} ${matches.length === 1 ? "destination" : "destinations"} found`
+              : "30+ destinations to explore"}
           </p>
           {query && (
             <button

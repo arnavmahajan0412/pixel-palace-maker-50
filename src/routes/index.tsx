@@ -209,7 +209,7 @@ function Index() {
                 <em className="font-normal text-gold">like never before.</em>
               </h1>
               <p className="mt-7 max-w-md text-sm leading-7 text-primary-foreground/80 sm:text-base">
-                38 iconic destinations. One passport.
+                30+ iconic destinations. One passport.
                 <br />
                 Endless memories waiting to be collected.
               </p>
@@ -239,7 +239,7 @@ function Index() {
 
         <section className="border-b border-border bg-paper px-5 py-7 lg:px-10">
           <div className="mx-auto grid max-w-[1220px] grid-cols-2 gap-y-7 sm:grid-cols-4 lg:grid-cols-4 lg:gap-5">
-            <Feature icon={<Compass />} title="38" label="Handpicked destinations" />
+            <Feature icon={<Compass />} title="30+" label="Handpicked destinations" />
             <Feature icon={<Stamp />} title="Collect" label="Stamps at each location" />
             <Feature icon={<QrCode />} title="Scan QR code" label="Get complete details" />
             <Feature icon={<Award />} title="Track your journey" label="Earn explorer badges" />
@@ -257,8 +257,8 @@ function Index() {
             actionHref="/destinations"
           />
           <p className="mt-3 max-w-xl text-sm leading-6 text-ink-soft">
-            Start with the valley’s essentials, then explore the complete collection of thirty-eight
-            places, trails, shrines and city stories.
+            Start with the valley’s essentials, then explore the complete collection of 30+ places,
+            trails, shrines and city stories.
           </p>
           <div className="mt-8">
             <div
@@ -280,7 +280,7 @@ function Index() {
                 <span className="mb-auto grid h-9 w-9 place-items-center rounded-full border border-gold/60 text-gold transition-transform group-hover:scale-110">
                   <Compass className="h-4 w-4" />
                 </span>
-                <span className="display-serif text-xl leading-tight">All 38 destinations</span>
+                <span className="display-serif text-xl leading-tight">All 30+ destinations</span>
                 <span className="mt-2 flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-gold">
                   Explore the map <ArrowRight className="h-3 w-3" />
                 </span>
