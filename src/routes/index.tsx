@@ -36,6 +36,9 @@ import dalImage from "@/assets/dal-lake.jpg";
 import sonamargImage from "@/assets/sonamarg.jpg";
 import pahalgamImage from "@/assets/pahalgam.jpg";
 import passportImage from "@/assets/jk-explorer-passport.png";
+import bronzeBadgeImage from "@/assets/badges/bronze-explorer.jpeg";
+import silverBadgeImage from "@/assets/badges/silver-explorer.jpeg";
+import goldBadgeImage from "@/assets/badges/gold-explorer.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -1577,7 +1580,7 @@ function CommunityPanel({ member, onJoin }: { member: Member | null; onJoin: () 
 
 function ExplorerBadges({ registered }: { registered: boolean }) {
   return (
-    <div id="explorer-badges" className="rounded-sm border border-border bg-paper p-6 sm:p-8">
+    <div id="explorer-badges" className="explorer-badges-panel rounded-sm border border-border bg-paper p-6 sm:p-8">
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
@@ -1594,21 +1597,21 @@ function ExplorerBadges({ registered }: { registered: boolean }) {
       </p>
       <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-4">
         <ExplorerBadge
-          icon={<Award className="h-6 w-6" strokeWidth={1.35} />}
+          image={bronzeBadgeImage}
           label="Bronze"
           goal="10 places"
           progress={registered ? "1/10" : "0/10"}
           tone="bronze"
         />
         <ExplorerBadge
-          icon={<Stamp className="h-6 w-6" strokeWidth={1.35} />}
+          image={silverBadgeImage}
           label="Silver"
           goal="20 places"
           progress="0/20"
           tone="silver"
         />
         <ExplorerBadge
-          icon={<Crown className="h-6 w-6" strokeWidth={1.35} />}
+          image={goldBadgeImage}
           label="Gold"
           goal="30 places"
           progress="0/30"
@@ -1620,13 +1623,13 @@ function ExplorerBadges({ registered }: { registered: boolean }) {
 }
 
 function ExplorerBadge({
-  icon,
+  image,
   label,
   goal,
   progress,
   tone,
 }: {
-  icon: React.ReactNode;
+  image: string;
   label: string;
   goal: string;
   progress: string;
@@ -1634,14 +1637,11 @@ function ExplorerBadge({
 }) {
   return (
     <div className={`badge-card badge-card-${tone} text-center`}>
-      <span className="badge-medallion mx-auto grid h-16 w-16 place-items-center rounded-full sm:h-[82px] sm:w-[82px]">
-        <span className="badge-rays" aria-hidden="true" />
-        <span className="badge-inner-ring" aria-hidden="true" />
-        <span className="relative z-10 grid h-8 w-8 place-items-center rounded-full border border-current/55 sm:h-10 sm:w-10">
-          {icon}
-        </span>
-        <span className="badge-monogram">J&amp;K</span>
-      </span>
+      <img
+        src={image}
+        alt={`${label} Explorer badge`}
+        className="badge-art mx-auto h-20 w-20 object-contain sm:h-28 sm:w-28"
+      />
       <strong className="mt-2 block text-xs text-ink sm:text-sm">{label}</strong>
       <span className="mt-0.5 block text-[9px] text-ink-soft sm:text-[10px]">Explore {goal}</span>
       <span className="mt-1 block text-[10px] font-bold text-ink">{progress}</span>

@@ -233,8 +233,51 @@
   border: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
-  padding: 1rem 0.4rem 0.85rem;
-  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.55), 0 2px 5px oklch(0.2 0.03 30 / 0.06);
+  border-radius: 0.45rem;
+  padding: 1.4rem 0.4rem 0.85rem;
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.7),
+    0 5px 12px oklch(0.2 0.03 30 / 0.1);
+}
+
+.badge-art {
+  display: block;
+  overflow: hidden;
+  border: 1px solid oklch(0.27 0.02 30);
+  border-radius: 999px;
+  background: oklch(0.18 0.01 30);
+  box-shadow:
+    inset 0 0 0 1px oklch(1 0 0 / 0.08),
+    0 5px 10px oklch(0.2 0.03 30 / 0.2);
+}
+
+.explorer-badges-panel {
+  background:
+    radial-gradient(circle at 92% 6%, oklch(0.9 0.06 80 / 0.22), transparent 22%),
+    var(--color-paper);
+}
+
+.badge-card::before {
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  content: "";
+  background: currentColor;
+  opacity: 0.65;
+}
+
+.badge-ribbon {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  right: 0;
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
 }
 
 .badge-medallion {
@@ -244,6 +287,7 @@
   background:
     radial-gradient(circle at 31% 26%, oklch(1 0 0 / 0.62), transparent 15%),
     radial-gradient(circle at 55% 60%, oklch(1 0 0 / 0.13), transparent 42%),
+    repeating-conic-gradient(from 10deg, oklch(1 0 0 / 0.16) 0deg 5deg, transparent 5deg 12deg),
     linear-gradient(145deg, oklch(1 0 0 / 0.28), oklch(0.25 0.02 30 / 0.16));
   box-shadow:
     inset 0 0 0 2px oklch(1 0 0 / 0.4),
@@ -297,16 +341,16 @@
 }
 
 .badge-card-bronze {
-  color: oklch(0.49 0.09 53);
-  background: linear-gradient(145deg, oklch(0.98 0.015 88), oklch(0.88 0.05 62));
+  color: oklch(0.48 0.1 53);
+  background: linear-gradient(145deg, oklch(0.99 0.016 88), oklch(0.86 0.06 62));
 }
 .badge-card-silver {
-  color: oklch(0.54 0.025 255);
-  background: linear-gradient(145deg, oklch(0.98 0.006 255), oklch(0.84 0.025 255));
+  color: oklch(0.5 0.03 255);
+  background: linear-gradient(145deg, oklch(0.99 0.008 255), oklch(0.82 0.03 255));
 }
 .badge-card-gold {
-  color: oklch(0.68 0.12 78);
-  background: linear-gradient(145deg, oklch(0.98 0.02 88), oklch(0.89 0.09 80));
+  color: oklch(0.67 0.13 78);
+  background: linear-gradient(145deg, oklch(0.99 0.024 88), oklch(0.87 0.1 80));
 }
 
 @media (min-width: 1024px) {
