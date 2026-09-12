@@ -189,7 +189,7 @@ function Index() {
       <main>
         <section
           id="home"
-          className="relative isolate flex min-h-[780px] items-end overflow-hidden bg-burgundy-deep pb-8 pt-28 sm:min-h-[760px] sm:pb-14 sm:pt-32 lg:min-h-[820px] lg:pb-24"
+          className="relative isolate flex min-h-[590px] items-end overflow-hidden bg-burgundy-deep pb-8 pt-28 sm:min-h-[760px] sm:pb-14 sm:pt-32 lg:min-h-[820px] lg:pb-24"
         >
           <img
             src={heroImage}
@@ -205,7 +205,7 @@ function Index() {
             alt="J&K Explorer passport"
             width={890}
             height={1360}
-            className="hero-passport pointer-events-none absolute bottom-20 right-[9%] z-0 hidden w-[24vw] max-w-[360px] object-contain drop-shadow-2xl lg:block"
+            className="hero-passport pointer-events-none absolute bottom-20 right-[-8vw] z-0 w-[43vw] max-w-[440px] object-contain drop-shadow-2xl sm:bottom-14 sm:right-[3%] sm:w-[34vw] lg:bottom-8 lg:right-[7%] lg:w-[29vw]"
           />
           <div className="relative z-10 mx-auto w-full max-w-[1380px] px-5 lg:px-10">
             <div className="max-w-2xl">
@@ -238,13 +238,6 @@ function Index() {
                   Explore destinations <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
-              <img
-                src={passportImage}
-                alt="J&K Explorer passport"
-                width={890}
-                height={1360}
-                className="hero-passport mx-auto mt-7 w-[58vw] max-w-[260px] object-contain drop-shadow-2xl lg:hidden"
-              />
             </div>
             <div className="mt-8 hidden items-center gap-3 text-xs text-primary-foreground/70 sm:mt-16 sm:flex">
               <span className="grid h-8 w-8 place-items-center rounded-full border border-primary-foreground/40">
