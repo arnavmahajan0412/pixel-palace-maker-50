@@ -10,11 +10,21 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as DestinationsRouteImport } from './routes/destinations'
+import { Route as ExploreBadgesRouteImport } from './routes/explore-badges'
+import { Route as JournalRouteImport } from './routes/journal'
+import { Route as PassportGuideRouteImport } from './routes/passport-guide'
+import { Route as TravelPlannerRouteImport } from './routes/travel-planner'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsRoute = DestinationsRouteImport.update({
@@ -22,31 +32,93 @@ const DestinationsRoute = DestinationsRouteImport.update({
   path: '/destinations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExploreBadgesRoute = ExploreBadgesRouteImport.update({
+  id: '/explore-badges',
+  path: '/explore-badges',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PassportGuideRoute = PassportGuideRouteImport.update({
+  id: '/passport-guide',
+  path: '/passport-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TravelPlannerRoute = TravelPlannerRouteImport.update({
+  id: '/travel-planner',
+  path: '/travel-planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/destinations': typeof DestinationsRoute
+  '/explore-badges': typeof ExploreBadgesRoute
+  '/journal': typeof JournalRoute
+  '/passport-guide': typeof PassportGuideRoute
+  '/travel-planner': typeof TravelPlannerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/destinations': typeof DestinationsRoute
+  '/explore-badges': typeof ExploreBadgesRoute
+  '/journal': typeof JournalRoute
+  '/passport-guide': typeof PassportGuideRoute
+  '/travel-planner': typeof TravelPlannerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/destinations': typeof DestinationsRoute
+  '/explore-badges': typeof ExploreBadgesRoute
+  '/journal': typeof JournalRoute
+  '/passport-guide': typeof PassportGuideRoute
+  '/travel-planner': typeof TravelPlannerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/destinations'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/destinations'
+    | '/explore-badges'
+    | '/journal'
+    | '/passport-guide'
+    | '/travel-planner'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/destinations'
-  id: '__root__' | '/' | '/destinations'
+  to:
+    | '/'
+    | '/about-us'
+    | '/destinations'
+    | '/explore-badges'
+    | '/journal'
+    | '/passport-guide'
+    | '/travel-planner'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-us'
+    | '/destinations'
+    | '/explore-badges'
+    | '/journal'
+    | '/passport-guide'
+    | '/travel-planner'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
   DestinationsRoute: typeof DestinationsRoute
+  ExploreBadgesRoute: typeof ExploreBadgesRoute
+  JournalRoute: typeof JournalRoute
+  PassportGuideRoute: typeof PassportGuideRoute
+  TravelPlannerRoute: typeof TravelPlannerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +130,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/destinations': {
       id: '/destinations'
       path: '/destinations'
@@ -65,12 +144,45 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DestinationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/explore-badges': {
+      id: '/explore-badges'
+      path: '/explore-badges'
+      fullPath: '/explore-badges'
+      preLoaderRoute: typeof ExploreBadgesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal': {
+      id: '/journal'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/passport-guide': {
+      id: '/passport-guide'
+      path: '/passport-guide'
+      fullPath: '/passport-guide'
+      preLoaderRoute: typeof PassportGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/travel-planner': {
+      id: '/travel-planner'
+      path: '/travel-planner'
+      fullPath: '/travel-planner'
+      preLoaderRoute: typeof TravelPlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
   DestinationsRoute: DestinationsRoute,
+  ExploreBadgesRoute: ExploreBadgesRoute,
+  JournalRoute: JournalRoute,
+  PassportGuideRoute: PassportGuideRoute,
+  TravelPlannerRoute: TravelPlannerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

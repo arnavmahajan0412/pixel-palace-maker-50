@@ -93,7 +93,6 @@ function Index() {
   const [selected, setSelected] = useState<Destination | null>(null);
   const [joinOpen, setJoinOpen] = useState(false);
   const [member, setMember] = useState<Member | null>(null);
-  const [mobileView, setMobileView] = useState<"passport" | "planner" | "badges">("passport");
 
   useEffect(() => {
     setMember(loadMember());
@@ -130,18 +129,18 @@ function Index() {
             <a href="#destinations" className="transition-colors hover:text-gold">
               Destinations
             </a>
-            <a href="#passport" className="transition-colors hover:text-gold">
+            <Link to="/passport-guide" className="transition-colors hover:text-gold">
               Passport Guide
-            </a>
-            <a href="#planner" className="transition-colors hover:text-gold">
+            </Link>
+            <Link to="/travel-planner" className="transition-colors hover:text-gold">
               Travel Planner
-            </a>
-            <a href="#journal" className="transition-colors hover:text-gold">
+            </Link>
+            <Link to="/journal" className="transition-colors hover:text-gold">
               Journal
-            </a>
-            <a href="#about" className="transition-colors hover:text-gold">
+            </Link>
+            <Link to="/about-us" className="transition-colors hover:text-gold">
               About Us
-            </a>
+            </Link>
           </nav>
           <div className="hidden items-center gap-4 lg:flex">
             <button
@@ -151,7 +150,8 @@ function Index() {
               <UserRound className="h-4 w-4" />{" "}
               {registered ? "Passport Active" : "Login / Register"}
             </button>
-            <button
+            <Link
+              to="/travel-planner"
               aria-label="Open travel planner"
               className="relative rounded-full p-2 transition-colors hover:bg-primary-foreground/10"
             >
@@ -159,7 +159,7 @@ function Index() {
               <span className="absolute -right-0.5 -top-0.5 grid h-4 w-4 place-items-center rounded-full bg-gold text-[9px] font-bold text-burgundy-deep">
                 {registered ? "1" : "0"}
               </span>
-            </button>
+            </Link>
           </div>
           <button
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -178,24 +178,22 @@ function Index() {
               <a href="#destinations" onClick={() => setMenuOpen(false)}>
                 Destinations
               </a>
-              <a
-                href="#mobile-explorer"
+              <Link
+                to="/passport-guide"
                 onClick={() => {
-                  setMobileView("passport");
                   setMenuOpen(false);
                 }}
               >
                 Passport Guide
-              </a>
-              <a
-                href="#mobile-explorer"
+              </Link>
+              <Link
+                to="/travel-planner"
                 onClick={() => {
-                  setMobileView("planner");
                   setMenuOpen(false);
                 }}
               >
                 Travel Planner
-              </a>
+              </Link>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -214,25 +212,23 @@ function Index() {
               >
                 Register Yourself
               </button>
-              <a
-                href="#mobile-explorer"
+              <Link
+                to="/explore-badges"
                 onClick={() => {
-                  setMobileView("badges");
                   setMenuOpen(false);
                 }}
               >
                 Explore Badges
-              </a>
-              <button
-                type="button"
+              </Link>
+              <Link
+                to="/about-us"
                 className="w-fit text-left"
                 onClick={() => {
-                  setJoinOpen(true);
                   setMenuOpen(false);
                 }}
               >
                 About Us
-              </button>
+              </Link>
             </div>
           </nav>
         )}
@@ -265,7 +261,7 @@ function Index() {
                 <span className="h-px w-7 bg-gold sm:w-10" />
                 The valley is calling
               </p>
-              <h1 className="display-serif max-w-[275px] text-[34px] leading-[0.98] text-primary-foreground sm:max-w-xl sm:text-7xl lg:text-[92px]">
+              <h1 className="display-serif max-w-[275px] text-[32px] leading-[0.98] text-primary-foreground sm:max-w-xl sm:text-5xl lg:text-7xl">
                 Explore Jammu & Kashmir{" "}
                 <em className="font-normal text-gold">like never before.</em>
               </h1>
@@ -368,18 +364,7 @@ function Index() {
           )}
         </section>
 
-        <section className="border-y border-border bg-paper-deep px-5 py-8 lg:hidden">
-          <ExplorerBadges registered={registered} />
-        </section>
-
-        <MobileExplorerExperience
-          activeView={mobileView}
-          onViewChange={setMobileView}
-          registered={registered}
-          onStart={() => setRegistered(true)}
-        />
-
-        <section className="hidden border-y border-border bg-paper-deep px-5 py-12 lg:block lg:px-10 lg:py-16">
+        <section className="border-y border-border bg-paper-deep px-5 py-10 lg:px-10 lg:py-16">
           <div className="mx-auto grid max-w-[1220px] gap-5 lg:grid-cols-[0.88fr_1.12fr]">
             <CommunityPanel member={member} onJoin={() => setJoinOpen(true)} />
             <ExplorerBadges registered={registered} />
@@ -388,14 +373,14 @@ function Index() {
 
         <section
           id="passport"
-          className="hidden scroll-mt-20 bg-burgundy-deep px-5 py-14 text-primary-foreground lg:block lg:px-10"
+          className="scroll-mt-20 bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-14"
         >
           <div className="mx-auto flex max-w-[1220px] flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold">
                 Your journey begins
               </p>
-              <h2 className="display-serif mt-2 max-w-xl text-4xl leading-tight sm:text-5xl">
+              <h2 className="display-serif mt-2 max-w-xl text-3xl leading-tight sm:text-4xl">
                 Every valley has a story. Start yours today.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-6 text-primary-foreground/70">
@@ -441,14 +426,14 @@ function Index() {
 
         <section
           id="planner"
-          className="hidden mx-auto max-w-[1220px] scroll-mt-20 px-5 py-20 lg:block lg:px-10"
+          className="mx-auto max-w-[1220px] scroll-mt-20 px-5 py-12 lg:px-10 lg:py-20"
         >
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-burgundy">
                 Plan the feeling
               </p>
-              <h2 className="display-serif mt-3 max-w-xl text-5xl leading-[1.02] text-ink">
+              <h2 className="display-serif mt-3 max-w-xl text-3xl leading-[1.02] text-ink sm:text-4xl">
                 More than a trip.
                 <br />
                 <span className="text-burgundy">A collection of moments.</span>
@@ -472,7 +457,7 @@ function Index() {
               <div className="absolute right-0 top-0 h-40 w-40 translate-x-12 -translate-y-12 rounded-full border border-gold/30" />
               <div className="absolute right-7 top-7 h-24 w-24 rounded-full border border-gold/30" />
               <Crown className="h-10 w-10 text-gold" strokeWidth={1.25} />
-              <h3 className="display-serif mt-8 text-3xl">
+              <h3 className="display-serif mt-8 text-2xl sm:text-3xl">
                 Earn your way
                 <br />
                 to Gold.
@@ -501,7 +486,7 @@ function Index() {
 
         <section
           id="journal"
-          className="hidden border-t border-border bg-paper-deep px-5 py-16 lg:block lg:px-10"
+          className="border-t border-border bg-paper-deep px-5 py-12 lg:px-10 lg:py-16"
         >
           <div className="mx-auto max-w-[1220px]">
             <SectionHeading
@@ -527,7 +512,7 @@ function Index() {
       </main>
       <footer
         id="about"
-        className="hidden bg-burgundy-deep px-5 py-12 text-primary-foreground lg:block lg:px-10"
+        className="bg-burgundy-deep px-5 pb-24 pt-12 text-primary-foreground lg:px-10 lg:py-12"
       >
         <div className="mx-auto flex max-w-[1220px] flex-col justify-between gap-10 sm:flex-row sm:items-end">
           <div>
@@ -567,18 +552,8 @@ function Index() {
       <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-border bg-paper/95 py-2 backdrop-blur-md lg:hidden">
         <MobileNav icon={<House />} label="Home" href="#home" />
         <MobileNav icon={<Navigation />} label="Explore" href="#destinations" />
-        <MobileNav
-          icon={<Stamp />}
-          label="Passport"
-          href="#mobile-explorer"
-          onClick={() => setMobileView("passport")}
-        />
-        <MobileNav
-          icon={<UsersRound />}
-          label="Journey"
-          href="#mobile-explorer"
-          onClick={() => setMobileView("badges")}
-        />
+        <MobileNav icon={<Stamp />} label="Passport" href="/passport-guide" />
+        <MobileNav icon={<UsersRound />} label="Journey" href="/explore-badges" />
       </nav>
       <a
         href={WHATSAPP_URL}
@@ -1485,7 +1460,7 @@ function SectionHeading({
     <div className="flex items-end justify-between gap-4">
       <div>
         <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-burgundy">{eyebrow}</p>
-        <h2 className="display-serif mt-2 text-4xl text-ink sm:text-5xl">{title}</h2>
+        <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">{title}</h2>
       </div>
       {actionHref ? (
         <Link
@@ -1561,7 +1536,7 @@ function CommunityPanel({ member, onJoin }: { member: Member | null; onJoin: () 
       <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
         Travel together
       </p>
-      <h2 className="display-serif mt-2 max-w-sm text-3xl leading-tight sm:text-4xl">
+      <h2 className="display-serif mt-2 max-w-sm text-2xl leading-tight sm:text-3xl">
         Join the Explorer Community
       </h2>
       <p className="mt-3 max-w-sm text-sm leading-6 text-primary-foreground/75">
@@ -1580,13 +1555,16 @@ function CommunityPanel({ member, onJoin }: { member: Member | null; onJoin: () 
 
 function ExplorerBadges({ registered }: { registered: boolean }) {
   return (
-    <div id="explorer-badges" className="explorer-badges-panel rounded-sm border border-border bg-paper p-6 sm:p-8">
+    <div
+      id="explorer-badges"
+      className="explorer-badges-panel rounded-sm border border-border bg-paper p-6 sm:p-8"
+    >
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
             Collect your story
           </p>
-          <h2 className="display-serif mt-1 text-3xl text-ink sm:text-4xl">Explorer badges</h2>
+          <h2 className="display-serif mt-1 text-2xl text-ink sm:text-3xl">Explorer badges</h2>
         </div>
         <span className="hidden text-[10px] font-bold uppercase tracking-widest text-ink-soft sm:block">
           3 badges to earn
@@ -1681,7 +1659,7 @@ function DestinationSpotlight({
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-burgundy">
             Destination details
           </p>
-          <h3 id="destination-title" className="display-serif mt-2 text-4xl text-ink">
+          <h3 id="destination-title" className="display-serif mt-2 text-3xl text-ink">
             {destination.name}
           </h3>
           <p className="mt-4 max-w-md text-sm leading-7 text-ink-soft">{destination.description}</p>
