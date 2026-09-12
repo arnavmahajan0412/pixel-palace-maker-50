@@ -3,19 +3,24 @@ import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Award,
+  BookOpen,
   CalendarDays,
   Check,
+  ChevronDown,
+  CircleHelp,
   Compass,
   Crown,
   Footprints,
   Heart,
   House,
   Instagram,
+  ListChecks,
   MapPin,
   Menu,
   Navigation,
   PackageOpen,
   QrCode,
+  Search,
   ShieldCheck,
   Stamp,
   TentTree,
@@ -85,6 +90,7 @@ function Index() {
   const [selected, setSelected] = useState<Destination | null>(null);
   const [joinOpen, setJoinOpen] = useState(false);
   const [member, setMember] = useState<Member | null>(null);
+  const [mobileView, setMobileView] = useState<"passport" | "planner" | "badges">("passport");
 
   useEffect(() => {
     setMember(loadMember());
@@ -183,7 +189,7 @@ function Index() {
       <main>
         <section
           id="home"
-          className="relative isolate flex min-h-[680px] items-end overflow-hidden bg-burgundy-deep pb-14 pt-32 sm:min-h-[760px] lg:min-h-[820px] lg:pb-24"
+          className="relative isolate flex min-h-[780px] items-end overflow-hidden bg-burgundy-deep pb-8 pt-28 sm:min-h-[760px] sm:pb-14 sm:pt-32 lg:min-h-[820px] lg:pb-24"
         >
           <img
             src={heroImage}
@@ -197,43 +203,50 @@ function Index() {
           <img
             src={passportImage}
             alt="J&K Explorer passport"
-            width={1024}
-            height={1365}
-            className="pointer-events-none absolute bottom-20 right-[-8vw] z-0 w-[43vw] max-w-[440px] object-contain drop-shadow-2xl sm:bottom-14 sm:right-[3%] sm:w-[34vw] lg:bottom-8 lg:right-[7%] lg:w-[29vw]"
+            width={890}
+            height={1360}
+            className="hero-passport pointer-events-none absolute bottom-20 right-[9%] z-0 hidden w-[24vw] max-w-[360px] object-contain drop-shadow-2xl lg:block"
           />
           <div className="relative z-10 mx-auto w-full max-w-[1380px] px-5 lg:px-10">
             <div className="max-w-2xl">
-              <p className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-gold">
-                <span className="h-px w-10 bg-gold" />
+              <p className="mb-3 flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-gold sm:mb-5 sm:gap-3 sm:text-[11px] sm:tracking-[0.3em]">
+                <span className="h-px w-7 bg-gold sm:w-10" />
                 The valley is calling
               </p>
-              <h1 className="display-serif max-w-xl text-5xl leading-[0.98] text-primary-foreground sm:text-7xl lg:text-[92px]">
+              <h1 className="display-serif max-w-[275px] text-[34px] leading-[0.98] text-primary-foreground sm:max-w-xl sm:text-7xl lg:text-[92px]">
                 Explore Jammu & Kashmir{" "}
                 <em className="font-normal text-gold">like never before.</em>
               </h1>
-              <p className="mt-7 max-w-md text-sm leading-7 text-primary-foreground/80 sm:text-base">
+              <p className="mt-4 max-w-[250px] text-xs leading-5 text-primary-foreground/80 sm:mt-7 sm:max-w-md sm:text-base sm:leading-7">
                 30+ iconic destinations. One passport.
                 <br />
                 Endless memories waiting to be collected.
               </p>
-              <div className="mt-9 flex flex-wrap gap-3">
+              <div className="mt-5 flex flex-wrap gap-2 sm:mt-9 sm:gap-3">
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-burgundy px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-lg transition-colors hover:bg-burgundy/80"
+                  className="inline-flex items-center gap-1.5 bg-burgundy px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-primary-foreground shadow-lg transition-colors hover:bg-burgundy/80 sm:gap-2 sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.14em]"
                 >
                   Buy passport <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
                   href="#destinations"
-                  className="flex items-center gap-2 border border-primary-foreground/70 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:border-gold hover:text-gold"
+                  className="flex items-center gap-1.5 border border-primary-foreground/70 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-primary-foreground transition-colors hover:border-gold hover:text-gold sm:gap-2 sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.14em]"
                 >
                   Explore destinations <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
+              <img
+                src={passportImage}
+                alt="J&K Explorer passport"
+                width={890}
+                height={1360}
+                className="hero-passport mx-auto mt-7 w-[58vw] max-w-[260px] object-contain drop-shadow-2xl lg:hidden"
+              />
             </div>
-            <div className="mt-16 flex items-center gap-3 text-xs text-primary-foreground/70">
+            <div className="mt-8 hidden items-center gap-3 text-xs text-primary-foreground/70 sm:mt-16 sm:flex">
               <span className="grid h-8 w-8 place-items-center rounded-full border border-primary-foreground/40">
                 ↓
               </span>
@@ -310,7 +323,18 @@ function Index() {
           )}
         </section>
 
-        <section className="border-y border-border bg-paper-deep px-5 py-12 lg:px-10 lg:py-16">
+        <section className="border-y border-border bg-paper-deep px-5 py-8 lg:hidden">
+          <ExplorerBadges registered={registered} />
+        </section>
+
+        <MobileExplorerExperience
+          activeView={mobileView}
+          onViewChange={setMobileView}
+          registered={registered}
+          onStart={() => setRegistered(true)}
+        />
+
+        <section className="hidden border-y border-border bg-paper-deep px-5 py-12 lg:block lg:px-10 lg:py-16">
           <div className="mx-auto grid max-w-[1220px] gap-5 lg:grid-cols-[0.88fr_1.12fr]">
             <CommunityPanel member={member} onJoin={() => setJoinOpen(true)} />
             <ExplorerBadges registered={registered} />
@@ -319,7 +343,7 @@ function Index() {
 
         <section
           id="passport"
-          className="scroll-mt-20 bg-burgundy-deep px-5 py-14 text-primary-foreground lg:px-10"
+          className="hidden scroll-mt-20 bg-burgundy-deep px-5 py-14 text-primary-foreground lg:block lg:px-10"
         >
           <div className="mx-auto flex max-w-[1220px] flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
             <div>
@@ -370,7 +394,10 @@ function Index() {
           </div>
         </section>
 
-        <section id="planner" className="mx-auto max-w-[1220px] scroll-mt-20 px-5 py-20 lg:px-10">
+        <section
+          id="planner"
+          className="hidden mx-auto max-w-[1220px] scroll-mt-20 px-5 py-20 lg:block lg:px-10"
+        >
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-burgundy">
@@ -427,7 +454,10 @@ function Index() {
           </div>
         </section>
 
-        <section id="journal" className="border-t border-border bg-paper-deep px-5 py-16 lg:px-10">
+        <section
+          id="journal"
+          className="hidden border-t border-border bg-paper-deep px-5 py-16 lg:block lg:px-10"
+        >
           <div className="mx-auto max-w-[1220px]">
             <SectionHeading
               eyebrow="From the journal"
@@ -450,7 +480,10 @@ function Index() {
           </div>
         </section>
       </main>
-      <footer id="about" className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10">
+      <footer
+        id="about"
+        className="hidden bg-burgundy-deep px-5 py-12 text-primary-foreground lg:block lg:px-10"
+      >
         <div className="mx-auto flex max-w-[1220px] flex-col justify-between gap-10 sm:flex-row sm:items-end">
           <div>
             <a href="#home" className="flex items-center gap-3">
@@ -489,8 +522,18 @@ function Index() {
       <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-border bg-paper/95 py-2 backdrop-blur-md lg:hidden">
         <MobileNav icon={<House />} label="Home" href="#home" />
         <MobileNav icon={<Navigation />} label="Explore" href="#destinations" />
-        <MobileNav icon={<Stamp />} label="Passport" href="#passport" />
-        <MobileNav icon={<UserRound />} label="Profile" href="#about" />
+        <MobileNav
+          icon={<Stamp />}
+          label="Passport"
+          href="#mobile-explorer"
+          onClick={() => setMobileView("passport")}
+        />
+        <MobileNav
+          icon={<UsersRound />}
+          label="Journey"
+          href="#mobile-explorer"
+          onClick={() => setMobileView("badges")}
+        />
       </nav>
       <a
         href={WHATSAPP_URL}
@@ -526,6 +569,360 @@ function Index() {
       {joinOpen && (
         <JoinModal onClose={() => setJoinOpen(false)} onJoin={joinCommunity} existing={member} />
       )}
+    </div>
+  );
+}
+
+function MobileExplorerExperience({
+  activeView,
+  onViewChange,
+  registered,
+  onStart,
+}: {
+  activeView: "passport" | "planner" | "badges";
+  onViewChange: (view: "passport" | "planner" | "badges") => void;
+  registered: boolean;
+  onStart: () => void;
+}) {
+  const [faqOpen, setFaqOpen] = useState<number | null>(0);
+  const [marked, setMarked] = useState<string[]>(registered ? ["Vaishno Devi"] : []);
+  const completed = marked.length;
+  const toggleMarked = (name: string) =>
+    setMarked((current) =>
+      current.includes(name) ? current.filter((item) => item !== name) : [...current, name],
+    );
+
+  return (
+    <section id="mobile-explorer" className="bg-paper-deep pb-24 lg:hidden">
+      {activeView === "passport" && (
+        <>
+          <div className="relative isolate overflow-hidden bg-burgundy-deep px-5 pb-7 pt-10 text-primary-foreground">
+            <img
+              src={heroImage}
+              alt=""
+              className="absolute inset-0 -z-20 h-full w-full object-cover opacity-45"
+            />
+            <div className="absolute inset-0 -z-10 bg-burgundy-deep/65" />
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-gold">
+              J&K Explorer
+            </p>
+            <h2 className="display-serif mt-2 text-4xl">Passport Guide</h2>
+            <p className="mt-2 max-w-xs text-xs leading-5 text-primary-foreground/80">
+              Your guide to making the most of your J&K Explorer Passport.
+            </p>
+          </div>
+          <div className="mx-4 -mt-2 rounded-t-lg bg-paper p-4 shadow-lg">
+            <h3 className="display-serif text-xl text-ink">How Your Passport Works</h3>
+            <div className="mt-3 space-y-2">
+              {[
+                [
+                  "01",
+                  "Get Your Passport",
+                  "Purchase your J&K Explorer Passport and begin your journey.",
+                ],
+                [
+                  "02",
+                  "Choose a Destination",
+                  "Explore the destinations featured in your passport.",
+                ],
+                [
+                  "03",
+                  "Visit & Explore",
+                  "Experience the place, capture your memories and discover more.",
+                ],
+                [
+                  "04",
+                  "Collect Your Stamp",
+                  "Mark the destination in your passport after visiting.",
+                ],
+                [
+                  "05",
+                  "Unlock Explorer Badges",
+                  "Complete destinations and progress from Bronze to Silver to Gold.",
+                ],
+              ].map(([number, title, text]) => (
+                <div
+                  key={number}
+                  className="flex gap-3 rounded-md border border-border bg-background p-3"
+                >
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-burgundy text-[9px] font-bold text-gold">
+                    {number}
+                  </span>
+                  <span>
+                    <strong className="block text-xs text-ink">{title}</strong>
+                    <span className="mt-0.5 block text-[10px] leading-4 text-ink-soft">{text}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mx-4 mt-4 rounded-lg bg-paper p-4 shadow-sm">
+            <h3 className="display-serif text-xl text-ink">What&apos;s Inside Your Passport?</h3>
+            <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+              <MobileFeature
+                icon={<BookOpen />}
+                title="Destination Pages"
+                text="Details for each location"
+              />
+              <MobileFeature
+                icon={<MapPin />}
+                title="Location Info"
+                text="History, culture, travel tips"
+              />
+              <MobileFeature icon={<Stamp />} title="Destination Stamps" text="Mark your visits" />
+              <MobileFeature
+                icon={<ListChecks />}
+                title="Travel Notes"
+                text="Write your experiences"
+              />
+              <MobileFeature icon={<Heart />} title="Memory Notes" text="Add photos and memories" />
+              <MobileFeature
+                icon={<Award />}
+                title="Explorer Badges"
+                text="Earn badges as you explore"
+              />
+            </div>
+          </div>
+          <div className="relative isolate mx-4 mt-4 min-h-[285px] overflow-hidden rounded-lg bg-paper shadow-sm">
+            <img
+              src={heroImage}
+              alt="Kashmir mountains"
+              className="absolute inset-x-0 bottom-0 -z-20 h-[158px] w-full object-cover object-bottom"
+            />
+            <div className="absolute inset-x-0 bottom-0 -z-10 h-[185px] bg-gradient-to-t from-burgundy-deep/60 via-burgundy-deep/10 to-paper" />
+            <div className="relative p-4 pb-8">
+              <div className="mx-auto flex max-w-[220px] items-center gap-3 text-burgundy">
+                <span className="h-px flex-1 bg-border" />
+                <span className="grid h-9 w-9 place-items-center rounded-full border border-burgundy/35 bg-paper-deep">
+                  <Compass className="h-4 w-4" />
+                </span>
+                <span className="h-px flex-1 bg-border" />
+              </div>
+              <h3 className="display-serif mt-2 text-center text-xl text-ink">Travel Progress</h3>
+              <p className="mx-auto mt-1 max-w-[220px] text-center text-[10px] leading-4 text-ink-soft">
+                Track your journey and see how far you&apos;ve come.
+              </p>
+            </div>
+            <div className="relative mt-12 rounded-md border border-border/80 bg-paper/95 p-4 shadow-sm backdrop-blur-[2px]">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-burgundy">
+                Important Note
+              </p>
+              <div className="mt-3 flex gap-3">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-paper-deep text-burgundy">
+                  <CircleHelp className="h-4 w-4" />
+                </span>
+                <p className="text-[10px] leading-4 text-ink-soft">
+                  Your J&K Explorer Passport is a travel keepsake, not an official government
+                  document, visa, identification document, or travel authorization.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="mx-4 mt-4 rounded-lg bg-paper p-4 shadow-sm">
+            <h3 className="display-serif text-xl text-ink">Frequently Asked Questions</h3>
+            <div className="mt-3 divide-y divide-border rounded-md border border-border">
+              {[
+                [
+                  "Is J&K Explorer Passport an official passport?",
+                  "No. It is a travel keepsake and exploration-themed product.",
+                ],
+                [
+                  "How do I earn badges?",
+                  "Explore destinations and collect the corresponding stamps.",
+                ],
+                [
+                  "Can I use the passport without the website?",
+                  "Absolutely. The physical passport is designed to be enjoyed independently.",
+                ],
+              ].map(([question, answer], index) => (
+                <button
+                  key={question}
+                  onClick={() => setFaqOpen(faqOpen === index ? null : index)}
+                  className="w-full p-3 text-left"
+                >
+                  <span className="flex items-center justify-between gap-3 text-xs font-bold text-ink">
+                    {question}
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${faqOpen === index ? "rotate-180" : ""}`}
+                    />
+                  </span>
+                  {faqOpen === index && (
+                    <span className="mt-2 block text-[10px] leading-4 text-ink-soft">{answer}</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="relative mx-4 mt-4 h-44 overflow-hidden rounded-lg bg-burgundy-deep shadow-sm">
+            <img
+              src={gulmargImage}
+              alt="Snow-covered Gulmarg mountains"
+              className="h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/90 via-burgundy-deep/35 to-burgundy-deep/5" />
+            <div className="absolute bottom-5 left-0 right-0 text-center text-primary-foreground">
+              <span className="mx-auto mb-2 block h-px w-8 bg-gold/70" />
+              <p className="display-serif px-8 text-[25px] italic leading-[0.9] tracking-wide drop-shadow-md">
+                Collect moments,
+                <br />
+                not things.
+              </p>
+            </div>
+          </div>
+        </>
+      )}
+
+      {activeView === "planner" && (
+        <div className="px-4 pt-6">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Travel planner
+          </p>
+          <h2 className="display-serif mt-1 text-3xl text-ink">Plan Your Kashmir Journey</h2>
+          <p className="mt-1 text-xs text-ink-soft">
+            Build your own adventure across Jammu & Kashmir.
+          </p>
+          <h3 className="mt-6 text-xs font-bold text-ink">1. Choose Your Travel Style</h3>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            {[
+              ["Adventure", gulmargImage],
+              ["Nature & Lakes", dalImage],
+              ["Spiritual Journey", vaishnoImage],
+              ["Photography", sonamargImage],
+              ["Family Trip", pahalgamImage],
+              ["Romantic Escape", heroImage],
+            ].map(([name, image]) => (
+              <button
+                key={name}
+                className="relative aspect-square overflow-hidden rounded-md text-left"
+              >
+                <img src={image} alt="" className="h-full w-full object-cover" />
+                <span className="absolute inset-0 bg-burgundy-deep/40" />
+                <span className="absolute bottom-1 left-1 right-1 text-center text-[9px] font-bold leading-3 text-primary-foreground">
+                  {name}
+                </span>
+              </button>
+            ))}
+          </div>
+          <div className="mt-7 flex items-center justify-between">
+            <h3 className="text-xs font-bold text-ink">2. Popular Destinations</h3>
+            <button
+              onClick={() => onViewChange("badges")}
+              className="text-[10px] font-bold text-burgundy"
+            >
+              View all →
+            </button>
+          </div>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            {popularDestinations.slice(0, 3).map((destination) => (
+              <div
+                key={destination.name}
+                className="overflow-hidden rounded-md border border-border bg-paper"
+              >
+                <img src={destination.image} alt="" className="aspect-square w-full object-cover" />
+                <p className="px-2 pt-1 text-[9px] font-bold text-ink">{destination.name}</p>
+                <button className="m-2 w-[calc(100%-1rem)] bg-burgundy py-1.5 text-[9px] font-bold text-primary-foreground">
+                  + Add
+                </button>
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={() => onViewChange("badges")}
+            className="mt-6 w-full bg-burgundy py-3 text-[10px] font-bold uppercase tracking-widest text-primary-foreground"
+          >
+            Save Journey
+          </button>
+        </div>
+      )}
+
+      {activeView === "badges" && (
+        <div className="px-4 pt-6">
+          <div className="relative overflow-hidden rounded-lg bg-burgundy-deep p-5 text-primary-foreground">
+            <img
+              src={heroImage}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover opacity-25"
+            />
+            <div className="relative">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
+                Explore badges
+              </p>
+              <h2 className="display-serif mt-2 text-3xl">Explore. Discover. Achieve.</h2>
+              <p className="mt-2 text-xs leading-5 text-primary-foreground/75">
+                Every journey brings you one step closer to becoming a legendary J&K Explorer.
+              </p>
+            </div>
+          </div>
+          <div className="rounded-b-lg bg-paper p-4 shadow-sm">
+            <h3 className="display-serif text-xl text-ink">Your Explorer Progress</h3>
+            <div className="mt-3 flex items-center gap-3">
+              <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+                <div
+                  className="h-full bg-gold"
+                  style={{ width: `${Math.min((completed / 30) * 100, 100)}%` }}
+                />
+              </div>
+              <span className="text-[10px] font-bold text-burgundy">{completed}/30</span>
+            </div>
+            <button
+              onClick={onStart}
+              className="mt-5 w-full bg-burgundy py-3 text-[10px] font-bold uppercase tracking-widest text-primary-foreground"
+            >
+              {registered ? "Journey Active" : "Start Tracking"}
+            </button>
+          </div>
+          <div className="mt-4 rounded-lg bg-paper p-4 shadow-sm">
+            <h3 className="display-serif text-xl text-ink">Mark Your Destinations</h3>
+            <div className="mt-3 flex items-center gap-2 border border-border px-3 py-2 text-xs text-ink-soft">
+              <Search className="h-4 w-4" />
+              Search destinations...
+            </div>
+            <div className="mt-3 space-y-2">
+              {[
+                "Vaishno Devi",
+                "Gulmarg",
+                "Dal Lake",
+                "Pahalgam",
+                "Sonamarg",
+                "Patnitop",
+                "Doodpathri",
+                "Betaab Valley",
+              ].map((name) => (
+                <label key={name} className="flex items-center gap-3 text-xs text-ink">
+                  <input
+                    type="checkbox"
+                    checked={marked.includes(name)}
+                    onChange={() => toggleMarked(name)}
+                    className="accent-burgundy"
+                  />
+                  {name}
+                </label>
+              ))}
+            </div>
+          </div>
+          <div className="mt-4">
+            <ExplorerBadges registered={registered} />
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function MobileFeature({
+  icon,
+  title,
+  text,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-md bg-background p-2 text-ink">
+      <span className="mx-auto grid h-8 w-8 place-items-center text-burgundy">{icon}</span>
+      <strong className="mt-1 block text-[9px] leading-3">{title}</strong>
+      <span className="mt-1 block text-[8px] leading-3 text-ink-soft">{text}</span>
     </div>
   );
 }
@@ -1301,10 +1698,21 @@ function Article({ image, category, title }: { image: string; category: string; 
     </article>
   );
 }
-function MobileNav({ icon, label, href }: { icon: React.ReactNode; label: string; href: string }) {
+function MobileNav({
+  icon,
+  label,
+  href,
+  onClick,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  href: string;
+  onClick?: () => void;
+}) {
   return (
     <a
       href={href}
+      onClick={onClick}
       className="flex flex-col items-center gap-1 text-ink-soft transition-colors hover:text-burgundy"
     >
       <span>{icon}</span>
