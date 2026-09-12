@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, CalendarDays, MapPin, Search, Stamp, X } from "lucide-react";
+import { ArrowLeft, MapPin, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import { destinations, type Destination } from "./index";
+import { destinationSlug, destinations } from "./index";
 
 export const Route = createFileRoute("/destinations")({
   head: () => ({
@@ -19,7 +19,6 @@ export const Route = createFileRoute("/destinations")({
 
 function DestinationsPage() {
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState<Destination | null>(null);
 
   const matches = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -91,10 +90,10 @@ function DestinationsPage() {
         {matches.length ? (
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
             {matches.map((destination) => (
-              <button
+              <Link
                 key={destination.name}
-                type="button"
-                onClick={() => setSelected(destination)}
+                to="/destination/$destinationSlug"
+                params={{ destinationSlug: destinationSlug(destination.name) }}
                 className="group overflow-hidden rounded-sm border border-border bg-paper text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative aspect-[1.03] overflow-hidden bg-muted">
@@ -117,7 +116,7 @@ function DestinationsPage() {
                   </h2>
                   <p className="mt-1 text-[10px] text-ink-soft">Best: {destination.time}</p>
                 </div>
-              </button>
+              </Link>
             ))}
           </div>
         ) : (
@@ -129,53 +128,6 @@ function DestinationsPage() {
           </div>
         )}
       </section>
-
-      {selected && <CatalogueDetails destination={selected} onClose={() => setSelected(null)} />}
     </main>
-  );
-}
-
-function CatalogueDetails({
-  destination,
-  onClose,
-}: {
-  destination: Destination;
-  onClose: () => void;
-}) {
-  return (
-    <div className="fixed inset-0 z-[70] flex items-end bg-burgundy-deep/65 backdrop-blur-sm sm:items-center sm:justify-center sm:p-6">
-      <div className="relative grid max-h-[92dvh] w-full overflow-y-auto bg-paper shadow-2xl sm:max-w-4xl sm:grid-cols-[0.9fr_1.1fr] sm:overflow-hidden">
-        <img
-          src={destination.image}
-          alt={`${destination.name}, ${destination.place}`}
-          width={900}
-          height={620}
-          className="h-48 w-full object-cover sm:h-full"
-        />
-        <div className="p-6 pb-9 sm:p-10">
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close destination details"
-            className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full border border-primary-foreground/35 bg-burgundy-deep/85 text-primary-foreground shadow-lg sm:border-border sm:bg-paper sm:text-ink-soft"
-          >
-            <X className="h-4 w-4" />
-          </button>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-burgundy">
-            Destination details
-          </p>
-          <h2 className="display-serif mt-2 text-4xl text-ink">{destination.name}</h2>
-          <p className="mt-4 text-sm leading-7 text-ink-soft">{destination.description}</p>
-          <div className="mt-6 flex flex-wrap gap-5 border-t border-border pt-5 text-xs text-ink-soft">
-            <span className="flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-burgundy" /> Best time: {destination.time}
-            </span>
-            <span className="flex items-center gap-2">
-              <Stamp className="h-4 w-4 text-burgundy" /> Stamp available
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

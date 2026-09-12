@@ -387,6 +387,126 @@
   }
 }
 
+.mobile-explorer {
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+
+.mobile-bottom-nav {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .mobile-explorer > :not(.mobile-explorer-hero) {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobile-explorer-hero {
+    padding-left: max(2rem, calc((100vw - 640px) / 2));
+    padding-right: max(2rem, calc((100vw - 640px) / 2));
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-explorer-desktop {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 4rem 0 5.5rem;
+    background: transparent;
+  }
+
+  .mobile-explorer-desktop.mobile-explorer-passport {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .mobile-explorer-desktop.mobile-explorer-passport .mobile-explorer-hero,
+  .mobile-explorer-desktop.mobile-explorer-passport .passport-closing-card {
+    grid-column: 1 / -1;
+  }
+
+  .mobile-explorer-desktop .mobile-explorer-hero {
+    display: none;
+    min-height: 250px;
+    margin: 0;
+    padding: 3.5rem 4rem;
+    border-radius: 0.5rem;
+  }
+
+  .mobile-explorer-desktop .mobile-explorer-hero h2 {
+    max-width: 540px;
+    font-size: clamp(2.6rem, 4vw, 4.25rem);
+  }
+
+  .mobile-explorer-desktop .mobile-explorer-card,
+  .mobile-explorer-desktop .mobile-explorer-content {
+    margin: 0;
+  }
+
+  .mobile-explorer-desktop .passport-guide-steps-card,
+  .mobile-explorer-desktop .passport-guide-features-card,
+  .mobile-explorer-desktop .passport-progress-card,
+  .mobile-explorer-desktop .passport-faq-card {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 25px oklch(0.2 0.03 30 / 0.08);
+  }
+
+  .mobile-explorer-desktop .passport-guide-steps-card > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .mobile-explorer-desktop .passport-guide-step {
+    min-height: 98px;
+    padding: 1rem;
+  }
+
+  .mobile-explorer-desktop .passport-guide-step:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .mobile-explorer-desktop .passport-feature-grid {
+    gap: 0.85rem;
+  }
+
+  .mobile-explorer-desktop .passport-progress-card {
+    min-height: 332px;
+  }
+
+  .mobile-explorer-desktop .passport-faq-card {
+    min-height: 332px;
+  }
+
+  .mobile-explorer-desktop .passport-closing-card {
+    height: 250px;
+  }
+
+  .mobile-explorer-desktop .passport-closing-card p {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .mobile-explorer .mobile-explorer-card {
+    border-radius: 0.45rem;
+  }
+
+  .mobile-explorer .badge-card {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .mobile-explorer .badge-art {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .destination-carousel {
     overflow-x: auto;

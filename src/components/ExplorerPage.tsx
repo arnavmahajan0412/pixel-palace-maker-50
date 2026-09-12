@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,6 +18,7 @@ import dalImage from "@/assets/dal-lake.jpg";
 import bronzeBadge from "@/assets/badges/bronze-explorer.jpeg";
 import silverBadge from "@/assets/badges/silver-explorer.jpeg";
 import goldBadge from "@/assets/badges/gold-explorer.jpeg";
+import { MobileExplorerExperience } from "@/routes/index";
 
 export type ExplorerPageKind = "passport" | "planner" | "badges" | "journal" | "about";
 
@@ -53,6 +55,8 @@ const pageContent = {
 
 export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
   const content = pageContent[kind];
+  const [registered, setRegistered] = useState(false);
+  const mobileView = kind === "passport" ? "passport" : kind === "planner" ? "planner" : "badges";
 
   return (
     <main className="min-h-screen bg-background text-foreground paper-texture">
@@ -88,13 +92,20 @@ export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1220px] px-5 py-10 lg:px-10 lg:py-16">
-        {kind === "passport" && <PassportGuide />}
-        {kind === "planner" && <TravelPlanner />}
-        {kind === "badges" && <Badges />}
-        {kind === "journal" && <Journal />}
-        {kind === "about" && <About />}
-      </section>
+      {kind === "passport" || kind === "planner" || kind === "badges" ? (
+        <MobileExplorerExperience
+          activeView={mobileView}
+          onViewChange={() => undefined}
+          registered={registered}
+          onStart={() => setRegistered(true)}
+          showOnDesktop
+        />
+      ) : (
+        <section className="mx-auto max-w-[1220px] px-5 py-10 lg:px-10 lg:py-16">
+          {kind === "journal" && <Journal />}
+          {kind === "about" && <About />}
+        </section>
+      )}
     </main>
   );
 }

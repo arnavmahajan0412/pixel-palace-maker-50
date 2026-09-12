@@ -90,9 +90,9 @@ function loadMember(): Member | null {
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [registered, setRegistered] = useState(false);
-  const [selected, setSelected] = useState<Destination | null>(null);
   const [joinOpen, setJoinOpen] = useState(false);
   const [member, setMember] = useState<Member | null>(null);
+  const [mobileView, setMobileView] = useState<"passport" | "planner" | "badges">("passport");
 
   useEffect(() => {
     setMember(loadMember());
@@ -126,14 +126,17 @@ function Index() {
             <a href="#home" className="text-gold transition-colors hover:text-primary-foreground">
               Home
             </a>
-            <a href="#destinations" className="transition-colors hover:text-gold">
+            <Link to="/destinations" className="transition-colors hover:text-gold">
               Destinations
-            </a>
+            </Link>
             <Link to="/passport-guide" className="transition-colors hover:text-gold">
               Passport Guide
             </Link>
             <Link to="/travel-planner" className="transition-colors hover:text-gold">
               Travel Planner
+            </Link>
+            <Link to="/explore-badges" className="transition-colors hover:text-gold">
+              Badges
             </Link>
             <Link to="/journal" className="transition-colors hover:text-gold">
               Journal
@@ -175,25 +178,27 @@ function Index() {
               <a href="#home" onClick={() => setMenuOpen(false)}>
                 Home
               </a>
-              <a href="#destinations" onClick={() => setMenuOpen(false)}>
+              <Link to="/destinations" onClick={() => setMenuOpen(false)}>
                 Destinations
-              </a>
-              <Link
-                to="/passport-guide"
+              </Link>
+              <a
+                href="#mobile-explorer"
                 onClick={() => {
+                  setMobileView("passport");
                   setMenuOpen(false);
                 }}
               >
                 Passport Guide
-              </Link>
-              <Link
-                to="/travel-planner"
+              </a>
+              <a
+                href="#mobile-explorer"
                 onClick={() => {
+                  setMobileView("planner");
                   setMenuOpen(false);
                 }}
               >
                 Travel Planner
-              </Link>
+              </a>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -212,23 +217,25 @@ function Index() {
               >
                 Register Yourself
               </button>
-              <Link
-                to="/explore-badges"
+              <a
+                href="#mobile-explorer"
                 onClick={() => {
+                  setMobileView("badges");
                   setMenuOpen(false);
                 }}
               >
                 Explore Badges
-              </Link>
-              <Link
-                to="/about-us"
+              </a>
+              <button
+                type="button"
                 className="w-fit text-left"
                 onClick={() => {
+                  setJoinOpen(true);
                   setMenuOpen(false);
                 }}
               >
                 About Us
-              </Link>
+              </button>
             </div>
           </nav>
         )}
@@ -261,7 +268,7 @@ function Index() {
                 <span className="h-px w-7 bg-gold sm:w-10" />
                 The valley is calling
               </p>
-              <h1 className="display-serif max-w-[275px] text-[32px] leading-[0.98] text-primary-foreground sm:max-w-xl sm:text-5xl lg:text-7xl">
+              <h1 className="display-serif max-w-[260px] text-[28px] leading-[1.02] text-primary-foreground sm:max-w-lg sm:text-4xl lg:text-5xl">
                 Explore Jammu & Kashmir{" "}
                 <em className="font-normal text-gold">like never before.</em>
               </h1>
@@ -325,12 +332,7 @@ function Index() {
               aria-label="Featured destinations"
             >
               {popularDestinations.map((destination) => (
-                <DestinationCard
-                  key={destination.name}
-                  destination={destination}
-                  onSelect={setSelected}
-                  compact
-                />
+                <DestinationCard key={destination.name} destination={destination} compact />
               ))}
               <Link
                 to="/destinations"
@@ -352,19 +354,26 @@ function Index() {
                     <DestinationCard
                       key={`${destination.name}-${index}`}
                       destination={destination}
-                      onSelect={setSelected}
                     />
                   ))}
                 </div>
               </div>
             </div>
           </div>
-          {selected && (
-            <DestinationSpotlight destination={selected} onClose={() => setSelected(null)} />
-          )}
         </section>
 
-        <section className="border-y border-border bg-paper-deep px-5 py-10 lg:px-10 lg:py-16">
+        <section className="border-y border-border bg-paper-deep px-3 py-8 min-[390px]:px-5 lg:hidden">
+          <ExplorerBadges registered={registered} />
+        </section>
+
+        <MobileExplorerExperience
+          activeView={mobileView}
+          onViewChange={setMobileView}
+          registered={registered}
+          onStart={() => setRegistered(true)}
+        />
+
+        <section className="hidden border-y border-border bg-paper-deep px-5 py-12 lg:block lg:px-10 lg:py-16">
           <div className="mx-auto grid max-w-[1220px] gap-5 lg:grid-cols-[0.88fr_1.12fr]">
             <CommunityPanel member={member} onJoin={() => setJoinOpen(true)} />
             <ExplorerBadges registered={registered} />
@@ -373,7 +382,7 @@ function Index() {
 
         <section
           id="passport"
-          className="scroll-mt-20 bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-14"
+          className="hidden scroll-mt-20 bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-14"
         >
           <div className="mx-auto flex max-w-[1220px] flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
             <div>
@@ -426,7 +435,7 @@ function Index() {
 
         <section
           id="planner"
-          className="mx-auto max-w-[1220px] scroll-mt-20 px-5 py-12 lg:px-10 lg:py-20"
+          className="hidden mx-auto max-w-[1220px] scroll-mt-20 px-5 py-12 lg:px-10 lg:py-20"
         >
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
@@ -486,7 +495,7 @@ function Index() {
 
         <section
           id="journal"
-          className="border-t border-border bg-paper-deep px-5 py-12 lg:px-10 lg:py-16"
+          className="hidden border-t border-border bg-paper-deep px-5 py-12 lg:block lg:px-10 lg:py-16"
         >
           <div className="mx-auto max-w-[1220px]">
             <SectionHeading
@@ -512,7 +521,7 @@ function Index() {
       </main>
       <footer
         id="about"
-        className="bg-burgundy-deep px-5 pb-24 pt-12 text-primary-foreground lg:px-10 lg:py-12"
+        className="hidden bg-burgundy-deep px-5 py-12 text-primary-foreground lg:block lg:px-10"
       >
         <div className="mx-auto flex max-w-[1220px] flex-col justify-between gap-10 sm:flex-row sm:items-end">
           <div>
@@ -536,9 +545,9 @@ function Index() {
             <a href="#destinations" className="hover:text-gold">
               Destinations
             </a>
-            <a href="#passport" className="hover:text-gold">
+            <Link to="/passport-guide" className="hover:text-gold">
               Passport
-            </a>
+            </Link>
             <a href="#about" className="hover:text-gold">
               About
             </a>
@@ -549,11 +558,21 @@ function Index() {
           © 2026 J&K Explorer · Made for the curious
         </div>
       </footer>
-      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-border bg-paper/95 py-2 backdrop-blur-md lg:hidden">
+      <nav className="mobile-bottom-nav fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-border bg-paper/95 py-2 backdrop-blur-md lg:hidden">
         <MobileNav icon={<House />} label="Home" href="#home" />
         <MobileNav icon={<Navigation />} label="Explore" href="#destinations" />
-        <MobileNav icon={<Stamp />} label="Passport" href="/passport-guide" />
-        <MobileNav icon={<UsersRound />} label="Journey" href="/explore-badges" />
+        <MobileNav
+          icon={<Stamp />}
+          label="Passport"
+          href="#mobile-explorer"
+          onClick={() => setMobileView("passport")}
+        />
+        <MobileNav
+          icon={<UsersRound />}
+          label="Journey"
+          href="#mobile-explorer"
+          onClick={() => setMobileView("badges")}
+        />
       </nav>
       <a
         href={WHATSAPP_URL}
@@ -593,16 +612,18 @@ function Index() {
   );
 }
 
-function MobileExplorerExperience({
+export function MobileExplorerExperience({
   activeView,
   onViewChange,
   registered,
   onStart,
+  showOnDesktop = false,
 }: {
   activeView: "passport" | "planner" | "badges";
   onViewChange: (view: "passport" | "planner" | "badges") => void;
   registered: boolean;
   onStart: () => void;
+  showOnDesktop?: boolean;
 }) {
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
   const [marked, setMarked] = useState<string[]>(registered ? ["Vaishno Devi"] : []);
@@ -613,10 +634,13 @@ function MobileExplorerExperience({
     );
 
   return (
-    <section id="mobile-explorer" className="bg-paper-deep pb-24 lg:hidden">
+    <section
+      id="mobile-explorer"
+      className={`mobile-explorer mobile-explorer-${activeView} bg-paper-deep pb-24 ${showOnDesktop ? "mobile-explorer-desktop lg:block" : "lg:hidden"}`}
+    >
       {activeView === "passport" && (
         <>
-          <div className="relative isolate overflow-hidden bg-burgundy-deep px-5 pb-7 pt-10 text-primary-foreground">
+          <div className="mobile-explorer-hero relative isolate overflow-hidden bg-burgundy-deep px-3 pb-7 pt-9 text-primary-foreground min-[390px]:px-5 min-[390px]:pt-10">
             <img
               src={heroImage}
               alt=""
@@ -626,12 +650,12 @@ function MobileExplorerExperience({
             <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-gold">
               J&K Explorer
             </p>
-            <h2 className="display-serif mt-2 text-4xl">Passport Guide</h2>
+            <h2 className="display-serif mt-2 text-3xl min-[390px]:text-4xl">Passport Guide</h2>
             <p className="mt-2 max-w-xs text-xs leading-5 text-primary-foreground/80">
               Your guide to making the most of your J&K Explorer Passport.
             </p>
           </div>
-          <div className="mx-4 -mt-2 rounded-t-lg bg-paper p-4 shadow-lg">
+          <div className="mobile-explorer-card passport-guide-steps-card mx-3 -mt-2 rounded-t-lg bg-paper p-3 shadow-lg min-[390px]:mx-4 min-[390px]:p-4">
             <h3 className="display-serif text-xl text-ink">How Your Passport Works</h3>
             <div className="mt-3 space-y-2">
               {[
@@ -663,7 +687,7 @@ function MobileExplorerExperience({
               ].map(([number, title, text]) => (
                 <div
                   key={number}
-                  className="flex gap-3 rounded-md border border-border bg-background p-3"
+                  className="passport-guide-step flex gap-3 rounded-md border border-border bg-background p-3"
                 >
                   <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-burgundy text-[9px] font-bold text-gold">
                     {number}
@@ -676,9 +700,9 @@ function MobileExplorerExperience({
               ))}
             </div>
           </div>
-          <div className="mx-4 mt-4 rounded-lg bg-paper p-4 shadow-sm">
+          <div className="mobile-explorer-card passport-guide-features-card mx-3 mt-3 rounded-lg bg-paper p-3 shadow-sm min-[390px]:mx-4 min-[390px]:mt-4 min-[390px]:p-4">
             <h3 className="display-serif text-xl text-ink">What&apos;s Inside Your Passport?</h3>
-            <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+            <div className="passport-feature-grid mt-4 grid grid-cols-3 gap-2 text-center">
               <MobileFeature
                 icon={<BookOpen />}
                 title="Destination Pages"
@@ -703,7 +727,7 @@ function MobileExplorerExperience({
               />
             </div>
           </div>
-          <div className="relative isolate mx-4 mt-4 min-h-[285px] overflow-hidden rounded-lg bg-paper shadow-sm">
+          <div className="mobile-explorer-card passport-progress-card relative isolate mx-3 mt-3 min-h-[285px] overflow-hidden rounded-lg bg-paper shadow-sm min-[390px]:mx-4 min-[390px]:mt-4">
             <img
               src={heroImage}
               alt="Kashmir mountains"
@@ -738,7 +762,7 @@ function MobileExplorerExperience({
               </div>
             </div>
           </div>
-          <div className="mx-4 mt-4 rounded-lg bg-paper p-4 shadow-sm">
+          <div className="mobile-explorer-card passport-faq-card mx-3 mt-3 rounded-lg bg-paper p-3 shadow-sm min-[390px]:mx-4 min-[390px]:mt-4 min-[390px]:p-4">
             <h3 className="display-serif text-xl text-ink">Frequently Asked Questions</h3>
             <div className="mt-3 divide-y divide-border rounded-md border border-border">
               {[
@@ -773,7 +797,7 @@ function MobileExplorerExperience({
               ))}
             </div>
           </div>
-          <div className="relative mx-4 mt-4 h-44 overflow-hidden rounded-lg bg-burgundy-deep shadow-sm">
+          <div className="mobile-explorer-card passport-closing-card relative mx-3 mt-3 h-40 overflow-hidden rounded-lg bg-burgundy-deep shadow-sm min-[390px]:mx-4 min-[390px]:mt-4 min-[390px]:h-44">
             <img
               src={gulmargImage}
               alt="Snow-covered Gulmarg mountains"
@@ -793,11 +817,13 @@ function MobileExplorerExperience({
       )}
 
       {activeView === "planner" && (
-        <div className="px-4 pt-6">
+        <div className="mobile-explorer-content px-3 pt-6 min-[390px]:px-4">
           <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
             Travel planner
           </p>
-          <h2 className="display-serif mt-1 text-3xl text-ink">Plan Your Kashmir Journey</h2>
+          <h2 className="display-serif mt-1 text-2xl text-ink min-[390px]:text-3xl">
+            Plan Your Kashmir Journey
+          </h2>
           <p className="mt-1 text-xs text-ink-soft">
             Build your own adventure across Jammu & Kashmir.
           </p>
@@ -856,7 +882,7 @@ function MobileExplorerExperience({
       )}
 
       {activeView === "badges" && (
-        <div className="px-4 pt-6">
+        <div className="mobile-explorer-content px-3 pt-6 min-[390px]:px-4">
           <div className="relative overflow-hidden rounded-lg bg-burgundy-deep p-5 text-primary-foreground">
             <img
               src={heroImage}
@@ -867,7 +893,9 @@ function MobileExplorerExperience({
               <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
                 Explore badges
               </p>
-              <h2 className="display-serif mt-2 text-3xl">Explore. Discover. Achieve.</h2>
+              <h2 className="display-serif mt-2 text-2xl min-[390px]:text-3xl">
+                Explore. Discover. Achieve.
+              </h2>
               <p className="mt-2 text-xs leading-5 text-primary-foreground/75">
                 Every journey brings you one step closer to becoming a legendary J&K Explorer.
               </p>
@@ -1143,6 +1171,13 @@ export type Destination = {
   description: string;
   time: string;
 };
+
+export function destinationSlug(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 export const destinations: Destination[] = [
   {
     name: "Vaishno Devi",
@@ -1483,16 +1518,15 @@ function SectionHeading({
 }
 function DestinationCard({
   destination,
-  onSelect,
   compact = false,
 }: {
   destination: Destination;
-  onSelect: (destination: Destination) => void;
   compact?: boolean;
 }) {
   return (
-    <button
-      onClick={() => onSelect(destination)}
+    <Link
+      to="/destination/$destinationSlug"
+      params={{ destinationSlug: destinationSlug(destination.name) }}
       className={`group shrink-0 snap-start text-left ${compact ? "w-full" : "w-[42vw] min-w-[138px] sm:w-[210px]"}`}
     >
       <div
@@ -1521,7 +1555,7 @@ function DestinationCard({
           </span>
         </span>
       </div>
-    </button>
+    </Link>
   );
 }
 
