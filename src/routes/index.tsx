@@ -169,18 +169,67 @@ function Index() {
         {menuOpen && (
           <nav className="border-t border-primary-foreground/15 bg-burgundy-deep px-5 py-4 lg:hidden">
             <div className="grid gap-4 text-sm uppercase tracking-widest">
+              <a href="#home" onClick={() => setMenuOpen(false)}>
+                Home
+              </a>
               <a href="#destinations" onClick={() => setMenuOpen(false)}>
                 Destinations
               </a>
-              <a href="#passport" onClick={() => setMenuOpen(false)}>
+              <a
+                href="#mobile-explorer"
+                onClick={() => {
+                  setMobileView("passport");
+                  setMenuOpen(false);
+                }}
+              >
                 Passport Guide
               </a>
-              <a href="#planner" onClick={() => setMenuOpen(false)}>
+              <a
+                href="#mobile-explorer"
+                onClick={() => {
+                  setMobileView("planner");
+                  setMenuOpen(false);
+                }}
+              >
                 Travel Planner
               </a>
-              <a href="#about" onClick={() => setMenuOpen(false)}>
-                About Us
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+              >
+                Shop / Buy Passport
               </a>
+              <button
+                type="button"
+                className="w-fit text-left"
+                onClick={() => {
+                  setJoinOpen(true);
+                  setMenuOpen(false);
+                }}
+              >
+                Register Yourself
+              </button>
+              <a
+                href="#mobile-explorer"
+                onClick={() => {
+                  setMobileView("badges");
+                  setMenuOpen(false);
+                }}
+              >
+                Explore Badges
+              </a>
+              <button
+                type="button"
+                className="w-fit text-left"
+                onClick={() => {
+                  setJoinOpen(true);
+                  setMenuOpen(false);
+                }}
+              >
+                About Us
+              </button>
             </div>
           </nav>
         )}
