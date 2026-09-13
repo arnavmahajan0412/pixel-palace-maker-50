@@ -78,6 +78,23 @@ function DestinationPage() {
       {destination.name === "Sarthal Valley (Bani, Basohli)" ? <SarthalValleyGuide /> : null}
       {destination.name === "Bawa Wali Mata & Jammu City Walk" ? <JammuCityWalkGuide /> : null}
       {destination.name === "Doodpathri" ? <DoodpathriGuide /> : null}
+      {destination.name === "Warwan Valley" ? <WarwanValleyGuide /> : null}
+      {destination.name === "Verinag" ? <VerinagGuide /> : null}
+      {destination.name === "Dudu Valley" ? <DuduValleyGuide /> : null}
+      {destination.name === "Sanasar" ? <SanasarGuide /> : null}
+      {destination.name === "Aharbal Waterfall" ? <AharbalWaterfallGuide /> : null}
+      {destination.name === "Sudh Mahadev Temple" ? <SudhMahadevGuide /> : null}
+      {destination.name === "Bangus Valley" ? <BangusValleyGuide /> : null}
+      {destination.name === "Yusmarg" ? <YusmargGuide /> : null}
+      {destination.name === "Purthu" ? <PurthuMeadowGuide /> : null}
+      {destination.name === "Suchetgarh Border" ? <SuchetgarhGuide /> : null}
+      {destination.name === "Darhal Waterfall & Shadra Sharief" ? <ShahdaraDarhalGuide /> : null}
+      {destination.name === "Keran Border" ? <KeranBorderGuide /> : null}
+      {destination.name === "Amarnath Yatra (Seasonal)" ? <AmarnathYatraGuide /> : null}
+      {destination.name === "Tulip Garden (Seasonal)" ? <TulipGardenGuide /> : null}
+      {destination.name === "Panchari" ? <PanchariGuide /> : null}
+      {destination.name === "Loran Valley" ? <LoranValleyGuide /> : null}
+      {destination.name === "Shiv Khori" ? <ShivKhoriGuide /> : null}
       {destination.name !== "Vaishno Devi" &&
       destination.name !== "Patnitop" &&
       destination.name !== "Mansar Lake (Surinsar)" &&
@@ -92,7 +109,24 @@ function DestinationPage() {
       destination.name !== "Paddar (Machail Mata)" &&
       destination.name !== "Sarthal Valley (Bani, Basohli)" &&
       destination.name !== "Bawa Wali Mata & Jammu City Walk" &&
-      destination.name !== "Doodpathri" ? (
+      destination.name !== "Doodpathri" &&
+      destination.name !== "Warwan Valley" &&
+      destination.name !== "Verinag" &&
+      destination.name !== "Dudu Valley" &&
+      destination.name !== "Sanasar" &&
+      destination.name !== "Aharbal Waterfall" &&
+      destination.name !== "Sudh Mahadev Temple" &&
+      destination.name !== "Bangus Valley" &&
+      destination.name !== "Yusmarg" &&
+      destination.name !== "Purthu" &&
+      destination.name !== "Suchetgarh Border" &&
+      destination.name !== "Darhal Waterfall & Shadra Sharief" &&
+      destination.name !== "Keran Border" &&
+      destination.name !== "Amarnath Yatra (Seasonal)" &&
+      destination.name !== "Tulip Garden (Seasonal)" &&
+      destination.name !== "Panchari" &&
+      destination.name !== "Loran Valley" &&
+      destination.name !== "Shiv Khori" ? (
         <GenericDestinationGuide destination={destination} />
       ) : null}
     </main>
@@ -1436,10 +1470,4389 @@ function DalLakeGuide() {
   );
 }
 
+function ShivKhoriGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Ransoo, Pouni, Reasi District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 1,500 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1 day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            The sacred cave of Lord Shiva
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              In Reasi&apos;s hills near Ransoo village, Shiv Khori is a revered Lord Shiva cave
+              shrine with a naturally formed Shivling and divine rock formations. Its name means
+              “Abode of Lord Shiva,” and the cave extends deep into the mountain.
+            </p>
+            <p>
+              Thousands visit year-round, especially at Maha Shivratri. Forest, hills, villages, and
+              the spiritual trek make it a meaningful combination of faith, adventure, and Jammu
+              scenery, often combined with Vaishno Devi.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          History & faith
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Hindu belief associates this ancient cave with Shiva&apos;s meditation and several
+            divine stories. The naturally formed Shivling is the centre of devotion and the cave is
+            held to reveal Shiva&apos;s presence.
+          </p>
+          <p>
+            The annual pilgrimage has grown with improved pilgrim facilities, establishing Shiv
+            Khori as one of Jammu &amp; Kashmir&apos;s most visited religious sites.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Suggested route
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → Katra → Reasi → Pouni → Ransoo → Cave
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Jammu: 140 km · Katra: 80 km · Reasi: 45 km. Jammu–Katra passes foothills, villages,
+              forest, and Trikuta views. Katra–Reasi brings Chenab, hills, valleys, and villages.
+              Ransoo is the base, followed by a scenic 3.5 km trek with rest areas, shops, and
+              pilgrim facilities.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Holy Cave · natural Shivling · divine rock formations · Shiva pilgrimage · Himalayan
+              views · Ransoo · Shivratri · mountain trek
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Seek blessings · darshan of the Shivling · join Shivratri · trek Ransoo route · enjoy
+              mountains · visit nearby religious/natural sights · experience village culture.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant and good for trekking.{" "}
+              <strong className="text-ink">July–September:</strong> green, occasional rain.{" "}
+              <strong className="text-ink">October–November:</strong> cool, comfortable pilgrimage.{" "}
+              <strong className="text-ink">December–February:</strong> cold but suitable with
+              preparation.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, approximately 140 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Shri Mata Vaishno Devi Katra station, about 80 km; Jammu Tawi is an alternative."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Buses, taxis, tourist and personal vehicles via Jammu–Katra–Reasi–Pouni–Ransoo."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Temple entry is free; registration may be needed in special pilgrimage periods."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Generally open year-round, recommended 6:00 AM–8:00 PM; times can change for festivals/weather."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Water, shelters, food stalls, special-occasion langar, medical/security support, rest
+              areas, parking, possible pony/palanquin, and souvenir shops. Services: Jammu
+              Airport/Rail, Katra, Vaishno Devi, Shiv Khori, Reasi, Bhairav Ghati, Patnitop, and
+              custom pilgrimage packages.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Trek support
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Pony, palki, local guide, and senior-citizen assistance are available subject to
+              provider and route charges.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Vaishno Devi, Katra · Bhim Garh/Reasi Fort · Salal Dam · Chenab River · Baba Dhansar ·
+              Jhajjar Kotli · Nau Devi Temple
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Kaladi Kulcha · Dogra Thali · Patisa · Khatta Meat · Lassi · sweets.
+              Cave photography may be restricted; photograph mountains, trek, Ransoo, villages, and
+              viewpoints early or at golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            ["What is Shiv Khori famous for?", "Natural Shivling and sacred Lord Shiva cave."],
+            ["How long is the trek?", "Approximately 3.5 km from Ransoo."],
+            [
+              "Suitable for seniors?",
+              "Yes, with pony/palki where available, though health and fitness matter.",
+            ],
+            ["Can it be combined with Vaishno Devi?", "Yes, many pilgrims combine both."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Ransoo, Reasi · 1,500 metres · 140 km
+          from Jammu · 80 km from Katra · natural Shivling/Cave · best March–June &amp;
+          September–November · 1 day · Jammu Airport and Katra station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Shiv Khori?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Shiv Khori is more than pilgrimage: sacred cave, rock formations, hill trail, and
+            peaceful mountains create a memorable journey for Shiva devotees and anyone exploring
+            Jammu&apos;s spiritual heritage.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function LoranValleyGuide() {
+  const facts = [
+    ["Location", "Loran Valley, Poonch District"],
+    ["Region", "Pir Panjal Mountains"],
+    ["Ideal trip duration", "1–2 days"],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        {facts.map(([label, value]) => (
+          <InfoCard key={label} icon={<MapPin className="h-5 w-5" />} label={label} value={value} />
+        ))}
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A peaceful hidden valley of Poonch
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Located in Poonch&apos;s Pir Panjal mountains, Loran Valley is a peaceful,
+              lesser-known destination of high mountains, green forest, flowing streams, and
+              traditional villages. Near Mughal Road, it offers an untouched Himalayan experience
+              away from crowded tourist places.
+            </p>
+            <p>
+              The Loran River, green meadows, pine and deodar forest, snow-covered winter peaks, and
+              quiet village life suit nature lovers, photographers, adventurers, and offbeat travel.
+              Historically it was an important mountain route linking Poonch and Kashmir.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Loran was traditionally connected with trade and travel between Poonch and Kashmir
+            through Pir Panjal high-altitude routes. Mughal emperors used the nearby historic Mughal
+            Road while travelling between the plains and Kashmir.
+          </p>
+          <p>
+            The valley preserves Pahari and Gujjar heritage in local architecture, agriculture,
+            cultural practices, and mountain life.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px] grid gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Suggested route
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → Rajouri → Poonch → Loran
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Jammu: 230–250 km · Poonch: 30–35 km · Rajouri: 120–130 km · Srinagar via Mughal Road:
+              200–220 km. Jammu–Rajouri passes hills, Chenab scenery, mountain roads and forest;
+              Rajouri–Poonch crosses Pir Panjal valleys and villages; the final stretch has pines,
+              deodar, streams, and viewpoints.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Pir Panjal scenery · Loran River · meadows · pine/deodar forest · villages · snow
+              peaks · peace · photography · Mughal Road connection
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore village · photograph mountains · walk rivers and streams · experience culture
+              · explore forest · picnic · visit nearby valleys · enjoy village life · watch
+              sunrise/sunset · camp with local guidance.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant and green.{" "}
+              <strong className="text-ink">July–September:</strong> fresh streams and vibrant
+              valley; be careful in heavy rain.{" "}
+              <strong className="text-ink">October–November:</strong> autumn, clear views,
+              photography. <strong className="text-ink">December–February:</strong> cold and
+              possible snow; check roads before travel.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar Airport: 200–220 km via Mughal Road; Jammu Airport: 230–250 km."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Jammu Tawi, approximately 230–250 km; continue by road to Poonch."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Taxi, tourist, or private vehicle via Jammu–Rajouri–Poonch; mountain driving experience is recommended."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Free; parking, camping, and local activities may vary."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination; daytime 8:00 AM–6:00 PM is recommended."
+          />
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & travel services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Facilities are limited: small shops, homestays, local food, parking, and local help.
+              Carry water, snacks, medicine, power bank, warm clothing, and shoes. Services include
+              Jammu pickup, Poonch sightseeing, Loran, Mughal Road, Pir Panjal, Rajouri–Poonch, and
+              custom mountain tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Walks & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Short hikes, forest walks, village trails, meadow exploration, and photography walks
+              are suitable. Longer Pir Panjal routes need local guidance.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Poonch Fort · Dehra Ki Gali · Peer Ki Gali · Mughal Road · Noori Chamb · Nandishool
+              Waterfall · Shahdara Sharief · Darhal Valley · Surankote
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Makki di Roti · Sarson da Saag · Kaladi Kulcha · Dogra and Pahari
+              dishes · Kahwa · sweets. Photograph mountains, streams, green valleys, forest trails,
+              village life, snow peaks, and sunsets early or at golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Frequently asked questions
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              [
+                "What is Loran famous for?",
+                "Peaceful scenery, forest, river, villages, and Pir Panjal beauty.",
+              ],
+              ["Where is it?", "Poonch district, Jammu & Kashmir."],
+              ["Family friendly?", "Yes, for families, photographers, and nature lovers."],
+              [
+                "How much time?",
+                "A Poonch day trip is possible; overnight is better for the full valley.",
+              ],
+              [
+                "Is trekking available?",
+                "Short hikes and walks are possible; longer routes need local guidance.",
+              ],
+            ].map(([q, a]) => (
+              <div key={q} className="border border-border bg-paper p-5">
+                <p className="font-semibold text-ink">{q}</p>
+                <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm leading-7 text-ink-soft">
+            <strong className="text-ink">Quick facts:</strong> Loran Valley, Poonch · Pir Panjal ·
+            30–35 km from Poonch · 230–250 km from Jammu · valley, forest, river, Mughal Road ·
+            March–November · 1–2 days · Jammu/Srinagar Airport and Jammu Tawi.
+          </p>
+        </div>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Loran Valley?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Loran is a quiet Pir Panjal treasure of mountains, streams, forests, and traditional
+            villages — a memorable route into Poonch&apos;s hidden Himalayan side.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function PanchariGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Panchari, Udhampur District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 2,000 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1–2 days"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A quiet tourist village in the Jammu hills
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Panchari is an emerging Udhampur hill destination among green forest, meadow, and
+              mountain landscapes. Its cool climate, peaceful atmosphere, and natural beauty provide
+              a calm alternative to crowded hill towns.
+            </p>
+            <p>
+              At around 2,000 metres, the area has pine and deodar forest, traditional villages,
+              ridges, village tourism, home stays, walks, and photography. It is a hidden Jammu gem
+              for families and travellers wanting quiet Himalayan foothills.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Panchari is a mountain settlement shaped by Dogra and Pahari culture. Local villages
+            have maintained food, customs, and hillside life for generations.
+          </p>
+          <p>
+            Promotion as a tourist village brought attention to rural stays and Udhampur nature.
+            Nearby Shankri Devta Temple, on a meadow-and-forest hillock, adds spiritual and cultural
+            significance.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Suggested route
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → Udhampur → Chenani → Panchari
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Jammu: 90–100 km · Udhampur: 40–45 km · Katra: 70–80 km. Jammu to Udhampur passes
+              plains, foothills, Chenab-region scenery, and highway landscapes. From Udhampur,
+              winding roads pass forest, green valleys, villages, and viewpoints into cool Panchari.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Hill landscapes · meadows · deodar and pine · quiet mountain environment · tourist
+              village · Dogra/Pahari culture · Shankri Devta · homestays · photography · cool
+              summers
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore village · walk in nature · visit meadows · experience village life · stay in
+              homestays · photograph · visit Shankri Devta · explore forest trails · enjoy local
+              cuisine · relax with family.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, ideal outdoors.{" "}
+              <strong className="text-ink">July–September:</strong> fresh, cloudy, monsoon beauty;
+              take care in heavy rainfall. <strong className="text-ink">October–November:</strong>{" "}
+              clear autumn and photography. <strong className="text-ink">December–February:</strong>{" "}
+              cold, possible higher snow, ideal for winter lovers.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, 95–110 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Udhampur Railway Station, 40–50 km; Jammu Tawi is another option."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Taxi, tourist/private vehicle, or bus via Jammu–Udhampur–Chenani."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Free; parking, stay, and activity costs may apply."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open hill destination; daylight visits, 8:00 AM–6:00 PM recommended."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Homestays · guest houses · shops · food · tourist assistance · parking. Bring water,
+              warm layers, medicine, power bank, good shoes, and supplies. Services: Jammu
+              Airport/city, Udhampur, Panchari, Shankri Devta, Chenani, and custom mountain tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Walks & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              No major famous trek, but short nature/forest walks, village hikes, meadow
+              exploration, and photo walks are available with local guidance.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Shankri Devta · Sudh Mahadev · Mantalai · Patnitop · Nathatop · Sanasar · Krimchi
+              Temples · Udhampur
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Makki di Roti · Saag with desi ghee · Rajma Chawal · Kaladi Kulcha · Dogra food ·
+              Kahwa · sweets. Capture slopes, forest, villages, sunrise, misty hills, traditional
+              homes, and seasonal change at early morning or golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Panchari famous for?",
+              "Peaceful hill atmosphere, forests, meadows, cool climate, and tourist village experience.",
+            ],
+            ["Where is it?", "Udhampur district, Jammu & Kashmir."],
+            ["Family friendly?", "Yes, for families, photographers, and quiet mountain travel."],
+            [
+              "How much time?",
+              "A Jammu day trip works; overnight offers more mountain atmosphere.",
+            ],
+            ["Is trekking available?", "No major route, but short hikes and walks are possible."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Panchari, Udhampur · 2,000 metres ·
+          90–100 km from Jammu · forest, meadow, village tourism, cool air · best March–November ·
+          1–2 days · Jammu Airport and Udhampur station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Panchari?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Panchari is a refreshing offbeat weekend escape — green forest, village traditions, cool
+            hills, and quiet scenery make it a relaxed way to experience a lesser-known side of
+            Jammu &amp; Kashmir.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function TulipGardenGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Srinagar, at Zabarwan foothills"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 1,600 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Tulip season"
+          value="March–April · dates vary annually"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Kashmir&apos;s brief season of colour
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              The Indira Gandhi Memorial Tulip Garden overlooks Dal Lake from the Zabarwan
+              foothills. Its large, ordered flower beds and mountains form one of Jammu &amp;
+              Kashmir&apos;s most celebrated spring scenes.
+            </p>
+            <p>
+              Previously called Model Floriculture Centre, the garden displays millions of tulips in
+              varied colour and has become a major spring attraction for visitors from India and
+              abroad. Unlike regular gardens, its famed tulip show lasts only a short period each
+              year.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Seasonal nature & history
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Tulips typically bloom in March–April, with opening based on temperature, winter snow,
+            growth, and weather. Winter closure allows bulbs the cold conditions they need;
+            gardeners prepare beds before spring opening. Peak bloom is only a few weeks, and after
+            flowering the garden may remain visitable without the signature display.
+          </p>
+          <p>
+            Established in 2007 to promote floriculture and tourism, the garden was built into
+            Zabarwan slopes for both cultivation and scenic travel. The annual Tulip Festival
+            celebrates spring with flowers, Kashmiri culture, crafts, and traditions.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Travel route
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Srinagar → Boulevard Road → Dal Lake → Tulip Garden
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              City centre: 8–10 km · Airport: 20–25 km · Railway Station: 10–12 km. The approach
+              crosses Srinagar city, markets, Dal Lake scenery, Boulevard Road, Mughal-garden
+              surroundings, Zabarwan views, and colourful beds.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Millions of tulips · Zabarwan backdrop · Dal Lake views · spring bloom · Tulip
+              Festival · flower displays · family experience · photography
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Walk flower fields · photograph tulips · capture mountains · join the festival · visit
+              Dal Lake and Mughal gardens · try Kashmiri food · shop handicrafts.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–April:</strong> full tulip season, colour, spring
+              weather. <strong className="text-ink">May–June:</strong> tulips end but garden remains
+              pleasant with some other flowers. <strong className="text-ink">July–February:</strong>{" "}
+              not for the famous tulip display; winter preparation period.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, 20–25 km; taxis readily available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Srinagar Railway Station, 10–12 km; Jammu Tawi connects outside the region."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Taxi, tourist vehicle, auto, or personal car via Srinagar and Boulevard Road."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Ticket required during tulip season; annual prices vary and online booking may be offered."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Tulip season typically 9:00 AM–6:00 PM; early visits have less crowd and better light."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Parking, ticket counters, water, rest areas, food, washrooms, visitor support, and
+              photography areas. Bring shoes, sunglasses, water, camera, and a light spring jacket.
+              Services: Srinagar Airport, city, Tulip Garden, Dal Lake, Mughal Gardens, spring
+              packages, custom tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Walks & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              No trekking inside the garden; take short garden walks, explore Zabarwan foothills, or
+              nearby scenic paths.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Dal Lake · Mughal Gardens · Nishat · Shalimar · Chashme Shahi · Pari Mahal · Hazratbal
+              · Boulevard Road
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Wazwan · Rogan Josh · Dum Aloo · Kahwa · Kaladi Kulcha · bakery · sweets. Capture
+              tulip rows, Zabarwan, Dal, sunrise, close-ups, and portraits early or at golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "Why is it seasonal?",
+              "Tulips bloom only in spring and the display lasts a few weeks.",
+            ],
+            ["When does it open?", "Usually March–April, depending on flowering conditions."],
+            ["Where is it?", "Near Dal Lake at the Zabarwan foothills in Srinagar."],
+            ["How much time?", "Around 1–2 hours."],
+            ["Family friendly?", "Yes, one of Srinagar's most family-friendly attractions."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Srinagar · 1,600 metres · tulips,
+          spring, Zabarwan · season March–April · 1–2 hours · Srinagar Airport and Railway Station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Tulip Garden?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Colourful flowers, Dal Lake, and the Zabarwan range create an extraordinary Kashmir
+            spring scene. For first-time visitors, families, nature lovers, and photographers, it is
+            a brief seasonal experience worth planning around official bloom dates.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function AmarnathYatraGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Amarnath Cave, Anantnag/Ganderbal"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 3,888 metres (12,756 feet)"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Yatra nature"
+          value="Seasonal pilgrimage · official summer dates"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A sacred journey to the ice Shivling
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              The Amarnath Yatra leads devotees through Jammu &amp; Kashmir&apos;s high Himalayas to
+              Amarnath Cave, where the naturally formed ice Shivling is worshipped. At about 3,888
+              metres, the cave is surrounded by mountains, glaciers, and dramatic Himalayan scenery.
+            </p>
+            <p>
+              This is not a year-round tourist attraction but a limited summer pilgrimage. It joins
+              faith, adventure, natural beauty, and high-altitude exploration for pilgrims from
+              India and abroad.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Seasonal nature
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            The Yatra normally operates about 40–50 days in summer, generally June–August, on dates
+            announced officially each year. Winter snow, extreme cold, and unpredictable weather
+            close the cave and routes outside the season.
+          </p>
+          <p>
+            Before opening, authorities prepare routes, facilities, security, medical care, and
+            rescue support. Pilgrims must register officially and follow that season&apos;s
+            guidelines.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              History & religious importance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Hindu tradition says Shiva revealed the Amar Katha, the secret of immortality, to
+              Parvati in this cave. The ice Shivling symbolises Lord Shiva. Centuries of pilgrims
+              and the support of agencies, security forces, medical teams, and Shri Amarnathji
+              Shrine Board made it one of India&apos;s largest organised pilgrimages.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Holy Cave · Ice Shivling · Himalayan scenery · Lidder Valley · Sheshnag Lake ·
+              Panchtarni · Baltal Valley · spiritual atmosphere · high-altitude adventure
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Complete darshan · experience pilgrimage trails · enjoy mountains · visit Pahalgam or
+              Sonamarg · experience Kashmiri culture · participate spiritually · photograph
+              Himalayan scenery where allowed.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">June–July:</strong> beginning, pleasant daytime, snowy
+              surroundings. <strong className="text-ink">July–August:</strong> main period and
+              better route access, but more pilgrims.{" "}
+              <strong className="text-ink">After August:</strong> colder and Yatra closes per
+              official dates. <strong className="text-ink">Winter:</strong> not open due to snow and
+              extreme cold.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Two pilgrimage routes
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="Pahalgam · traditional route"
+            value="Srinagar → Pahalgam → Chandanwari → Pissu Top → Sheshnag → Panchtarni → Cave. Srinagar–Pahalgam 90–100 km; 36–40 km trek. Gradual, scenic Lidder Valley ascent."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="Baltal · shorter route"
+            value="Srinagar → Sonamarg → Baltal → Domel → Barari → Sangam → Cave. Srinagar–Baltal 90–100 km; 14–16 km trek. Shorter but steeper, for experienced walkers."
+          />
+        </div>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="Pahalgam journey"
+            value="Pampore, Anantnag, Lidder River, then Chandanwari. Trek via Pissu Top, Sheshnag Lake, and Panchtarni amid glaciers and alpine landscape."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="Baltal journey"
+            value="Through Ganderbal and Sonamarg to Baltal, then steep paths via Domel, Barari, and Sangam."
+          />
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar Airport; Pahalgam and Baltal are each about 90–100 km by road."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Jammu Tawi; then 250–300 km by road toward Srinagar and base camps."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Pahalgam: Jammu–Srinagar–Anantnag–Pahalgam. Baltal: Jammu–Srinagar–Sonamarg–Baltal. Taxis, buses, and Yatra transport available."
+          />
+        </div>
+        <div className="mx-auto mt-8 grid max-w-[1220px] gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Registration & fee"
+            value="Official registration, compulsory health certificate, ID, and current instructions are required. Darshan is free; registration and services may cost separately."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings & safety"
+            value="Follow official schedule, start trekking early, observe camp timings, and avoid bad-weather travel."
+          />
+        </div>
+      </section>
+      <section className="mx-auto grid max-w-[1220px] gap-10 px-5 py-12 lg:grid-cols-2 lg:px-10 lg:py-16">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Facilities & preparation
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Seasonal base camps, medical camps, langars, security, tents, pony/palki/rescue
+            services, and water points. Carry warm layers, rain gear, trekking shoes, medicine, ID,
+            power bank, and water.
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Travel services
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Srinagar/Jammu pickup · Yatra packages · Pahalgam and Baltal stay · pony/palki · Kashmir
+            sightseeing · custom pilgrimage tours.
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Trekking & assistance
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Pahalgam trek: 36–40 km, moderate, via Chandanwari/Pissu/Sheshnag/Panchtarni. Baltal:
+            14–16 km, moderate to difficult, shorter and steep. Pony, palki, local guide, and
+            medical assistance are available.
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Nearby attractions
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Pahalgam · Betaab Valley · Aru · Baisaran · Sonamarg · Thajiwas Glacier · Lidder Valley
+            · Srinagar
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Food & photography
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Wazwan · Rogan Josh · Dum Aloo · Rajma Chawal · Kaladi Kulcha · Kahwa · bakery · sweets;
+            during Yatra, langar, tea, and simple vegetarian food. Photograph peaks, trails,
+            streams, Sheshnag, Panchtarni, sunrise, and pilgrimage atmosphere on clear days.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Frequently asked questions
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              [
+                "Why is it seasonal?",
+                "High altitude, winter snow, extreme weather, and seasonal safety preparations.",
+              ],
+              [
+                "Where is the cave?",
+                "In the Anantnag region of Jammu & Kashmir, at about 3,888 metres.",
+              ],
+              [
+                "Pahalgam or Baltal?",
+                "Pahalgam is longer, gradual, scenic; Baltal is shorter but steeper.",
+              ],
+              ["How many days?", "Usually 3–5, depending on route, plan, and fitness."],
+              [
+                "Is it difficult?",
+                "It requires fitness for altitude, walking distance, and changing weather.",
+              ],
+            ].map(([q, a]) => (
+              <div key={q} className="border border-border bg-paper p-5">
+                <p className="font-semibold text-ink">{q}</p>
+                <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm leading-7 text-ink-soft">
+            <strong className="text-ink">Quick facts:</strong> Amarnath Cave · 3,888 metres ·
+            Anantnag/Ganderbal · Ice Shivling · seasonal 40–50 days · Pahalgam and Baltal · official
+            summer dates · Srinagar Airport and Jammu Tawi.
+          </p>
+        </div>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why undertake Amarnath Yatra?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Amarnath combines devotion, challenging trails, and extraordinary Himalayan scenery. For
+            pilgrims and travellers, its journey to the holy cave represents faith, courage, and a
+            profound connection with the mountains.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function KeranBorderGuide() {
+  const route = [
+    [
+      "Srinagar to Sopore",
+      "Kashmir Valley, orchards, fields, and villages; Sopore is the northern districts gateway.",
+    ],
+    ["Sopore to Kupwara", "Green valleys, mountain roads, forests, and traditional villages."],
+    ["Kupwara to Kralpora", "Mountain views, pine forest, river scenes, and a quiet gateway stop."],
+    [
+      "Kralpora to Keran",
+      "Narrow roads, forest, Kishanganga views, snowy peaks, and remote villages open to an unforgettable valley.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Keran, Kupwara District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 5,000–6,000 feet"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="2 days"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Kishanganga River at the frontier
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Keran is a distinctive North Kashmir border destination on the Kishanganga (Neelum)
+              River in Kupwara, framed by the Shamsabari range, forest, and mountains near the Line
+              of Control.
+            </p>
+            <p>
+              A peaceful village of wooden homes, river scenery, traditional culture, and mountain
+              adventure, it blends nature and border tourism more quietly than many strategic
+              frontier areas. It remains a hidden Kupwara gem for travellers seeking a less-explored
+              Himalayan experience.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Keran has long been a frontier region. Before 1947, mountain routes linked communities
+            and cultural traditions around the valley. After Partition, it became a border area
+            divided by political boundaries.
+          </p>
+          <p>
+            The Kishanganga shaped Keran&apos;s identity, separating the Indian side from areas
+            across the LoC. Remoteness and security made access limited for years; its natural
+            character now supports border tourism.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Srinagar → Sopore → Kupwara → Kralpora → Keran
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            Srinagar: 160–170 km · Kupwara: 60 km · Sopore: 100 km · Kralpora: 45–50 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Kishanganga River · border landscape · LoC viewpoints · Keran Valley · forests ·
+              villages · Kashmiri lifestyle · riverside scenery · photography · offbeat Kashmir
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore Keran · enjoy the river · experience border tourism from permitted places ·
+              visit viewpoints · photograph · walk village lanes · learn local culture · relax by
+              water · explore nearby forest and valleys · stay in homestays.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">May–June:</strong> pleasant and green.{" "}
+              <strong className="text-ink">July–September:</strong> lush valley and river, great
+              photography. <strong className="text-ink">October–November:</strong> autumn, clear,
+              quieter. <strong className="text-ink">December–April:</strong> possible heavy snow,
+              difficult roads, and potential border-route restrictions.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, 160–170 km; taxis available toward Kupwara and Keran."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Srinagar/Nowgam Railway Station; Jammu Tawi is another option from outside the region."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxi, tourist, or personal vehicle via the main route. Check current road and permission requirements before departure."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="No general tourist fee; border permissions and parking may apply and change with security guidelines."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination; day visits 8:00 AM–5:00 PM recommended due to roads and weather."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Homestays · guest houses · small food shops · parking · local guides · basic tourist
+              facilities. Carry water, warm clothes, medicines, power bank, valid ID, comfortable
+              shoes, and supplies. Services: Srinagar Airport/city, Kupwara, Keran Border, Lolab,
+              Bangus, and custom North Kashmir border tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Walks & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Nature walks, forest trails, village hikes, photography walks, and mountain
+              exploration are possible. Use local guidance for remote routes.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Lolab Valley · Bangus Valley · Kalaroos Caves · Teetwal Border · Tangdhar · Sadhna
+              Pass · Kupwara · Machil Valley
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Wazwan · Rogan Josh · Rajma Chawal · Makai Roti · Kaladi Kulcha · Kahwa · bakery · red
+              rice and village food. Photograph river, reflections, border scenery, forest roads,
+              villages, peaks, sunrise, and golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Keran famous for?",
+              "Its beautiful valley, Kishanganga, border setting, forest, and untouched nature.",
+            ],
+            ["Where is it?", "Kupwara district near the LoC."],
+            [
+              "Family-friendly?",
+              "Yes, for families, photographers, nature and adventure travellers.",
+            ],
+            [
+              "How much time is needed?",
+              "Two days from Srinagar for the valley and nearby places.",
+            ],
+            [
+              "Is permission needed?",
+              "Check latest rules before travel: permissions can apply in border areas.",
+            ],
+            [
+              "Is trekking available?",
+              "Short walks and hikes are possible; longer routes need local guidance.",
+            ],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Keran, Kupwara · 5,000–6,000 feet ·
+          160–170 km from Srinagar · Kishanganga, LoC views, forests, border tourism · best
+          May–October · 2 days · Srinagar Airport and Railway Station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Keran?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Keran uniquely brings together river, mountain, village, history, and border culture. It
+            is an unforgettable Kupwara frontier journey for anyone wanting an offbeat Kashmir
+            landscape beyond the usual tourist circuit.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function ShahdaraDarhalGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Thanna Mandi & Darhal, Rajouri"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Classification"
+          value="Spiritual, Historical & Natural"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1–2 days"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Faith and waterfalls in Pir Panjal
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              In Rajouri&apos;s Pir Panjal mountains, Shahdara Sharief Dargah and Darhal Waterfall
+              bring together spirituality, history, and natural scenery. Shahdara Sharief, the
+              Ziyarat of Baba Ghulam Shah Badshah (R.A.), lies in Thanna Mandi around 5,800 feet,
+              with green mountains and forest around it.
+            </p>
+            <p>
+              Darhal Waterfall offers flowing water, mountain surroundings, and a peaceful stop in
+              the hidden Pir Panjal landscape. Together, they create a rewarding blend of shrine
+              visit and nature exploration.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Shahdara Sharief is associated with Baba Ghulam Shah Badshah (R.A.) and has drawn people
+            from different communities for generations. The area was historically called Sein Dara,
+            and its quiet mountain setting adds to its spiritual meaning.
+          </p>
+          <p>
+            Darhal has long been connected with Pir Panjal villages, forests, and local culture. Its
+            streams and waterfalls have made it an emerging attraction for nature lovers.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Jammu → Rajouri → Thanna Mandi → Shahdara Sharief → Darhal
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Jammu to Rajouri"
+              value="Mountain highways, rivers, forest, and viewpoints; Rajouri is the western Pir Panjal gateway."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Rajouri to Thanna Mandi"
+              value="Green hills, pine forest, villages, and valleys toward the shrine route."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="To Shahdara Sharief"
+              value="Hill roads, forests, and quiet Pir Panjal views reveal the shrine."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="On to Darhal"
+              value="Mountain and village scenery, forest, and streams to a refreshing waterfall stop."
+            />
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            Jammu: 160–190 km · Rajouri: 25–35 km · Thanna Mandi: 10–15 km · Darhal: 20–30 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Baba Ghulam Shah Badshah Dargah · Pir Panjal views · spiritual calm · Darhal Waterfall
+              · green forest · villages · scenic roads · photography · Rajouri culture
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Visit the Dargah · experience its atmosphere · explore mountain scenery · see Darhal
+              Waterfall · photograph · spend time by streams · enjoy Rajouri food/culture · visit
+              historical places.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant and green.{" "}
+              <strong className="text-ink">July–September:</strong> fresh greenery and waterfall,
+              travel carefully in heavy rain.{" "}
+              <strong className="text-ink">October–November:</strong> clear, comfortable,
+              photographic. <strong className="text-ink">December–February:</strong> cold, with
+              possible higher snow.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, about 160 km; taxis run toward Rajouri."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Jammu Tawi Railway Station, about 160 km; continue by road."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Jammu → Akhnoor → Rajouri → Thanna Mandi, by taxi, tourist vehicle, private car, or local transport."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Dargah entry is free and donations voluntary. Waterfall entry is usually free; parking/local charges can apply."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Dargah: morning to evening year-round. Waterfall: 8:00 AM–5:00 PM recommended for safe day visits."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Dargah: rest areas, pilgrim accommodation, medical support, food, parking. Waterfall
+              facilities are limited; carry water, snacks, shoes, medicines, power bank, and warm
+              clothing. Services: Jammu pickup, Rajouri, Shahdara, Darhal, Thanna Mandi, Pir Panjal,
+              and custom Rajouri tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Walks & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              No major established trek; enjoy short nature, forest-side, village, photography, and
+              mountain walks. Use local guidance for longer Pir Panjal hikes.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajouri Fort · Dehra Ki Gali · Thanna Mandi · Kotranka · Budhal · Nowshera · Mughal
+              Road · Peer Ki Gali
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Kaladi Kulcha · Dogra food · Kashmiri Wazwan · Kahwa · bakery · sweets.
+              Photograph shrine surroundings, mountains, forest roads, waterfall, villages, and
+              sunset early or at golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Shahdara Sharief famous for?",
+              "Baba Ghulam Shah Badshah Dargah and Pir Panjal setting.",
+            ],
+            ["Where is it?", "Thanna Mandi area, Rajouri district."],
+            [
+              "Is Darhal Waterfall worth visiting?",
+              "Yes, as a quiet natural attraction with mountain scenery.",
+            ],
+            [
+              "How much time is required?",
+              "One day from Rajouri; from Jammu, allow a longer day or overnight.",
+            ],
+            [
+              "Is trekking available?",
+              "No major trek, but short walks and local exploration are possible.",
+            ],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Thanna Mandi &amp; Darhal, Rajouri ·
+          Shahdara at about 5,800 feet · 160–190 km from Jammu · Dargah, waterfall, mountain scenery
+          · best March–November · 1–2 days · Jammu Airport and Jammu Tawi.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Shahdara Sharief & Darhal?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            This route combines faith, history, and Pir Panjal nature: a peaceful Dargah and
+            refreshing waterfall deliver an offbeat Rajouri experience for pilgrims, photographers,
+            and lovers of mountain landscapes.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function SuchetgarhGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Suchetgarh, R.S. Pura, Jammu District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Classification"
+          value="Historical, Border & Cultural"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="Half day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            History and patriotism at the border
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Near R.S. Pura in Jammu district, Suchetgarh Border offers a distinct experience of
+              border tourism, national history, and the rural Jammu plains near the India–Pakistan
+              International Border.
+            </p>
+            <p>
+              Its historic Octroi Post once served a key trade route before Partition in 1947. Today
+              the area is developed for visitors to understand border history, see BSF ceremonial
+              and security activity where permitted, and experience patriotic border culture amid
+              open fields and villages.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Before Partition, Suchetgarh connected Jammu and Sialkot as a trade and communication
+            route. Its Railway Station was linked to the India–Pakistan network, but service ended
+            after 1947. The Octroi Post was a major pre-Partition customs point.
+          </p>
+          <p>
+            After 1947, it became part of the international border. Tourism now helps visitors learn
+            its history, witness border arrangements, and understand the region&apos;s significance.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Route & journey
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → R.S. Pura → Suchetgarh
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              From Jammu: 30–35 km · R.S. Pura: 10–15 km · Jammu Airport: 25–30 km · Jammu Tawi: 35
+              km. The drive crosses city outskirts, farmland, villages, open fields, and border
+              settlements. R.S. Pura is known for fertile land and traditional rural life;
+              installations become visible near the border.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              India–Pakistan border view · Octroi Post · BSF border experience · rural Jammu ·
+              patriotism · history · photography · village life
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Visit the viewpoint · learn border history · observe BSF arrangements from permitted
+              areas · explore Octroi Post · photograph · experience rural landscapes · combine
+              nearby Jammu sights · learn Partition history.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant and easy sightseeing.{" "}
+              <strong className="text-ink">July–September:</strong> green fields; plan for weather.{" "}
+              <strong className="text-ink">October–November:</strong> comfortable, clear,
+              photographic. <strong className="text-ink">December–February:</strong> cooler, carry
+              layers.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, approximately 25–30 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Jammu Tawi Railway Station, approximately 35 km and connected to major cities."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxi, tourist, or personal vehicle via Jammu and R.S. Pura. Carry valid ID for border-area requirements."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Usually free; parking may apply and access depends on security permissions/current rules."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Daytime, recommended 10:00 AM–5:00 PM. Confirm locally because security restrictions can affect access."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Parking · viewing area · nearby small shops and food stalls · tourist assistance ·
+              R.S. Pura restaurants. Carry water, valid identity documents, sun protection,
+              comfortable shoes, and supplies. Services include Jammu Airport/city, Suchetgarh, R.S.
+              Pura, religious and heritage tours, and custom day trips.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Border tourism note
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              There is no trekking. The destination focuses on historical exploration, border
+              culture, rural sightseeing, and permitted photography.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Jammu City · Bahu Fort · Bagh-e-Bahu · Mubarak Mandi · Amar Mahal · Raghunath Temple ·
+              R.S. Pura · Ranbireshwar Temple · Mansar Lake
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Kaladi Kulcha · Dogra food · Chole Bhature · sweets · Kahwa · Jammu
+              bakery. Photograph border landscapes, historic structures, rural fields, village life,
+              and sunset in morning or golden hour, respecting all restrictions.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Suchetgarh famous for?",
+              "Border location, Octroi Post, BSF presence, and border tourism.",
+            ],
+            ["Where is it?", "Near R.S. Pura in Jammu district."],
+            [
+              "Family friendly?",
+              "Yes, for families, students, history lovers, and visitors seeking a unique experience.",
+            ],
+            ["How much time?", "Half a day, including nearby attractions."],
+            ["Is trekking available?", "No; this is a historical and border destination."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Suchetgarh, R.S. Pura, Jammu · 30–35 km
+          from Jammu · border tourism, Octroi Post, India–Pakistan view · best March–November · half
+          day · Jammu Airport and Jammu Tawi.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Suchetgarh?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Suchetgarh offers a different Jammu journey — history, patriotism, rural beauty, and
+            border culture rather than mountains and valleys. It is a meaningful stop for travellers
+            interested in history, distinctive photography, and India&apos;s border regions.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function PurthuMeadowGuide() {
+  const route = [
+    [
+      "Jammu to Kathua",
+      "Jammu plains, agricultural land, village scenery, and mountain views; Kathua is the Ravi Valley gateway.",
+    ],
+    [
+      "Kathua to Basohli",
+      "Hilly roads, forests, Ravi River landscapes, and traditional villages leading to historic Basohli.",
+    ],
+    [
+      "Basohli to Purthu",
+      "Mountain roads, greenery, forest surroundings, viewpoints, and relaxing open meadow country.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Purthu, Basohli Region, Kathua"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 1,000–1,500 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1 day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A quiet Ravi Valley meadow
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Near historic Basohli in Kathua, Purthu Meadow is an emerging offbeat Jammu &amp;
+              Kashmir natural destination with open grassland, green hills, forest, fresh air, and
+              quiet mountain scenery.
+            </p>
+            <p>
+              Spring and summer bring vegetation and greenery; winter offers cool mountain
+              atmosphere with occasional nearby higher snow. This peaceful Ravi Valley escape suits
+              nature lovers, photographers, families, and weekend travellers away from crowded
+              places.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Purthu belongs to Basohli&apos;s culturally rich landscape, connected to agriculture,
+            forest, mountain life, and local communities. Basohli is famous for its world-renowned
+            painting tradition, a significant part of Indian art history.
+          </p>
+          <p>
+            Purthu has remained a lesser-known place for recreation and grazing. Growing interest in
+            Basohli&apos;s nature, history, and offbeat travel is bringing it attention.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Jammu → Kathua → Lakhanpur → Basohli → Purthu
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            Jammu: 150–170 km · Kathua: 70–80 km · Basohli: 10–20 km · Lakhanpur: 60–70 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Green meadows · Basohli landscapes · quiet nature · forest views · Ravi scenery ·
+              photo viewpoints · offbeat trip · picnic spot · village atmosphere
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore meadow · photograph · relax in nature · picnic · nature walks · experience
+              Basohli culture · visit scenic places · watch sunrise/sunset · explore Basohli town
+              and nearby sights.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, good sightseeing.{" "}
+              <strong className="text-ink">July–September:</strong> fresh monsoon greenery; plan
+              cautiously in heavy rain. <strong className="text-ink">October–November:</strong>{" "}
+              clear and photographic. <strong className="text-ink">December–February:</strong> cool
+              and peaceful; carry warm layers.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, 150–170 km; taxis run toward Basohli."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Kathua Railway Station, 70–80 km; Jammu Tawi is another option."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxi, tourist, or personal vehicle via Jammu–Kathua–Basohli."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Free; parking and local activities may have charges."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination; 8:00 AM–6:00 PM day visits recommended."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Limited parking, nearby small shops, Basohli food, local assistance, nearby stay
+              options. Carry water, snacks, medicine, power bank, good footwear, and supplies.
+              Services include Jammu Airport, Basohli, Purthu, Ranjit Sagar Dam, Kathua, Ravi
+              Valley, and custom nature tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Walks & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              No major established trek, but short meadow, village, photography, and forest-side
+              walks are available; use local guidance to explore safely.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Basohli Town · Ranjit Sagar Dam · Basohli Fort area · Ravi River · Jasrota Wildlife
+              Sanctuary · Lakhanpur · Kathua · Billawar
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Dogra food · Rajma Chawal · Kaladi Kulcha · Makki di Roti · sweets · Kahwa · bakery.
+              Photograph meadows, mountains, forest, villages, seasonal greenery, sunrise, and
+              golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Purthu famous for?",
+              "Peaceful meadow, green scenery, natural beauty, and offbeat Basohli setting.",
+            ],
+            ["Where is it?", "Basohli region, Kathua district."],
+            ["Family friendly?", "Yes, for families, photographers, and nature lovers."],
+            [
+              "How much time is needed?",
+              "Half a day for Purthu; full day with Basohli and nearby sights.",
+            ],
+            [
+              "Is trekking available?",
+              "No major trail, but short walks and meadow hikes are possible.",
+            ],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Purthu, Basohli, Kathua · 1,000–1,500
+          metres · 150–170 km from Jammu · meadows, greenery, peace, Basohli region · best
+          March–November · one day · Jammu Airport and Kathua station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Purthu Meadow?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Purthu is a refreshing lesser-known Jammu getaway: meadow, hills, fresh air, and
+            Basohli&apos;s cultural context make an ideal quiet escape for families, photography,
+            and offbeat exploration.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function YusmargGuide() {
+  const route = [
+    [
+      "Srinagar to Budgam",
+      "Kashmir Valley landscapes, fields, villages, and mountains; Budgam is Central Kashmir's scenic gateway.",
+    ],
+    [
+      "Budgam to Charar-e-Sharief",
+      "Traditional villages, green scenery, mountain roads, and a major cultural and religious town.",
+    ],
+    [
+      "Charar-e-Sharief to Yusmarg",
+      "Pine forests, mountain roads, viewpoints, and the first memorable view of broad meadows.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Yusmarg, Budgam District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 2,400 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1 day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Central Kashmir&apos;s quiet meadow
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Yusmarg is one of Budgam&apos;s most peaceful mountain destinations, surrounded by
+              broad green meadows, dense forest, snow-covered mountains, and flowing streams. Local
+              belief gives the name the meaning “Meadow of Jesus,” linking the region with a visit
+              by Jesus Christ.
+            </p>
+            <p>
+              At about 2,400 metres, it has spring flowers, summer grass, and snowy winter scenery.
+              It is also a base for trails toward Doodhpathri, Sang-e-Safed, and high-altitude lakes
+              — a hidden Kashmir escape for nature, family time, photography, and trekking.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Yusmarg has long served shepherd communities as grazing land. In the British period,
+            pleasant climate and scenery made it a retreat, later developing into tourism while
+            retaining a quieter, less-commercial character.
+          </p>
+          <p>
+            Its meadows, streams, forest, villages, and mountain life remain part of Central
+            Kashmir&apos;s natural and cultural heritage.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Srinagar → Budgam → Charar-e-Sharief → Yusmarg
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            Srinagar: 45–50 km · Budgam: 35–40 km · Gulmarg: 130–140 km · Pahalgam: around 150 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Green meadows · Pir Panjal views · Doodh Ganga · Sang-e-Safed · pine forests ·
+              trekking · horse riding · winter snow · picnic spots · photography
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore meadows · photograph mountains and forests · walk by Doodh Ganga · ride horses
+              · take nature walks · visit Sang-e-Safed · explore trails · enjoy winter snow
+              activities · relax with family · experience Kashmiri culture.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, family and
+              sightseeing. <strong className="text-ink">July–September:</strong> fresh meadow
+              season, photography and trekking.{" "}
+              <strong className="text-ink">October–November:</strong> autumn, clear, quieter.{" "}
+              <strong className="text-ink">December–February:</strong> snow, winter photography and
+              activities with equipment.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, approximately 45–50 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Srinagar Railway Station, about 50 km; Jammu Tawi is an outside-region option."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxis, tourist vehicles, local buses, or personal cars via the main route."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Usually free; parking, horse riding, and activities are separate."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination; 8:00 AM–6:00 PM recommended for safe day visits."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Parking · food stalls · rest areas · pony services · shops · basic accommodation ·
+              guides. Carry water, warm layers, medicine, power bank, shoes, and supplies. Services:
+              Srinagar Airport, city, Yusmarg, Budgam, Charar-e-Sharief, Doodhpathri, Central
+              Kashmir, custom nature packages.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Trekking & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Guides, horse support, nature walks, camping, and route assistance. Yusmarg →
+              Sang-e-Safed is an easy 5–6 km, 2–3 hour meadow/forest walk; Yusmarg → Tosa Maidan is
+              a moderate long hike into higher Pir Panjal terrain.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Doodhpathri · Charar-e-Sharief · Sang-e-Safed · Tosa Maidan · Nilnag Lake · Astanmarg
+              · Budgam · Srinagar
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Wazwan · Rogan Josh · Dum Aloo · Rajma Chawal · Kaladi Kulcha · Kahwa · bakery items ·
+              sweets. Photograph meadows, peaks, pines, streams, horses, villages, sunrise, and
+              golden hour on clear days.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Yusmarg famous for?",
+              "Meadows, forest, mountain views, peace, and trekking.",
+            ],
+            ["Where is it?", "Budgam district, 45–50 km from Srinagar."],
+            ["Family-friendly?", "Yes, for families, photographers, couples, and nature lovers."],
+            [
+              "How much time is needed?",
+              "One day for sightseeing; overnight for a slower mountain experience.",
+            ],
+            ["Is trekking available?", "Yes, including Sang-e-Safed and nearby mountain routes."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Yusmarg, Budgam · 2,400 metres · 45–50
+          km from Srinagar · meadows, forests, trails, views · best March–October · 1 day · Srinagar
+          Airport and Railway Station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Yusmarg?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Yusmarg is a calm and untouched Kashmir escape: endless meadow, clear stream, forest,
+            and mountain backdrop provide natural beauty, family relaxation, photography, and
+            adventure away from the city.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function BangusValleyGuide() {
+  const route = [
+    [
+      "Srinagar to Sopore",
+      "Kashmir Valley landscapes, apple orchards, agricultural fields, and mountain views; Sopore is a North Kashmir gateway.",
+    ],
+    [
+      "Sopore to Handwara",
+      "Countryside, forests, traditional villages, and mountain roads to the main access point.",
+    ],
+    [
+      "Handwara to Bangus",
+      "Pine and conifer forests, mountain roads, viewpoints, remote landscapes, and the first wide meadow view.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Bangus Valley, Kupwara District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Around 10,000 feet"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1–2 days"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            North Kashmir&apos;s untouched meadow country
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Bangus, or Bungus, Valley is a spectacular and lesser-explored high-altitude meadow in
+              Handwara, Kupwara. Vast grasslands, conifer forests, streams, and Himalayan scenery
+              form a raw, peaceful natural landscape.
+            </p>
+            <p>
+              At around 10,000 feet, it has two principal areas: Bodh Bangus (Big Bangus) and Lokut
+              Bangus (Small Bangus). Alpine terrain, wildflowers, grazing fields, and quiet
+              surroundings make it an offbeat eco-tourism escape beyond Kashmir&apos;s more
+              commercial destinations.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Bangus has long been valued for forests and seasonal grazing meadows used by local
+            shepherd communities. Its name reflects the character of this meeting of grassland and
+            forest.
+          </p>
+          <p>
+            Remoteness kept the valley less explored for years. It is now gaining eco-tourism
+            interest while continuing to represent traditional mountain life and Himalayan
+            ecosystems.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Srinagar → Sopore → Handwara → Bangus
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            Alternative: Srinagar → Kupwara → Chowkibal → Bangus. Srinagar: 130–150 km · Kupwara:
+            40–45 km · Handwara: 30 km · Sopore: 70–80 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Bodh Bangus · Lokut Bangus · high meadows · conifer forests · streams · Himalayan
+              landscapes · wildflowers · quiet · photo viewpoints · offbeat Kashmir
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore meadows · photograph mountains · relax by streams and forests · walk in nature
+              · camp where allowed · observe shepherd life · birdwatch · visit Kupwara sights ·
+              enjoy untouched North Kashmir.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">May–June:</strong> pleasant and increasingly green.{" "}
+              <strong className="text-ink">July–September:</strong> peak: fully green meadows,
+              wildflowers, clear views, photography and camping.{" "}
+              <strong className="text-ink">October–November:</strong> autumn and fewer crowds.{" "}
+              <strong className="text-ink">December–April:</strong> snow can make roads difficult;
+              check locally and prepare.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, 130–150 km; taxis available toward Kupwara/Handwara."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Baramulla Railway Station, 60–70 km from Kupwara side; Jammu is another outside-state option."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxis, tourist vehicles, personal cars, and local transport until Handwara/Kupwara."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="No regular fee; parking and local permissions may apply by current conditions."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination, recommended 7:00 AM–6:00 PM; day travel suits mountain terrain."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Limited parking, local guides, seasonal food arrangements, permitted camping, and
+              nearby Handwara/Kupwara stays. Carry water, snacks, layers, medication, power bank,
+              shoes, and supplies. Taxi services cover Srinagar Airport, city, Bangus, Kupwara,
+              Handwara, Lolab, North Kashmir, and custom nature tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Trekking & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Meadow walks, hiking, forest trails, photography walks, and local routes. The wide
+              landscapes offer good trekking potential for adventure lovers.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Lolab Valley · Kalaroos Caves · Kupwara · Handwara · Seemab Valley · Keran Valley ·
+              Sadhna Pass · Wular Lake
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Wazwan · Rogan Josh · Dum Aloo · Rajma Chawal · Kaladi Kulcha · Kahwa · bakery items ·
+              village food. Photograph endless meadows, mountains, forests, streams, wildflowers,
+              shepherd scenes, and sunrise/sunset in clear weather.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Bangus famous for?",
+              "High meadows, forests, streams, mountains, and untouched natural beauty.",
+            ],
+            ["Where is it?", "Kupwara district near Handwara."],
+            [
+              "Family friendly?",
+              "Yes, for families, photographers, and nature lovers prepared for limited facilities.",
+            ],
+            [
+              "How long is needed?",
+              "A full-day Srinagar trip, with a nearby overnight stay for a fuller experience.",
+            ],
+            [
+              "Is trekking available?",
+              "Short hikes and walks are possible; it is mainly a meadow destination.",
+            ],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Bangus, Kupwara · around 10,000 feet ·
+          130–150 km from Srinagar · Bodh and Lokut Bangus · best May–October · 1–2 days · Srinagar
+          Airport and Baramulla station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Bangus Valley?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Bangus is a rare, peaceful North Kashmir escape: endless meadows, silent forests, clear
+            streams, and mountain air. It is made for travellers seeking less-explored Himalayan
+            beauty, photography, and adventure.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function SudhMahadevGuide() {
+  const route = [
+    [
+      "Jammu to Udhampur",
+      "Jammu hills, mountain landscapes, Chenab region views, and green valleys.",
+    ],
+    ["Udhampur to Chenani", "Pine forests, villages, river valleys, and Himalayan foothills."],
+    [
+      "Chenani to Sudh Mahadev",
+      "Winding roads, dense forest, traditional villages, scenic viewpoints, and a peaceful temple approach.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Sudhmahadev, Chenani, Udhampur"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 1,225 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1 day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A sacred Shiva shrine in the Chenani hills
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              In Udhampur&apos;s Chenani mountains, Sudh Mahadev is among Jammu &amp; Kashmir&apos;s
+              most sacred ancient Shiva temples. Forests, Himalayan scenery, and a peaceful setting
+              make it both a pilgrimage and a scenic escape.
+            </p>
+            <p>
+              The temple is known for its ancient Shivling, sacred Trishul, mythological importance,
+              and thousands of years of belief. Nearby Gauri Kund is associated with Goddess
+              Parvati&apos;s worship. The annual Sudh Mahadev Mela brings thousands for ritual,
+              prayer, and cultural activity.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          History & faith
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Legend says Parvati worshipped Shiva here and a demon named Sudh disturbed her prayers.
+            Shiva appeared to protect her, and the place became Sudh Mahadev. The sacred Trishul is
+            regarded as a symbol of divine power and faith.
+          </p>
+          <p>
+            Gauri Kund is sacred to Parvati, while nearby Mantalai is traditionally connected with
+            the marriage of Shiva and Parvati. The temple and annual fair preserve Dogra religious
+            heritage across centuries.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Jammu → Udhampur → Chenani → Sudh Mahadev
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            From Jammu: 120 km · Udhampur: 45–50 km · Patnitop: 25–30 km · Srinagar: 200–220 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Ancient Shiva Temple · Shivling · Lord Shiva&apos;s Trishul · Gauri Kund · Sudh
+              Mahadev Mela · Mantalai · Himalayan views · forests · spiritual atmosphere ·
+              photography · peaceful picnics
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Pray at the temple · see the Trishul · visit Gauri Kund · explore Mantalai ·
+              photograph mountains · walk forest trails · experience traditions · visit Patnitop ·
+              attend the mela.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, easy mountain
+              travel. <strong className="text-ink">July–September:</strong> lush, festival season,
+              great views. <strong className="text-ink">October–November:</strong> clear, quiet,
+              good photography. <strong className="text-ink">December–February:</strong> cold with
+              nearby snow; pack warm clothes.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, approximately 120 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Udhampur Railway Station, 45–50 km; Jammu Tawi is an alternative."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxis, tourist vehicles, buses, and personal vehicles via Jammu–Udhampur–Chenani."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Temple entry is free; donations voluntary and parking can apply."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open year-round; recommended 6:00 AM–8:00 PM, especially morning and evening."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Parking, temple seating, small shops, food stalls, basic nearby stays, transport, and
+              extra mela facilities. Carry water, warm layers, medicine, power bank, comfortable
+              footwear, and supplies. Services include Jammu Airport, temple, Gauri Kund, Mantalai,
+              Patnitop, Chenani, Udhampur, religious packages, and custom hill tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Light trails & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Walking guides, forest-trail support, village exploration, and photo walks. Sudh
+              Mahadev → Gauri Kund is an easy 2–3 km round trip, 1–2 hour religious nature walk with
+              streams and forest. The Sudh Mahadev → Mantalai trail is easy to moderate, 2–3 hours,
+              through pine forests and village paths.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Trekking tips
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Carry proper shoes, water, a light jacket, snacks, and camera. March–November mornings
+              are best; avoid slippery forest routes in heavy rain.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Gauri Kund · Mantalai · Patnitop · Nathatop · Sanasar · Chenani Tunnel · Udhampur ·
+              Krimchi Temples · Kud · Batote
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Kaladi Kulcha · Dogra cuisine · Patisa · Kahwa · sweets · bakery.
+              Photograph temple, Trishul, forests, mountains, Gauri Kund, festivals, and villages
+              early, at golden hour, or on fair days.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is it famous for?",
+              "Ancient Shiva shrine, Trishul, mythology, and peaceful Himalayan setting.",
+            ],
+            ["Where is it?", "Near Chenani, Udhampur district."],
+            ["Family friendly?", "Yes — for families, seniors, pilgrims, and nature lovers."],
+            [
+              "How much time?",
+              "Half day for temple and Gauri Kund; full day adds Mantalai and nearby attractions.",
+            ],
+            ["Can I trek nearby?", "Yes, short easy routes around Gauri Kund and Mantalai."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Sudhmahadev, Chenani · 1,225 metres ·
+          120 km from Jammu · ancient temple, Trishul, Gauri Kund, Mantalai · best March–November ·
+          1 day · Jammu Airport and Udhampur station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Sudh Mahadev?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Sudh Mahadev brings together Jammu&apos;s spiritual heritage and natural beauty: an
+            ancient Shiva shrine, forests, mountains, and short walks give pilgrims, photographers,
+            historians, and nature lovers a meaningful Himalayan journey.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function AharbalWaterfallGuide() {
+  const route = [
+    [
+      "Srinagar to Pampore",
+      "Kashmir Valley landscapes, saffron fields, agricultural areas, and mountain views.",
+    ],
+    [
+      "Pampore to Pulwama",
+      "Rice fields, apple orchards, villages, foothills, and Pulwama's agricultural beauty.",
+    ],
+    [
+      "Pulwama to Shopian",
+      "Forests, mountain roads, green valleys, and Kashmiri villages; Shopian is the key gateway.",
+    ],
+    [
+      "Shopian to Aharbal",
+      "Pine forests, mountain streams, viewpoints, and the sound of the falls announcing arrival.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Aharbal, Kulgam District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 2,200 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1 day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            The Niagara Falls of Kashmir
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              In South Kashmir&apos;s mountains, Aharbal Waterfall is a spectacular Kulgam
+              attraction on the Veshaw River, known for powerful water, quiet forests, and Himalayan
+              scenery. Often called the “Niagara Falls of Kashmir,” it drops roughly 25 metres
+              through rocky cliffs into a blue pool.
+            </p>
+            <p>
+              Pines, meadows, and mountains make it a natural paradise for photographers and
+              adventurers. It is also the starting point for the Kausar Nag Lake trek in Pir Panjal,
+              source region of the Veshaw River, with trekking, fishing, camping, and exploration
+              opportunities.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Aharbal has been naturally significant to communities for centuries, tied to forest
+            life, mountain routes, and seasonal village activity. The Veshaw River originates around
+            Kausar Nag and is an important South Kashmir water source.
+          </p>
+          <p>
+            Its beauty, peaceful environment, and access from Srinagar and South Kashmir helped
+            establish Aharbal as a nature destination of forests, waterfalls, trails, and adventure.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Srinagar → Pampore → Pulwama → Shopian → Aharbal
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            From Srinagar: 70–75 km · Kulgam: 25–30 km · Shopian: 25 km · Anantnag: 50 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Aharbal Waterfall · Niagara Falls of Kashmir · Veshaw River · pine and fir forests ·
+              Himalayan views · Kausar Nag trail · photography · fishing · nature walks · picnic
+              setting
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Visit and photograph the waterfall · spend time by river and forest · explore trails ·
+              plan Kausar Nag · walk in nature · fish where permitted · picnic · explore South
+              Kashmir.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant and green.{" "}
+              <strong className="text-ink">July–September:</strong> the waterfall is most
+              impressive, fresh and photographic.{" "}
+              <strong className="text-ink">October–November:</strong> autumn, clear views, quieter.{" "}
+              <strong className="text-ink">December–February:</strong> cold and possibly snowy;
+              prepare properly.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, 70–75 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Anantnag Railway Station, 45–50 km; Jammu Tawi is an alternative."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxis, tourist vehicles, buses, and personal cars via Srinagar–Pampore–Pulwama–Shopian."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Waterfall entry is free; parking charges and trekking/camping permissions may apply."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination; 8:00 AM–6:00 PM recommended for safety and sightseeing."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Parking · rest areas · food stalls · basic stay options · forest rest facilities
+              nearby · local guides · picnic areas. Carry water, warm clothes, medicines, power
+              bank, and supplies. Services include Srinagar Airport, city, Aharbal, Shopian, Kulgam,
+              Kausar Nag support, and custom nature tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Trekking assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Local guides, camping, route support, and walks. Main route: Aharbal → Kungwattan →
+              Mahinag → Kausar Nag Lake; suitable for experienced trekkers with preparation.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Kausar Nag Lake · Shopian Valley · Mughal Road · Heerpora Wildlife Sanctuary · Kulgam
+              Valley · Pulwama · Kokernag · Verinag
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Wazwan · Rogan Josh · Dum Aloo · Rajma Chawal · Kaladi Kulcha · Kahwa · bakery items ·
+              sweets. Capture waterfall, river, pine forests, mountains, misty mornings, autumn, and
+              trails early or at golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Aharbal famous for?",
+              "Its roughly 25-metre waterfall, forests, scenery, and Niagara Falls of Kashmir nickname.",
+            ],
+            ["Where is it?", "Kulgam district, on the Veshaw River."],
+            ["Family friendly?", "Yes, for families, photographers, and nature lovers."],
+            ["How much time is needed?", "Half to one day for the falls; trekking needs more."],
+            ["Can I visit Kausar Nag?", "Yes, Aharbal is the Kausar Nag trek starting point."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Aharbal, Kulgam · 2,200 metres · 70–75
+          km from Srinagar · waterfall, Veshaw, forests, trekking · best March–October · one day ·
+          Srinagar Airport and Anantnag station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Aharbal?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Aharbal is a refreshing escape into hidden South Kashmir: roaring water, forests, river,
+            and Himalayan surroundings. It rewards nature lovers, photographers, and adventure
+            seekers with untouched scenery.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function SanasarGuide() {
+  const route = [
+    [
+      "Jammu to Udhampur",
+      "Shivalik hills, river valleys, mountains, and small towns; Udhampur is a gateway to Patnitop and Sanasar.",
+    ],
+    ["Udhampur to Chenani", "Green mountains, pine forests, villages, and Chenab Valley scenery."],
+    [
+      "Chenani to Patnitop",
+      "Curving mountain roads, dense forests, viewpoints, and scenic valleys.",
+    ],
+    [
+      "Patnitop to Sanasar",
+      "Conifer forests, open meadows, peaks, and the famous adventure meadow.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Sanasar, Ramban District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 2,050 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1–2 days"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Jammu&apos;s Mini Gulmarg
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              In the Chenab Valley Himalayas, Sanasar is a scenic and peaceful Jammu hill
+              destination with green meadows, conifer forests, outdoor adventure, and mountain
+              views. Its name comes from the nearby Sana and Sar villages, and the large cup-shaped
+              meadow framed by tall pines gives it a distinct Himalayan setting.
+            </p>
+            <p>
+              Called “Mini Gulmarg of Jammu,” it is loved for paragliding, trekking, camping,
+              climbing, horse rides, and walks. Fresh air, panoramas, and relaxed surroundings suit
+              families, couples, photographers, and adventure seekers.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Sanasar was traditionally a quiet settlement among forest and grazing land, where
+            communities preserved their local culture and connection to the Himalayas. Nearby Shankh
+            Pal Temple, on its ridge and dedicated to Nag Shankh Pal, is an old religious trekking
+            destination.
+          </p>
+          <p>
+            Natural terrain and meadows gradually made Sanasar an adventure tourism hub; it is now
+            one of Jammu &amp; Kashmir&apos;s notable offbeat hills.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Jammu → Udhampur → Chenani → Patnitop → Sanasar
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            From Jammu: approximately 120 km · Udhampur: 90 km · Patnitop: 20 km · Srinagar: 190 km.
+            Sanasar is around 20 km west of Patnitop.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Sanasar Meadow · Sana and Sar villages · Himalayan views · paragliding · 9-hole golf
+              course · trekking · Shankh Pal trek · pine forests · camping · adventure tourism
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore the meadow · paraglide · trek to Shankh Pal ridge · camp · try climbing and
+              rappelling · horse ride · photograph mountains · walk pine forests · visit Patnitop
+              and Nathatop · watch sunrise and sunset.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, best for outdoor
+              activities. <strong className="text-ink">July–September:</strong> fresh, cool, for
+              nature. <strong className="text-ink">October–November:</strong> clear views, fewer
+              crowds, photography. <strong className="text-ink">December–February:</strong> snowy
+              winter landscapes with preparation.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, approximately 120 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Udhampur Railway Station, approximately 90 km; Jammu Tawi is another option."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Bus, taxi, tourist, or personal vehicle via Jammu–Udhampur–Chenani–Patnitop."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Valley entry free; adventure activities and parking have separate charges."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination, recommended 8:00 AM–6:00 PM; activities run in daylight."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Hotels, guest houses, tourist huts, restaurants, food stalls, parking, adventure
+              operators, guides, and basic medical facilities. Services: Jammu Airport/Rail pickup,
+              Patnitop, Sanasar, Nathatop, Sudh Mahadev, Chenani, and custom Jammu packages.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Trekking & assistance
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Local trek guides, camping assistance, instructors, and walk guides. Routes include
+              Sanasar–Shankh Pal Temple, Shankh Pal Ridge, and forest trails.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Patnitop · Nathatop · Madhatop · Shankh Pal Temple · Sudh Mahadev Temple · Mantalai ·
+              Chenani–Nashri Tunnel · Kud
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Kaladi Kulcha · Dogra Thali · Patisa · Kahwa · local breads · Jammu
+              sweets. Capture meadows, forests, peaks, village life, adventure, and snow at early
+              morning or golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Sanasar famous for?",
+              "Meadows, conifer forests, paragliding, trekking, adventure, and quiet Himalayan scenery.",
+            ],
+            ["Where is it?", "Ramban district, around 20 km west of Patnitop."],
+            ["Why Mini Gulmarg?", "The mountain-and-forest-ringed meadow recalls Gulmarg."],
+            [
+              "Family friendly?",
+              "Yes, for families, couples, photographers, and adventure lovers.",
+            ],
+            ["How long is enough?", "1–2 days; longer for trekking and nearby attractions."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Sanasar, Ramban · 2,050 metres · 120 km
+          from Jammu, 20 km from Patnitop · meadows, paragliding, trekking · best March–June &amp;
+          September–November · Jammu Airport and Udhampur station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Sanasar?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Sanasar brings adventure and natural beauty together: peaceful meadow, forests, mountain
+            views, and outdoor activities create a memorable Himalayan escape beyond the usual Jammu
+            destinations.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function DuduValleyGuide() {
+  const highlights = [
+    "Dudu Valley landscapes",
+    "Green meadows",
+    "Vasuki Naag Temple",
+    "Natural waterfall",
+    "Dudu–Basantgarh views",
+    "Himalayan forests",
+    "Village life",
+    "Trekking routes",
+    "Peaceful environment",
+    "Offbeat travel",
+  ];
+  const things = [
+    "Visit Vasuki Naag Temple.",
+    "Explore the waterfall near the temple.",
+    "Take mountain photographs.",
+    "Walk forest trails.",
+    "Experience village culture.",
+    "Enjoy scenic road trips.",
+    "Explore Basantgarh landscapes.",
+    "Camp in suitable locations.",
+    "Watch sunrise and sunset.",
+    "Enjoy the peaceful Himalayan atmosphere.",
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Dudu, Udhampur District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 1,800–2,500 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="1–2 days"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            An offbeat Chenani–Dudu escape
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              In Udhampur&apos;s remote mountains, Dudu Valley is a hidden gem of untouched green
+              landscapes, forests, waterfalls, and quiet Himalayan surroundings. In the higher
+              Chenani–Dudu reaches, it is a tranquil escape from busier destinations.
+            </p>
+            <p>
+              Mountains, traditional villages, valleys, temples, and trails lead on toward
+              Basantgarh. The sacred Vasuki Naag Temple and a waterfall nearby add spiritual and
+              natural interest. Dudu is emerging as a compelling offbeat destination for nature,
+              adventure, and serenity.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Dudu has been a mountain settlement for centuries, with strong Dogra cultural,
+            traditional, and religious connections. The region is associated with Vasuki Naag
+            worship; the ancient temple is an important centre for nearby communities and pilgrims.
+          </p>
+          <p>
+            Its remote setting preserved local customs and natural environment, with forests and
+            routes supporting farming, livestock rearing, and seasonal movement. It is now gaining
+            recognition for unexplored Himalayan scenery.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested travel route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Jammu → Udhampur → Chenani → Sudhmahadev → Latti → Dudu
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Jammu to Udhampur"
+              value="Shivalik foothills, river valleys, mountain landscapes, and small towns."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Udhampur to Chenani"
+              value="Green hills, forests, villages, and Himalayan scenery before higher mountains."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Chenani to Latti"
+              value="Forests, meadows, villages, fresh air, and increasingly scenic higher terrain."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Latti to Dudu"
+              value="Green valleys, streams, slopes, and remote settlements to a peaceful destination."
+            />
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            From Jammu: 140–160 km; Udhampur: approximately 100 km; Chenani: approximately 60 km.
+            Dudu is reached through mountain roads via Chenani and Ramnagar routes.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">
+              {highlights.map((x) => (
+                <li key={x} className="border-l-2 border-gold pl-3">
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">
+              {things.map((x) => (
+                <li key={x} className="border-l-2 border-gold pl-3">
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Best time to visit
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["March–June", "Pleasant weather, greenery, sightseeing, and comfortable drives."],
+            ["July–September", "Fresh greenery and active waterfalls for nature lovers."],
+            ["October–November", "Cool autumn, good photography."],
+            ["December–February", "Cold, possible snowfall, requiring winter preparation."],
+          ].map(([a, b]) => (
+            <InfoCard key={a} icon={<CalendarDays className="h-5 w-5" />} label={a} value={b} />
+          ))}
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport, approximately 150 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Udhampur Railway Station, approximately 100 km; Jammu Tawi is an alternative."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Jammu → Udhampur → Chenani → Latti → Dudu, by taxi, bus, tourist vehicle, or private car; mountain driving experience is recommended."
+          />
+        </div>
+        <div className="mx-auto mt-8 grid max-w-[1220px] gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Valley and temple entry are free; some parking charges may apply."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination; daytime travel recommended, 7:00 AM–6:00 PM."
+          />
+        </div>
+      </section>
+      <section className="mx-auto grid max-w-[1220px] gap-10 px-5 py-12 lg:grid-cols-2 lg:px-10 lg:py-16">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Facilities & preparation
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Limited basic accommodation, guest houses, small shops, local food, temple facilities,
+            parking, and guides. Carry medicine, water, power banks, warm clothing, and essentials.
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Travel & trekking services
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Jammu/Udhampur pickup and drop · Dudu, Basantgarh, Sudhmahadev, Patnitop, Chenani ·
+            custom adventure packages. Local guides, trek help, camping, village guides, and walks
+            are available for Dudu–Basantgarh trails, forests, and meadows.
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Nearby attractions
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Sudh Mahadev Temple · Mantalai · Patnitop · Basantgarh Valley · Latti Village · Shiv
+            Gali Pass · Chenani · Udhampur Town
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Food & photography
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Rajma Chawal · Kaladi Kulcha · Dogra Thali · breads · sweets · Kahwa · mountain dishes.
+            Photograph valleys, waterfalls, forests, village life, temple surroundings, sunrise,
+            sunset, and winter snow peaks early or at golden hour.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Frequently asked questions
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              [
+                "What is Dudu famous for?",
+                "Natural beauty, green landscapes, waterfalls, forests, and Vasuki Naag Temple.",
+              ],
+              ["Where is it?", "Udhampur district, Jammu & Kashmir."],
+              ["Family-friendly?", "Yes, for nature, sightseeing, and quiet mountain experiences."],
+              ["Best season?", "March–June and September–November for comfortable travel."],
+              [
+                "Is trekking required?",
+                "No: Dudu is road-accessible, with nearby hiking and trekking options.",
+              ],
+            ].map(([q, a]) => (
+              <div key={q} className="border border-border bg-paper p-5">
+                <p className="font-semibold text-ink">{q}</p>
+                <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm leading-7 text-ink-soft">
+            <strong className="text-ink">Quick facts:</strong> Dudu, Udhampur · 1,800–2,500 metres ·
+            150 km from Jammu · 100 km from Udhampur · valleys, falls, Vasuki Naag, Himalayan
+            scenery · 1–2 days · Jammu Airport and Udhampur Railway Station.
+          </p>
+        </div>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Dudu Valley?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Dudu is where nature, spirituality, and adventure come together: streams, green
+            mountains, traditional villages, and quiet roads make a memorable escape into
+            lesser-known Himalayan Jammu.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function VerinagGuide() {
+  const route = [
+    [
+      "Srinagar to Pampore",
+      "Countryside, rice fields, apple orchards, mountain views, and rural villages. Pampore is renowned for saffron fields.",
+    ],
+    [
+      "Pampore to Awantipora",
+      "Historical monuments, green landscapes, river valleys, foothills, and Awantipora's archaeological remains.",
+    ],
+    [
+      "Awantipora to Anantnag",
+      "Villages, green fields, mountain scenery, and traditional settlements. Anantnag is the base for nearby sights.",
+    ],
+    [
+      "Anantnag to Verinag",
+      "Forest landscapes, mountain views, fresh Himalayan air, and the Pir Panjal foothills lead to the spring and Mughal garden.",
+    ],
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Verinag, Anantnag District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 1,850 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="Half day to 1 day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            The spring where the Jhelum begins
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              At the Pir Panjal foothills in Anantnag, Verinag is a beautiful natural destination
+              famous for its clear spring, Mughal architecture, and peaceful surroundings. It is the
+              source of the Jhelum River and an important historical and cultural landmark.
+            </p>
+            <p>
+              The name comes from Sanskrit “Virah” and the local spring name. Jahangir built the
+              celebrated octagonal stone basin around the natural spring in the 17th century. Pine
+              forests, mountains, and maintained gardens frame its blue water and create a fine
+              blend of nature, history, and Mughal heritage.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Jahangir was deeply impressed by Verinag and developed it as a royal retreat in the 17th
+            century, creating the octagonal spring structure and Persian-style Mughal garden. He
+            considered Kashmir among the world&apos;s most beautiful places and had a special
+            attachment to this site.
+          </p>
+          <p>
+            Mughal rulers used it as a resting place during Kashmir visits. For centuries its
+            waters, historic structure, and quiet surroundings have remained a defining natural and
+            cultural landmark.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Srinagar → Pampore → Awantipora → Anantnag → Verinag
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {route.map(([a, b]) => (
+              <InfoCard key={a} icon={<Compass className="h-5 w-5" />} label={a} value={b} />
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            From Srinagar: approximately 80 km · Anantnag: 26 km · Pahalgam: 50 km.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Verinag Spring · Jhelum source · Mughal Garden · stone architecture · clear blue water
+              · Pir Panjal views · quiet surroundings · photography · South Kashmir sightseeing
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Visit the spring · explore garden · take peaceful walks · photograph scenery · learn
+              Mughal history · enjoy mountain views · explore Anantnag nearby sights · experience
+              Kashmiri culture and villages.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, comfortable
+              sightseeing. <strong className="text-ink">July–September:</strong> fresh, lush
+              surroundings. <strong className="text-ink">October–November:</strong> autumn colour
+              and photography. <strong className="text-ink">December–February:</strong> cold,
+              possible nearby snow; bring warm clothing.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, approximately 80 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Banihal Railway Station, around 55–60 km; Jammu Tawi is an alternative."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Buses, taxis, tourist vehicles, and personal vehicles via Srinagar–Pampore–Awantipora–Anantnag."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="A nominal garden fee and parking charges may apply; structures can change seasonally."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Usually open year-round, recommended 9:00 AM–6:00 PM. Morning and evening suit views and photography."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Parking · drinking water · garden · nearby food stalls · rest areas · shops · visitor
+              support · security. Services: Srinagar Airport/drop, Srinagar sightseeing, Verinag,
+              Anantnag, Pahalgam, Kokernag, Achabal, and custom Kashmir packages. Verinag is
+              primarily sightseeing; local guides, photography help, and transport support are
+              available.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Mughal Gardens · Achabal Garden · Pahalgam · Kokernag Spring · Martand Sun Temple ·
+              Anantnag Town · Daksum Valley · Betaab Valley
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Wazwan · Rogan Josh · Dum Aloo · Rajma Chawal · Kaladi Kulcha · Kahwa · bakery items ·
+              sweets. Photograph the blue spring, Mughal architecture, gardens, mountains, forests,
+              and autumn colours early or at golden hour.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "What is Verinag famous for?",
+              "Its spring, Mughal garden, and status as Jhelum's source.",
+            ],
+            ["Where is Verinag?", "Anantnag district, Jammu & Kashmir."],
+            [
+              "Who built the garden?",
+              "Emperor Jahangir developed the spring structure and garden in the Mughal period.",
+            ],
+            [
+              "Family friendly?",
+              "Yes — peaceful and suitable for families, children, and senior citizens.",
+            ],
+            [
+              "How much time is needed?",
+              "A half day, or combine it with South Kashmir attractions.",
+            ],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Verinag, Anantnag · 1,850 metres · 80
+          km from Srinagar, 26 km from Anantnag · spring and Mughal garden · best March–June &amp;
+          September–November · Srinagar Airport and Banihal Railway Station.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Verinag?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Verinag harmonises Kashmir&apos;s natural beauty and historic heritage: sparkling water,
+            Mughal architecture, peaceful gardens, and mountain surroundings. It is a must-visit
+            South Kashmir stop for history, culture, and a quiet escape.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function WarwanValleyGuide() {
+  const highlights = [
+    "Untouched Himalayan valley",
+    "Warwan River",
+    "Alpine meadows",
+    "Margan Top",
+    "Traditional villages",
+    "Remote lifestyle",
+    "Warwan Valley Trek",
+    "Snow-covered mountains",
+    "Forest landscapes",
+    "Photography paradise",
+  ];
+  const activities = [
+    "Explore Warwan villages.",
+    "Take scenic mountain drives.",
+    "Visit alpine meadows and rivers.",
+    "Experience village life.",
+    "Photograph landscapes.",
+    "Trek remote Himalayan trails.",
+    "Camp under stars.",
+    "Meet local communities.",
+    "Explore nearby valleys and viewpoints.",
+    "Enjoy quiet away from crowded places.",
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Kishtwar District, Jammu & Kashmir"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 2,000–3,000 metres"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="3–5 days"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A remote Himalayan wilderness
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Hidden deep in Kishtwar&apos;s Himalayan mountains, Warwan Valley is among the
+              region&apos;s most remote and untouched valleys, known for rivers, green meadows,
+              dense forests, and traditional mountain villages. Between Kashmir Valley and Ladakh,
+              it remains isolated for winter months because of snow.
+            </p>
+            <p>
+              Its peaceful atmosphere, simple life, and scenery reward trekkers, photographers, and
+              offbeat travellers. The famous Warwan Valley Trek crosses high passes, meadows,
+              rivers, glaciers, and landscapes connecting Kashmir with Ladakh&apos;s Suru Valley — a
+              rare meeting of adventure, nature, culture, and tranquility.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Indigenous mountain communities have lived in Warwan for centuries through farming,
+            livestock rearing, and seasonal migration. Its remoteness preserved local architecture,
+            customs, and a close connection with nature.
+          </p>
+          <p>
+            Traditional routes across Warwan linked Kashmir, Kishtwar, and Ladakh for shepherds,
+            traders, and communities. Recent interest in offbeat tourism has brought trekkers and
+            nature lovers while retaining the valley&apos;s untouched character.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested travel route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Srinagar → Kokernag → Sinthan Top → Kishtwar → Margan Top → Inshan → Warwan
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Srinagar to Kokernag"
+              value="Countryside, apple orchards, green valleys, villages, streams, and rivers."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Kokernag to Sinthan"
+              value="Alpine landscapes, snowy peaks, forests, high meadows, and panoramic viewpoints."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Sinthan to Kishtwar"
+              value="Deep valleys, river landscapes, remote villages, forested slopes; Kishtwar is a key gateway."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Kishtwar to Warwan"
+              value="Remote roads via Margan Top, high passes, crossings, pastures, villages, and Himalayan scenery."
+            />
+          </div>
+          <p className="mt-5 text-sm leading-7 text-ink-soft">
+            From Srinagar: approximately 250–300 km; from Kishtwar: 100–120 km; from Anantnag:
+            150–180 km. Margan Top is considered the gateway to Warwan Valley.
+          </p>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">
+              {highlights.map((x) => (
+                <li key={x} className="border-l-2 border-gold pl-3">
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">
+              {activities.map((x) => (
+                <li key={x} className="border-l-2 border-gold pl-3">
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Best time to visit
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            [
+              "July–September",
+              "Best travel season: accessible roads, green meadows, flowers, trekking, photography.",
+            ],
+            [
+              "October–November",
+              "Cool weather, autumn landscapes, fewer visitors; suited to experienced travellers.",
+            ],
+            [
+              "December–April",
+              "Heavy snowfall and likely closures; only for winter-adventure planning.",
+            ],
+            [
+              "May–June",
+              "Snow melts and scenery is beautiful, though some routes can remain difficult.",
+            ],
+          ].map(([a, b]) => (
+            <InfoCard key={a} icon={<CalendarDays className="h-5 w-5" />} label={a} value={b} />
+          ))}
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, 250–300 km; taxis can continue toward Kishtwar and Warwan."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Jammu Tawi Railway Station, about 350–400 km; then continue by road via Kishtwar."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private taxis, tourist vehicles, local transport, or personal vehicles via the main route; experienced local drivers are recommended."
+          />
+        </div>
+        <div className="mx-auto mt-8 grid max-w-[1220px] gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Free; forest or camping permissions may apply in some areas."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Open natural destination. Daytime travel is recommended, ideally 7:00 AM–5:00 PM; conditions depend on weather."
+          />
+        </div>
+      </section>
+      <section className="mx-auto grid max-w-[1220px] gap-10 px-5 py-12 lg:grid-cols-2 lg:px-10 lg:py-16">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Facilities & preparation
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Facilities are limited: basic guest houses, homestays, food arrangements, small shops,
+            guides, limited medical care, patchy mobile connectivity, and camping. Carry essential
+            medicines, power banks, warm clothing, and basic supplies.
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Travel services
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Srinagar/Jammu pickup and drop · Kishtwar sightseeing · Warwan tour · Margan Top ·
+            Sinthan Top · Himalayan road trips · Custom adventure packages.
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Trekking & assistance
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Local trekking guides · Camping support · Porters · Route assistance · Trek planning.
+            The Warwan Trek needs good fitness, proper equipment, and experienced guidance.
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Nearby attractions
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Sinthan Top · Kishtwar National Park · Paddar Valley · Chenab Valley · Machail Mata
+            Temple · Kishtwar Town · Anantnag Valley · Kokernag Springs
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Food & photography
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Rajma Chawal · Wazwan dishes · Kaladi Kulcha · Dum Aloo · Kahwa · breads · dairy
+            products · seasonal mountain food. Photograph meadows, villages, Warwan River, snowy
+            peaks, shepherd scenes, houses, sunrise, and golden hour.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Frequently asked questions
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              [
+                "What is Warwan famous for?",
+                "Untouched landscapes, alpine meadows, rivers, villages, and trekking.",
+              ],
+              ["Where is it?", "Kishtwar district, Jammu & Kashmir."],
+              [
+                "Best season?",
+                "July to September, when roads are open and greenery is at its best.",
+              ],
+              [
+                "Family-friendly?",
+                "Yes, if prepared for long mountain journeys and limited facilities.",
+              ],
+              [
+                "Is trekking required?",
+                "No for some road-accessible areas, but deeper Himalayan routes require trekking.",
+              ],
+            ].map(([q, a]) => (
+              <div key={q} className="border border-border bg-paper p-5">
+                <p className="font-semibold text-ink">{q}</p>
+                <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm leading-7 text-ink-soft">
+            <strong className="text-ink">Quick facts:</strong> Kishtwar · 2,000–3,000 metres ·
+            250–300 km from Srinagar · 100–120 km from Kishtwar · famous for meadows, rivers,
+            trekking, untouched nature · best July–September · 3–5 days · Srinagar Airport and Jammu
+            Tawi.
+          </p>
+        </div>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Warwan Valley?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Warwan is an unforgettable journey into untouched Himalayan wilderness: villages, green
+            meadows, rivers, trails, and a traditional way of life. For travellers seeking hidden
+            beauty away from tourist crowds, it offers a rare, authentic adventure.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function DoodpathriGuide() {
-  const highlights = ["Doodpathri Meadows", "Shaliganga River", "Alpine landscapes", "Pine and deodar forests", "Snow-covered mountains", "Scenic viewpoints", "Horse riding", "Picnic spots", "Walking trails", "Photography locations"];
-  const things = ["Walk through green meadows.", "Sit beside the Shaliganga River.", "Try horse riding around the valley.", "Enjoy family picnics.", "Photograph mountain scenery.", "Explore nearby forests.", "Have Kashmiri tea and snacks.", "Experience snowfall in winter.", "Spend peaceful time in nature."];
-  return <><section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14"><InfoCard icon={<MapPin className="h-5 w-5" />} label="Location" value="Khansahib Area, Budgam District" /><InfoCard icon={<Compass className="h-5 w-5" />} label="Altitude" value="Approximately 2,730 metres (8,957 feet)" /><InfoCard icon={<CalendarDays className="h-5 w-5" />} label="From Srinagar" value="Approximately 40–45 km · 1.5–2 hours" /></section><section className="bg-paper px-5 py-12 lg:px-10 lg:py-16"><div className="mx-auto max-w-[1220px]"><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Overview</p><h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">Kashmir&apos;s Valley of Milk</h2><div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft"><p>Doodpathri, in Budgam&apos;s Khansahib area, is one of Kashmir&apos;s most beautiful lesser-explored valleys. Known as the “Valley of Milk,” it is famed for wide green meadows, crystal-clear streams, pine and deodar forests, and Himalayan views.</p><p>At approximately 2,730 metres (8,957 feet), it offers a peaceful alternative to crowded destinations. Snowy peaks, alpine landscapes, and rivers make an ideal setting for nature lovers, photographers, families, and adventurers. The approach through villages, forests, and mountain roads is part of the experience.</p></div></div></section><section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16"><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p><div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft"><p>Local tradition links the name to “Dood” (milk) and “Pathri” (stone). Kashmiri saint Sheikh-ul-Alam Sheikh Noor-ud-din Noorani is believed to have found a stream here whose water looked white as milk flowing over stones.</p><p>Shepherd communities historically used the valley&apos;s lush meadows for grazing. Today it is an eco-tourism destination that retains its natural charm and peaceful mountain-community character.</p></div></section><section className="bg-cream px-5 py-12 lg:px-10 lg:py-16"><div className="mx-auto max-w-[1220px]"><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Suggested route</p><h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">Srinagar → Budgam → Khansahib → Doodpathri</h2><div className="mt-6 grid gap-4 md:grid-cols-3"><InfoCard icon={<Compass className="h-5 w-5" />} label="Srinagar to Budgam" value="Kashmir villages, agricultural fields, traditional houses, and mountain landscapes — a quieter side of Kashmir." /><InfoCard icon={<Compass className="h-5 w-5" />} label="Budgam to Khansahib" value="The road enters foothills with forest and mountain views alongside peaceful villages." /><InfoCard icon={<Compass className="h-5 w-5" />} label="Khansahib to Doodpathri" value="Pine forests, streams, winding roads, and green hills open into wide meadows surrounded by mountains." /></div></div></section><section className="bg-paper px-5 py-12 lg:px-10 lg:py-16"><div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2"><div><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Top highlights</p><ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">{highlights.map(x => <li key={x} className="border-l-2 border-gold pl-3">{x}</li>)}</ul></div><div><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Things to do</p><ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">{things.map(x => <li key={x} className="border-l-2 border-gold pl-3">{x}</li>)}</ul></div></div></section><section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16"><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Best time to visit</p><div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[["April–June", "Pleasant weather, green meadows, families and sightseeing."], ["July–September", "Lush landscapes for photography and walks."], ["October–November", "Autumn colours and fewer crowds."], ["December–March", "Snow-covered beauty; roads depend on snowfall."]].map(([a,b]) => <InfoCard key={a} icon={<CalendarDays className="h-5 w-5" />} label={a} value={b} />)}</div></section><section className="bg-paper px-5 py-12 lg:px-10 lg:py-16"><div className="mx-auto grid max-w-[1220px] gap-4 sm:grid-cols-3"><InfoCard icon={<Compass className="h-5 w-5" />} label="By air" value="Srinagar International Airport, 40–45 km; taxis available." /><InfoCard icon={<Compass className="h-5 w-5" />} label="By train" value="Srinagar Railway Station (Nowgam), approximately 45 km." /><InfoCard icon={<Compass className="h-5 w-5" />} label="By road" value="Srinagar → Budgam → Khansahib → Doodpathri by taxi, rental, tourist cab, or local transport to nearby areas." /></div><div className="mx-auto mt-8 grid max-w-[1220px] gap-4 sm:grid-cols-2"><InfoCard icon={<Stamp className="h-5 w-5" />} label="Entry fee" value="Free; pony rides, activities, and parking can have charges." /><InfoCard icon={<CalendarDays className="h-5 w-5" />} label="Timings" value="Daylight visits, recommended 8:00 AM–6:00 PM; winter access depends on road conditions." /></div></section><section className="mx-auto grid max-w-[1220px] gap-10 px-5 py-12 lg:grid-cols-2 lg:px-10 lg:py-16"><div><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Facilities & travel services</p><p className="mt-3 text-sm leading-7 text-ink-soft">Parking · Local food stalls · Tea shops · Pony services · Guides · Rest areas · Limited nearby accommodation · Limited washrooms. Services include Srinagar Airport, city tour, Doodpathri day trip, Gulmarg, Pahalgam, Sonamarg, Budgam, and custom Kashmir packages.</p><p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Adventure activities</p><p className="mt-3 text-sm leading-7 text-ink-soft">Horse riding · Nature walks · Trekking · Photography · Camping where permitted · Birdwatching · Picnics</p></div><div><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Nearby attractions</p><p className="mt-3 text-sm leading-7 text-ink-soft">Yusmarg · Khansahib · Budgam · Tosamaidan · Srinagar City · Dal Lake · Pari Mahal · Mughal Gardens</p><p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Food & photography</p><p className="mt-3 text-sm leading-7 text-ink-soft">Kashmiri Wazwan · Rogan Josh · Gushtaba · Yakhni · Kahwa · Noon Chai · Kashmiri breads · Kaladi Kulcha. Photograph Shaliganga, meadows, trails, viewpoints, and horse-riding areas; morning gives clear mountains and evening gives golden valley light.</p></div></section><section className="bg-cream px-5 py-12 lg:px-10 lg:py-16"><div className="mx-auto max-w-[1220px]"><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">Frequently asked questions</p><div className="mt-6 grid gap-4 sm:grid-cols-2">{[["Why is Doodpathri famous?", "Green meadows, streams, forests, and peaceful Himalayan scenery."], ["How much time is needed?", "A Srinagar day trip works, while an overnight stay is more peaceful."], ["Is it family friendly?", "Yes, thanks to open spaces, scenery, and peaceful atmosphere."], ["Is it better than crowded destinations?", "It is ideal for travellers who prefer untouched nature and fewer crowds."]].map(([q,a]) => <div key={q} className="border border-border bg-paper p-5"><p className="font-semibold text-ink">{q}</p><p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p></div>)}</div><p className="mt-8 text-sm leading-7 text-ink-soft"><strong className="text-ink">Quick facts:</strong> Khansahib, Budgam · 2,730 metres · 40–45 km from Srinagar · meadows, Shaliganga, forests, scenery · best April–September · 1 day · Srinagar Airport and Railway Station.</p></div></section><section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16"><div className="mx-auto max-w-[1220px]"><p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">Why visit Doodpathri?</p><p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">Doodpathri is one of Kashmir&apos;s most peaceful valleys — nature, adventure, and tranquillity without crowds. Endless meadows, rivers, forests, and mountain views create an authentic Himalayan escape where simplicity and serenity meet.</p></div></section></>;
+  const highlights = [
+    "Doodpathri Meadows",
+    "Shaliganga River",
+    "Alpine landscapes",
+    "Pine and deodar forests",
+    "Snow-covered mountains",
+    "Scenic viewpoints",
+    "Horse riding",
+    "Picnic spots",
+    "Walking trails",
+    "Photography locations",
+  ];
+  const things = [
+    "Walk through green meadows.",
+    "Sit beside the Shaliganga River.",
+    "Try horse riding around the valley.",
+    "Enjoy family picnics.",
+    "Photograph mountain scenery.",
+    "Explore nearby forests.",
+    "Have Kashmiri tea and snacks.",
+    "Experience snowfall in winter.",
+    "Spend peaceful time in nature.",
+  ];
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Khansahib Area, Budgam District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 2,730 metres (8,957 feet)"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="From Srinagar"
+          value="Approximately 40–45 km · 1.5–2 hours"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Kashmir&apos;s Valley of Milk
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Doodpathri, in Budgam&apos;s Khansahib area, is one of Kashmir&apos;s most beautiful
+              lesser-explored valleys. Known as the “Valley of Milk,” it is famed for wide green
+              meadows, crystal-clear streams, pine and deodar forests, and Himalayan views.
+            </p>
+            <p>
+              At approximately 2,730 metres (8,957 feet), it offers a peaceful alternative to
+              crowded destinations. Snowy peaks, alpine landscapes, and rivers make an ideal setting
+              for nature lovers, photographers, families, and adventurers. The approach through
+              villages, forests, and mountain roads is part of the experience.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">History</p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Local tradition links the name to “Dood” (milk) and “Pathri” (stone). Kashmiri saint
+            Sheikh-ul-Alam Sheikh Noor-ud-din Noorani is believed to have found a stream here whose
+            water looked white as milk flowing over stones.
+          </p>
+          <p>
+            Shepherd communities historically used the valley&apos;s lush meadows for grazing. Today
+            it is an eco-tourism destination that retains its natural charm and peaceful
+            mountain-community character.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Suggested route
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Srinagar → Budgam → Khansahib → Doodpathri
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Srinagar to Budgam"
+              value="Kashmir villages, agricultural fields, traditional houses, and mountain landscapes — a quieter side of Kashmir."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Budgam to Khansahib"
+              value="The road enters foothills with forest and mountain views alongside peaceful villages."
+            />
+            <InfoCard
+              icon={<Compass className="h-5 w-5" />}
+              label="Khansahib to Doodpathri"
+              value="Pine forests, streams, winding roads, and green hills open into wide meadows surrounded by mountains."
+            />
+          </div>
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">
+              {highlights.map((x) => (
+                <li key={x} className="border-l-2 border-gold pl-3">
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink-soft">
+              {things.map((x) => (
+                <li key={x} className="border-l-2 border-gold pl-3">
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Best time to visit
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["April–June", "Pleasant weather, green meadows, families and sightseeing."],
+            ["July–September", "Lush landscapes for photography and walks."],
+            ["October–November", "Autumn colours and fewer crowds."],
+            ["December–March", "Snow-covered beauty; roads depend on snowfall."],
+          ].map(([a, b]) => (
+            <InfoCard key={a} icon={<CalendarDays className="h-5 w-5" />} label={a} value={b} />
+          ))}
+        </div>
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Srinagar International Airport, 40–45 km; taxis available."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Srinagar Railway Station (Nowgam), approximately 45 km."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Srinagar → Budgam → Khansahib → Doodpathri by taxi, rental, tourist cab, or local transport to nearby areas."
+          />
+        </div>
+        <div className="mx-auto mt-8 grid max-w-[1220px] gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Free; pony rides, activities, and parking can have charges."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Daylight visits, recommended 8:00 AM–6:00 PM; winter access depends on road conditions."
+          />
+        </div>
+      </section>
+      <section className="mx-auto grid max-w-[1220px] gap-10 px-5 py-12 lg:grid-cols-2 lg:px-10 lg:py-16">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Facilities & travel services
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Parking · Local food stalls · Tea shops · Pony services · Guides · Rest areas · Limited
+            nearby accommodation · Limited washrooms. Services include Srinagar Airport, city tour,
+            Doodpathri day trip, Gulmarg, Pahalgam, Sonamarg, Budgam, and custom Kashmir packages.
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Adventure activities
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Horse riding · Nature walks · Trekking · Photography · Camping where permitted ·
+            Birdwatching · Picnics
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Nearby attractions
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Yusmarg · Khansahib · Budgam · Tosamaidan · Srinagar City · Dal Lake · Pari Mahal ·
+            Mughal Gardens
+          </p>
+          <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Food & photography
+          </p>
+          <p className="mt-3 text-sm leading-7 text-ink-soft">
+            Kashmiri Wazwan · Rogan Josh · Gushtaba · Yakhni · Kahwa · Noon Chai · Kashmiri breads ·
+            Kaladi Kulcha. Photograph Shaliganga, meadows, trails, viewpoints, and horse-riding
+            areas; morning gives clear mountains and evening gives golden valley light.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Frequently asked questions
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              [
+                "Why is Doodpathri famous?",
+                "Green meadows, streams, forests, and peaceful Himalayan scenery.",
+              ],
+              [
+                "How much time is needed?",
+                "A Srinagar day trip works, while an overnight stay is more peaceful.",
+              ],
+              [
+                "Is it family friendly?",
+                "Yes, thanks to open spaces, scenery, and peaceful atmosphere.",
+              ],
+              [
+                "Is it better than crowded destinations?",
+                "It is ideal for travellers who prefer untouched nature and fewer crowds.",
+              ],
+            ].map(([q, a]) => (
+              <div key={q} className="border border-border bg-paper p-5">
+                <p className="font-semibold text-ink">{q}</p>
+                <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm leading-7 text-ink-soft">
+            <strong className="text-ink">Quick facts:</strong> Khansahib, Budgam · 2,730 metres ·
+            40–45 km from Srinagar · meadows, Shaliganga, forests, scenery · best April–September ·
+            1 day · Srinagar Airport and Railway Station.
+          </p>
+        </div>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Doodpathri?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Doodpathri is one of Kashmir&apos;s most peaceful valleys — nature, adventure, and
+            tranquillity without crowds. Endless meadows, rivers, forests, and mountain views create
+            an authentic Himalayan escape where simplicity and serenity meet.
+          </p>
+        </div>
+      </section>
+    </>
+  );
 }
 
 function JammuCityWalkGuide() {

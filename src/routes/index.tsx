@@ -1331,6 +1331,14 @@ export const destinations: Destination[] = [
     time: "Apr – Oct",
   },
   {
+    name: "Loran Valley",
+    place: "Poonch",
+    image: sonamargImage,
+    description:
+      "A quiet Pir Panjal valley of forest trails, village life and clear mountain streams.",
+    time: "Mar – Nov",
+  },
+  {
     name: "Surinsar Lake",
     place: "Jammu",
     image: dalImage,
