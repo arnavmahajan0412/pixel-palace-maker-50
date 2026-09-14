@@ -1,15 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Award,
-  BookOpen,
-  CalendarDays,
-  Compass,
-  MapPin,
-  Stamp,
-} from "lucide-react";
+import { ArrowRight, Award, BookOpen, CalendarDays, Compass, MapPin, Stamp } from "lucide-react";
 
 import heroImage from "@/assets/kashmir-hero.jpg";
 import vaishnoImage from "@/assets/vaishno-devi.jpg";
@@ -19,6 +10,7 @@ import bronzeBadge from "@/assets/badges/bronze-explorer.jpeg";
 import silverBadge from "@/assets/badges/silver-explorer.jpeg";
 import goldBadge from "@/assets/badges/gold-explorer.jpeg";
 import { MobileExplorerExperience } from "@/routes/index";
+import { SiteNavigation } from "@/components/SiteNavigation";
 
 export type ExplorerPageKind = "passport" | "planner" | "badges" | "journal" | "about";
 
@@ -59,18 +51,8 @@ export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
   const mobileView = kind === "passport" ? "passport" : kind === "planner" ? "planner" : "badges";
 
   return (
-    <main className="min-h-screen bg-background text-foreground paper-texture">
-      <header className="border-b border-primary-foreground/15 bg-burgundy-deep text-primary-foreground">
-        <div className="mx-auto flex min-h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gold hover:text-gold-soft"
-          >
-            <ArrowLeft className="h-4 w-4" /> Back to home
-          </Link>
-          <span className="display-serif text-xl tracking-wide">J&amp;K Explorer</span>
-        </div>
-      </header>
+    <main className="min-h-screen bg-background pb-16 text-foreground paper-texture lg:pb-0">
+      <SiteNavigation />
 
       <section className="relative isolate overflow-hidden bg-burgundy-deep px-5 py-16 text-primary-foreground lg:px-10 lg:py-24">
         <img

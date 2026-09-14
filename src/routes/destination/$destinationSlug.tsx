@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, CalendarDays, Compass, MapPin, Stamp } from "lucide-react";
 
 import { destinationSlug, destinations } from "../index";
+import { SiteNavigation } from "@/components/SiteNavigation";
 
 export const Route = createFileRoute("/destination/$destinationSlug")({
   component: DestinationPage,
@@ -28,20 +29,8 @@ function DestinationPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background text-foreground paper-texture">
-      <header className="border-b border-primary-foreground/15 bg-burgundy-deep text-primary-foreground">
-        <div className="mx-auto flex min-h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
-          <Link
-            to="/destinations"
-            className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gold hover:text-gold-soft"
-          >
-            <ArrowLeft className="h-4 w-4" /> All destinations
-          </Link>
-          <Link to="/" className="display-serif text-xl tracking-wide">
-            J&amp;K Explorer
-          </Link>
-        </div>
-      </header>
+    <main className="min-h-screen bg-background pb-16 text-foreground paper-texture lg:pb-0">
+      <SiteNavigation />
 
       <section className="relative isolate min-h-[440px] overflow-hidden bg-burgundy-deep text-primary-foreground lg:min-h-[560px]">
         <img

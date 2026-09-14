@@ -133,14 +133,8 @@ function Index() {
             <Link to="/passport-guide" className="transition-colors hover:text-gold">
               Passport Guide
             </Link>
-            <Link to="/travel-planner" className="transition-colors hover:text-gold">
-              Travel Planner
-            </Link>
             <Link to="/explore-badges" className="transition-colors hover:text-gold">
               Badges
-            </Link>
-            <Link to="/journal" className="transition-colors hover:text-gold">
-              Journal
             </Link>
             <Link to="/about-us" className="transition-colors hover:text-gold">
               About Us
@@ -151,8 +145,7 @@ function Index() {
               className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors hover:text-gold"
               onClick={() => setRegistered(true)}
             >
-              <UserRound className="h-4 w-4" />{" "}
-              {registered ? "Passport Active" : "Login / Register"}
+              <UserRound className="h-4 w-4" /> Join Community
             </button>
             <Link
               to="/travel-planner"
@@ -190,15 +183,6 @@ function Index() {
                 }}
               >
                 Passport Guide
-              </a>
-              <a
-                href="#mobile-explorer"
-                onClick={() => {
-                  setMobileView("planner");
-                  setMenuOpen(false);
-                }}
-              >
-                Travel Planner
               </a>
               <button
                 type="button"
@@ -1037,10 +1021,6 @@ function BuyPassportModal({ onClose }: { onClose: () => void }) {
             Instagram DM
           </a>
         </div>
-        <p className="mt-4 text-xs leading-5 text-ink-soft">
-          The message is pre-filled in WhatsApp. For Instagram, it is copied automatically so you
-          can paste it into the new message.
-        </p>
       </section>
     </div>
   );
@@ -1626,6 +1606,7 @@ function DestinationCard({
 function CommunityPanel({ member, onJoin }: { member: Member | null; onJoin: () => void }) {
   return (
     <div
+      id="community"
       className="relative isolate min-h-[250px] overflow-hidden rounded-sm bg-burgundy-deep p-7 text-primary-foreground sm:p-9"
       style={{ backgroundImage: `url(${pahalgamImage})`, backgroundPosition: "center" }}
     >

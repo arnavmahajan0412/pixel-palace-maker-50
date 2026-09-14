@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, MapPin, Search } from "lucide-react";
+import { MapPin, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { destinationSlug, destinations } from "./index";
+import { SiteNavigation } from "@/components/SiteNavigation";
 
 export const Route = createFileRoute("/destinations")({
   head: () => ({
@@ -32,18 +33,8 @@ function DestinationsPage() {
   }, [query]);
 
   return (
-    <main className="min-h-screen bg-background text-foreground paper-texture">
-      <header className="border-b border-primary-foreground/15 bg-burgundy-deep text-primary-foreground">
-        <div className="mx-auto flex min-h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gold hover:text-gold-soft"
-          >
-            <ArrowLeft className="h-4 w-4" /> Back to home
-          </Link>
-          <span className="display-serif text-xl tracking-wide">J&amp;K Explorer</span>
-        </div>
-      </header>
+    <main className="min-h-screen bg-background pb-16 text-foreground paper-texture lg:pb-0">
+      <SiteNavigation />
 
       <section className="border-b border-border bg-paper px-5 py-12 lg:px-10 lg:py-16">
         <div className="mx-auto max-w-[1220px]">
