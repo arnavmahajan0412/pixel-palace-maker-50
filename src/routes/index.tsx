@@ -63,8 +63,8 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP_MESSAGE =
   "Hi J&K Explorer, I'd like to buy the J&K Explorer Passport. Please share the details.";
-// Add a business number after wa.me/ to open a direct conversation rather than the WhatsApp picker.
-const WHATSAPP_URL = `https://wa.me/?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const WHATSAPP_URL = `https://wa.me/919541012999?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const INSTAGRAM_DM_URL = "https://www.instagram.com/direct/new/";
 const MEMBER_KEY = "jk-explorer-member";
 
 type Member = {
@@ -91,6 +91,7 @@ function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [registered, setRegistered] = useState(false);
   const [joinOpen, setJoinOpen] = useState(false);
+  const [buyOpen, setBuyOpen] = useState(false);
   const [member, setMember] = useState<Member | null>(null);
   const [mobileView, setMobileView] = useState<"passport" | "planner" | "badges">("passport");
 
@@ -199,14 +200,16 @@ function Index() {
               >
                 Travel Planner
               </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setMenuOpen(false)}
+              <button
+                type="button"
+                className="w-fit text-left"
+                onClick={() => {
+                  setBuyOpen(true);
+                  setMenuOpen(false);
+                }}
               >
-                Shop / Buy Passport
-              </a>
+                Buy Passport
+              </button>
               <button
                 type="button"
                 className="w-fit text-left"
@@ -278,14 +281,13 @@ function Index() {
                 Endless memories waiting to be collected.
               </p>
               <div className="mt-5 flex flex-wrap gap-2 sm:mt-9 sm:gap-3">
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  type="button"
+                  onClick={() => setBuyOpen(true)}
                   className="inline-flex items-center gap-1.5 bg-burgundy px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-primary-foreground shadow-lg transition-colors hover:bg-burgundy/80 sm:gap-2 sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.14em]"
                 >
                   Buy passport <ArrowRight className="h-4 w-4" />
-                </a>
+                </button>
                 <a
                   href="#destinations"
                   className="flex items-center gap-1.5 border border-primary-foreground/70 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-primary-foreground transition-colors hover:border-gold hover:text-gold sm:gap-2 sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.14em]"
@@ -608,6 +610,7 @@ function Index() {
       {joinOpen && (
         <JoinModal onClose={() => setJoinOpen(false)} onJoin={joinCommunity} existing={member} />
       )}
+      {buyOpen && <BuyPassportModal onClose={() => setBuyOpen(false)} />}
     </div>
   );
 }
@@ -971,6 +974,74 @@ function MobileFeature({
       <span className="mx-auto grid h-8 w-8 place-items-center text-burgundy">{icon}</span>
       <strong className="mt-1 block text-[9px] leading-3">{title}</strong>
       <span className="mt-1 block text-[8px] leading-3 text-ink-soft">{text}</span>
+    </div>
+  );
+}
+
+function BuyPassportModal({ onClose }: { onClose: () => void }) {
+  const copyMessageForInstagram = () => {
+    if (navigator.clipboard) {
+      void navigator.clipboard.writeText(WHATSAPP_MESSAGE);
+    }
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 grid place-items-center bg-burgundy-deep/75 px-5 py-8 backdrop-blur-sm">
+      <button
+        type="button"
+        aria-label="Close buy passport options"
+        className="absolute inset-0 cursor-default"
+        onClick={onClose}
+      />
+      <section
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="buy-passport-title"
+        className="relative w-full max-w-md border border-gold/40 bg-paper p-6 shadow-2xl sm:p-8"
+      >
+        <button
+          type="button"
+          aria-label="Close"
+          className="absolute right-4 top-4 text-ink-soft transition-colors hover:text-burgundy"
+          onClick={onClose}
+        >
+          <X className="h-5 w-5" />
+        </button>
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          J&amp;K Explorer
+        </p>
+        <h2 id="buy-passport-title" className="display-serif mt-2 text-3xl text-ink">
+          Buy your passport
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-ink-soft">
+          Choose how you&apos;d like to contact us. We&apos;ll start with the same passport enquiry.
+        </p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            onClick={onClose}
+            className="inline-flex min-h-12 items-center justify-center bg-burgundy px-4 text-xs font-bold uppercase tracking-[0.12em] text-primary-foreground transition-colors hover:bg-burgundy/85"
+          >
+            WhatsApp DM
+          </a>
+          <a
+            href={INSTAGRAM_DM_URL}
+            target="_blank"
+            rel="noreferrer"
+            onClick={copyMessageForInstagram}
+            className="inline-flex min-h-12 items-center justify-center border border-burgundy/30 px-4 text-xs font-bold uppercase tracking-[0.12em] text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy/5"
+          >
+            Instagram DM
+          </a>
+        </div>
+        <p className="mt-4 text-xs leading-5 text-ink-soft">
+          The message is pre-filled in WhatsApp. For Instagram, it is copied automatically so you
+          can paste it into the new message.
+        </p>
+      </section>
     </div>
   );
 }
@@ -1367,13 +1438,6 @@ export const destinations: Destination[] = [
     time: "Apr – Oct",
   },
   {
-    name: "Srinagar City Walk",
-    place: "Srinagar",
-    image: dalImage,
-    description: "Lal Chowk, Hazratbal, Sunday Market and the everyday stories of the city.",
-    time: "Apr – Oct",
-  },
-  {
     name: "Dudu Valley",
     place: "Udhampur",
     image: sonamargImage,
@@ -1428,14 +1492,6 @@ export const destinations: Destination[] = [
     image: pahalgamImage,
     description: "A forested hill escape with village life, fresh streams and slow mountain days.",
     time: "Apr – Oct",
-  },
-  {
-    name: "Kailash Kund",
-    place: "Doda",
-    image: sonamargImage,
-    description:
-      "A high-altitude lake trek for pilgrims and hikers seeking a true mountain challenge.",
-    time: "Aug – Sep",
   },
   {
     name: "Devi Pindi Trek & Mandir",

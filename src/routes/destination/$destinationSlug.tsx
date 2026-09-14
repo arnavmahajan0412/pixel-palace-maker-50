@@ -95,6 +95,11 @@ function DestinationPage() {
       {destination.name === "Panchari" ? <PanchariGuide /> : null}
       {destination.name === "Loran Valley" ? <LoranValleyGuide /> : null}
       {destination.name === "Shiv Khori" ? <ShivKhoriGuide /> : null}
+      {destination.name === "Chinka Valley" ? <ChinkaValleyGuide /> : null}
+      {destination.name === "Deva Mai" ? <DevaMaiGuide /> : null}
+      {destination.name === "Devi Pindi Trek & Mandir" ? <DeviPindiGuide /> : null}
+      {destination.name === "Sukrala Mata Mandir" ? <SukralaMataGuide /> : null}
+      {destination.name === "Surinsar Lake" ? <SurinsarLakeGuide /> : null}
       {destination.name !== "Vaishno Devi" &&
       destination.name !== "Patnitop" &&
       destination.name !== "Mansar Lake (Surinsar)" &&
@@ -126,7 +131,12 @@ function DestinationPage() {
       destination.name !== "Tulip Garden (Seasonal)" &&
       destination.name !== "Panchari" &&
       destination.name !== "Loran Valley" &&
-      destination.name !== "Shiv Khori" ? (
+      destination.name !== "Shiv Khori" &&
+      destination.name !== "Chinka Valley" &&
+      destination.name !== "Deva Mai" &&
+      destination.name !== "Devi Pindi Trek & Mandir" &&
+      destination.name !== "Sukrala Mata Mandir" &&
+      destination.name !== "Surinsar Lake" ? (
         <GenericDestinationGuide destination={destination} />
       ) : null}
     </main>
@@ -1463,6 +1473,1167 @@ function DalLakeGuide() {
             magnificent views, while Dal Lake provides a unique experience of Kashmiri tradition and
             natural beauty. A journey to both creates unforgettable memories of the paradise of
             Jammu &amp; Kashmir.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function SurinsarLakeGuide() {
+  const faqs = [
+    ["How far is Surinsar Lake from Jammu?", "It is approximately 25 km from Jammu City."],
+    ["How far is it from Mansar Lake?", "Surinsar and Mansar are around 9 km apart."],
+    [
+      "Is birdwatching possible?",
+      "Yes. Seasonal water birds and migratory birds can be seen, especially in cooler months.",
+    ],
+    [
+      "Can I visit Surinsar and Mansar in one day?",
+      "Yes. The twin-lake circuit is a popular day trip from Jammu.",
+    ],
+    [
+      "What is the best time?",
+      "March to June is especially pleasant; October and November are also comfortable.",
+    ],
+    [
+      "What are the usual timings?",
+      "The lake area is generally visited from 7:00 AM to 5:00 PM; confirm locally before travel.",
+    ],
+    [
+      "Is there an entry fee?",
+      "Entry is normally free, though activities or facilities may have separate charges.",
+    ],
+    [
+      "Is boating available?",
+      "Follow current local instructions; boating availability can change with season and management.",
+    ],
+  ];
+
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Jammu district, Jammu & Kashmir"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Distance"
+          value="25 km from Jammu · 9 km from Mansar"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="Half day or twin-lake day trip"
+        />
+      </section>
+
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Where sacred legends meet the serenity of nature
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Surinsar Lake is a peaceful freshwater lake set among the forested hills and green
+              countryside of Jammu district. About 25 km from Jammu City and only 9 km from Mansar
+              Lake, it is an easy escape for nature lovers, families, birdwatchers, and
+              photographers.
+            </p>
+            <p>
+              Calm waters, a small central island, seasonal lotus blooms, and birdlife give the lake
+              its quiet character. Together with Mansar, Surinsar forms a beloved twin-lake circuit
+              where natural beauty and local mythology meet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Legend & history
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Local tradition links Surinsar and Mansar to the Mahabharata. One popular belief
+            connects the lakes with Arjuna and Babar Vahan, while another associates the waters with
+            the divine serpent Sheshnag. The lake is also known in local tradition as Surangsar.
+          </p>
+          <p>
+            These stories have made Surinsar more than a scenic stop: it is a place where visitors
+            are encouraged to move gently, respect the water, and appreciate its cultural
+            significance.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              One-day circuit
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → Surinsar → Mansar → Jammu
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Leave Jammu in the morning for lakeside walks, reflections, and photographs at
+              Surinsar. Late morning is ideal for a gentle nature walk, seasonal lotus views, and
+              birdwatching. Continue to Mansar in the afternoon for its temples, lakefront, and
+              local food, then return to Jammu by evening.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Freshwater lake · forested hills · central island · lotus blooms · seasonal birds ·
+              twin-lake mythology · lakeside walks · family picnic setting · nearby adventure
+              activities
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Walk beside the lake · watch for lotus and birds · photograph calm water and
+              surrounding hills · enjoy a picnic responsibly · explore the Surinsar–Mansar circuit.
+              A nearby adventure park may offer activities such as a giant swing, trampoline, and
+              climbing wall; availability is subject to current local operation.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant weather and lush scenery.{" "}
+              <strong className="text-ink">July–September:</strong> rich monsoon greenery with rain
+              possible. <strong className="text-ink">October–November:</strong> comfortable weather
+              and clear views. <strong className="text-ink">December–February:</strong> cooler
+              conditions and good seasonal birdwatching.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport is approximately 45–50 km away."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Jammu Tawi Railway Station is approximately 30–35 km away."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="About 25 km from Jammu and 65–70 km from Katra; taxis and public buses are available."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Entry is normally free. Activities and some facilities may charge separately."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Generally 7:00 AM–5:00 PM. Morning is best for calm water and birdwatching."
+          />
+        </div>
+      </section>
+
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & travel services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Expect lakeside walking areas, parking, basic food options, tourist facilities, and
+              stays in the wider Jammu–Mansar area. Jammu makes the most convenient base for taxis,
+              buses, sightseeing, and overnight accommodation.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Outdoor experience
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Surinsar is ideal for quiet birdwatching, nature walks, lotus viewing, forest scenery,
+              picnic time, and photography. Keep to designated paths and check local guidance before
+              using water-based or adventure activities.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Responsible visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Do not enter the water without permission. Avoid disturbing wildlife, feeding birds,
+              or leaving litter. Respect religious and local instructions, use marked walking areas,
+              and help keep the lake clean for its birds and future visitors.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions & food
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Mansar Lake · Surinsar–Mansar Wildlife Sanctuary · Sheshnag and Umapati Mahadev
+              Temples · Bahu Fort · Bagh-e-Bahu. Try Rajma Chawal, Kaladi Kulcha, Dogra thali,
+              Khatta Meat, kulhad tea, and local sweets. Photograph early reflections, birds from a
+              respectful distance, lotus in season, and golden-hour hills.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {faqs.map(([question, answer]) => (
+            <div key={question} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{question}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{answer}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Jammu district · freshwater lake · 25
+          km from Jammu · 9 km from Mansar · nature, spirituality, birdwatching and photography ·
+          best March–June · half-day visit or full twin-lake circuit.
+        </p>
+      </section>
+
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Surinsar Lake?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Surinsar Lake offers a gentle combination of natural beauty, mythology, and an easy day
+            escape from Jammu. Pair it with Mansar for a memorable lake circuit of forest views,
+            quiet walks, local flavour, and the unhurried rhythm of the Jammu hills.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function SukralaMataGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Sukrala near Billawar, Kathua"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Altitude"
+          value="Approximately 3,500 feet"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal duration"
+          value="Half day to full day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A sacred hilltop shrine of Dogra land
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              On a peaceful, forested Billawar hillock, Sukrala Mata Mandir is an important historic
+              Dogra shrine. Dedicated to Sukrala Devi, it is traditionally associated with Mal Devi,
+              regarded as an incarnation of Sharda Devi.
+            </p>
+            <p>
+              At around 3,500 feet, the temple combines spirituality, local legend, heritage, and
+              Jammu-hill scenery. Visitors climb flights of steps to reach the hilltop sanctum.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          History & religious significance
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Tradition describes the shrine as the abode of Mal Devi/Sharda Devi, manifested as a
+            Shilla, a stone slab seated on a brass lion with a silver-mounted head. It also contains
+            an image of Mahishasur Mardini associated with Maha Lakshmi.
+          </p>
+          <p>
+            The temple is traditionally believed to have been built by Madho Singh, an exiled Chamba
+            prince. It remains a key religious and cultural part of Duggar heritage.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              One-day plan
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → Kathua → Billawar → Sukrala
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Start early, travel through Kathua to Billawar, then continue approximately 9.6 km to
+              Sukrala. Park near the shrine, climb the temple steps, take darshan, and enjoy the
+              surroundings. In the afternoon return to Billawar and visit Mahabilvakeshwar Temple if
+              time allows before travelling back to Jammu.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              The final Billawar–Sukrala section rises to the hilltop. Check local road conditions
+              during monsoon or heavy rain.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Historic shrine · 3,500-ft hilltop · forest · Dogra heritage · sacred Shilla · brass
+              lion · Mahishasur Mardini · countryside views · Navratri atmosphere
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Seek darshan · climb the temple steps · enjoy hilltop greenery · photograph
+              exterior/steps/views with permission · explore historic Billawar temples.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time & festivals
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> comfortable travel.{" "}
+              <strong className="text-ink">July–September:</strong> greener but wet/slippery roads
+              and steps. <strong className="text-ink">October–November:</strong> comfortable
+              pilgrimage and exploration. <strong className="text-ink">December–February:</strong>{" "}
+              cool; check roads/weather. Navratri is a major period, with substantially larger
+              crowds.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport → Kathua → Billawar → Sukrala, approximately 110–120 km."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Kathua Railway Station → Billawar → Sukrala, approximately 75 km."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Jammu: 110–120 km; Kathua: 75 km; Billawar: 9.6 km. Buses connect Billawar with Jammu, Kathua, Udhampur, and Pathankot."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="No regular darshan fee; voluntary donations/offerings and special services may have separate arrangements."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Use daylight hours and confirm current darshan schedule locally, especially during Navratri."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & travel services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Temple facilities, water, basic pilgrim services, route shops/refreshments, local
+              transport, and Billawar stays. Billawar has guest houses, a dak bungalow, and private
+              hotels; taxis/local vehicles can be arranged. Carry water and basic snacks.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Outdoor experience
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              This is a spiritual/heritage destination rather than a long trek: enjoy hill walking,
+              the step pilgrimage, nature exploration, hilltop views, and landscape photography.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Mahabilvakeshwar Temple · Billawar · Sarthal · Basohli
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Khatta · Ambal · Kaladi Kulcha · Dogri tea. Photograph the temple from
+              the steps, surrounding hills, countryside, shrine details, and morning/late-afternoon
+              light; follow sanctum rules.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "Is it a trek?",
+              "It is a hillock pilgrimage reached by flights of steps, not a long wilderness trek.",
+            ],
+            ["Where is it?", "Sukrala near Billawar, Kathua."],
+            ["Distance from Billawar?", "Approximately 9.6 km."],
+            ["Distance from Kathua?", "Approximately 75 km."],
+            ["How high is it?", "Around 3,500 feet."],
+            ["What is it associated with?", "Mal Devi, regarded as Sharda Devi's reincarnation."],
+            ["When is it busiest?", "Navratri."],
+            [
+              "Can it be a day trip?",
+              "Yes, from Jammu or nearby towns, especially with Billawar heritage.",
+            ],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Sukrala, Kathua · near Billawar · 3,500
+          feet · 9.6 km from Billawar · 75 km from Kathua · historic/religious · Sukrala Mata · road
+          plus steps · best March–June &amp; October–November · Navratri · half/full day.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Sukrala Mata?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Sukrala unites faith, history, Dogra heritage, and peaceful hill country. The climb from
+            Billawar to its green hilltop shrine gives travellers a meaningful spiritual stop beyond
+            the usual routes.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function DeviPindiGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Starting area"
+          value="Painthal / Ladda, Reasi"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Trek difficulty"
+          value="Easy to moderate"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal trip"
+          value="Half day to 1 day"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            A sacred trail through Reasi&apos;s hills
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Devi Pindi blends spirituality, nature, and short mountain trekking among Reasi&apos;s
+              green hills. The Devi Pindi Mata Mandir is traditionally linked with Mata Vaishno
+              Devi, offering a quieter, more offbeat alternative to the large Vaishno Devi route.
+            </p>
+            <p>
+              Forest, rock, stream, green hills, narrow paths, and viewpoints make the journey as
+              important as temple darshan. Published local descriptions vary: about 3 km beside a
+              stream, or two routes around 2.5 km and 5 km depending on the trailhead.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Religious significance & trek
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Devotees worship the Divine Mother here in the form of Pindies, and the secluded setting
+            makes the approach part of its spiritual experience.
+          </p>
+          <p>
+            The trek is easy to moderate depending on route, weather, and fitness. A shorter
+            Koda-village route is roughly 2.5 km, while a nursery/canal approach is around 5 km;
+            trails connect. Rain can make rocks and paths slippery.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Suggested day trip
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu / Katra → Painthal / Ladda → Trek → Mandir
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Arrive early, follow the designated/local trail, and enjoy forest, streams, hills, and
+              views. After darshan and rest, return to the trailhead in daylight, then head toward
+              Katra or Jammu. Devi Pindi is commonly described as around 15 km from Katra, though
+              the road approach depends on the exact trailhead.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Devi Pindi Mandir · forest trek · water stream · green hills · rocky paths · quiet ·
+              spiritual experience · photography · short adventure · offbeat Katra destination
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Pray at the Mandir · forest trek · enjoy streams and greenery · photograph trail,
+              rock, temple and mountains · rest/picnic only where allowed and keep the area clean.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, comfortable
+              beginners/families. <strong className="text-ink">July–September:</strong> lush with
+              flowing water but slippery rock and higher streams; check weather.{" "}
+              <strong className="text-ink">October–November:</strong> clear, comfortable,
+              photographic. <strong className="text-ink">December–February:</strong> cooler and
+              quieter.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport → Jammu → Katra/Udhampur Road → Painthal/Ladda."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Shri Mata Vaishno Devi Katra station, then Painthal/Ladda and the trek."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Jammu/Katra → Katra/Udhampur Road → Painthal/Ladda. Katra area distance is about 15 km; trek is 2.5–5 km by trail."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="Temple entry is generally free; voluntary religious offerings are welcome."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Temple arrangements can vary; begin trekking 6:00 AM–3:00 PM so return is complete in daylight."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Basic temple facilities, local water sources, limited roadside services, and possible
+              trailhead parking. Bring water, snacks, first aid, torch/phone light, trekking shoes,
+              and rain protection. Katra is the practical base for hotels, food, medical care, and
+              services. Local support includes Jammu/Katra transport, Devi Pindi trek, sightseeing,
+              Vaishno Devi, Nau Devi, Baba Dhansar, Shiv Khori, Reasi, and custom pilgrimages.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Trek safety
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Start early, check weather, wear proper shoes, carry water/snacks/charged phone/power
+              bank, avoid trekking alone, stay on local trail, take care on wet rocks, avoid swollen
+              streams/wildlife, do not litter, and never begin the return late — forest sections are
+              hard to navigate after dark.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Vaishno Devi · Nau Devi Mata · Deva Mai · Bhimgarh Fort · Baba Dhansar · Shiv Khori
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              After the trek try Rajma Chawal, Kaladi Kulcha, Dogri food, Chole, breads, tea, Kahwa,
+              and snacks around Katra/Reasi. Carry your own trail food/water. Photograph forest,
+              water, rock, temple, hills, and green valleys early; monsoon is vivid but slippery.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "Why is Devi Pindi famous?",
+              "Religious importance, forest trek, and peaceful Reasi setting.",
+            ],
+            ["Where is it?", "Painthal/Ladda area, Reasi."],
+            ["How far from Katra?", "About 15 km, varying by trailhead."],
+            [
+              "How long is the trek?",
+              "Different approaches range about 2.5–5 km, with a published stream route around 3 km.",
+            ],
+            [
+              "Suitable for beginners?",
+              "For reasonably fit beginners, but rain makes it more difficult.",
+            ],
+            [
+              "Can children go?",
+              "Older children comfortable on uneven trail may go; assess weather and conditions.",
+            ],
+            ["Year-round?", "The area can be visited, but trail weather matters greatly."],
+            [
+              "Can I stay overnight?",
+              "No established temple accommodation; use Katra, or confirm permitted camping locally.",
+            ],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Painthal/Ladda, Reasi · Spiritual &amp;
+          Trekking · Devi Pindi Mata Mandir · Katra approx. 15 km · trek 2.5–5 km · easy–moderate ·
+          Katra station/Jammu Airport · half day–1 day · best March–June and October–November.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Devi Pindi?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Devi Pindi is where a spiritual journey meets offbeat mountain adventure. Forest paths,
+            flowing water, mountain scenery, and the sacred temple make a distinctive Reasi
+            experience beyond the busiest pilgrimage routes.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function DevaMaiGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Near Katra, Reasi District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Classification"
+          value="Spiritual, Heritage & Nature"
+        />
+        <InfoCard
+          icon={<CalendarDays className="h-5 w-5" />}
+          label="Ideal visit"
+          value="1–2 hours"
+        />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Where faith meets Katra&apos;s quiet hills
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              In the Shivalik hills near Katra, Deva Mai is a peaceful, spiritually significant
+              Reasi destination. The temple is dedicated to the Divine Mother and traditionally
+              connected to Mata Vaishno Devi.
+            </p>
+            <p>
+              Away from central Katra&apos;s busier areas, it offers a quieter experience of faith,
+              greenery, hill views, and local tradition. It is regarded as the second Darshan in a
+              traditional sequence beginning at Kol Khandoli and continuing toward Vaishno Devi.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          History & local beliefs
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Local tradition associates Deva Mai with Mata Vaishno Devi&apos;s early spiritual
+            journey. Accounts describe the Divine Mother as having lived here in the form of a young
+            girl, giving the temple an important place in Katra&apos;s religious heritage.
+          </p>
+          <p>
+            Trees and Shivalik landscapes reinforce its calm atmosphere, and the shrine has become a
+            significant stop for the wider Katra–Vaishno Devi pilgrimage region.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Suggested route & plan
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → Katra → Deva Mai
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Deva Mai is approximately 4 km from Katra through a short detour off the Jammu–Katra
+              road; the exact distance varies by starting point. Jammu–Katra is about 50 km, making
+              Jammu–Deva Mai around 54–60 km.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">Suggested day:</strong> Morning Katra → temple darshan →
+              surroundings; afternoon Katra lunch/sightseeing; evening market, rest, or Vaishno Devi
+              preparation.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Deva Mai Temple · Vaishno Devi traditions · Shivalik surroundings · quiet faith ·
+              pilgrimage circuit · greenery · views · photography · short Katra excursion
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Pray at the temple · enjoy hill surroundings · photograph landscape · walk
+              respectfully around the site · include it in a broader Katra and Trikuta spiritual
+              circuit.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time & festivals
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, easy family visits.{" "}
+              <strong className="text-ink">July–September:</strong> fresh monsoon scenery; check
+              slippery hill roads. <strong className="text-ink">October–November:</strong> clear,
+              peaceful, photo-friendly. <strong className="text-ink">December–February:</strong>{" "}
+              cooler and quiet. Navratri and Durga Puja are especially important and can bring
+              larger crowds.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport → Jammu → Katra → Deva Mai; Jammu–Katra is approximately 50 km."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Shri Mata Vaishno Devi Katra station; taxi/local vehicle makes the short final journey."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Private car, taxi, rental, and suitable local transport via Jammu–Katra and the local detour."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="No separate temple entry fee is generally associated; donations are voluntary and current rules apply."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="Best visited in daylight; timings can vary in festivals and religious occasions."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Deva Mai is a smaller religious stop, so use Katra for hotels, restaurants, medical
+              services, shops, ATMs, transport, and tourist support. Services include Jammu Airport,
+              Katra rail, local sightseeing, temple, Vaishno Devi assistance, Nau Devi, Baba
+              Dhansar, Shiv Khori, Reasi, and custom pilgrimages.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Vaishno Devi Shrine · Nau Devi Mata Mandir · Baba Dhansar · Bhimgarh Fort · Siyad Baba
+              · Shiv Khori
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Katra offers Rajma Chawal, Kaladi Kulcha, Dogri food, Chole, breads, tea, Kahwa, and
+              snacks. Photograph temple architecture, hills, forest, entrance, and religious details
+              in morning or warm evening light; respect sanctum restrictions.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Travel tips
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Dress respectfully, follow temple customs, avoid loud behaviour/littering, carry water
+              and good footwear, check festival crowds, respect photography restrictions, and keep
+              cash for small expenses.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            [
+              "Why is Deva Mai famous?",
+              "Its religious link with Mata Vaishno Devi and quiet Shivalik setting.",
+            ],
+            ["Where is it?", "Reasi district, close to Katra."],
+            ["How far from Katra?", "Approximately 4 km, varying by starting point/route."],
+            [
+              "Can I combine it with Vaishno Devi?",
+              "Yes, easily as part of a Katra pilgrimage itinerary.",
+            ],
+            ["Family friendly?", "Yes, as a short spiritual and sightseeing excursion."],
+            [
+              "Is there a trek?",
+              "It is reached by road via a short detour; follow current local access rather than assuming a trekking route.",
+            ],
+            ["How long should I stay?", "Around 1–2 hours depending on darshan and crowds."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Near Katra, Reasi · Spiritual/Heritage
+          · Deva Mai Temple · Vaishno Devi association · 4 km from Katra · 55–60 km from Jammu ·
+          Jammu Airport · Katra Rail · 1–2 hours · year-round.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Deva Mai?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Deva Mai is a quiet spiritual experience beyond Katra&apos;s busiest routes. Its Vaishno
+            Devi traditions, green hills, and convenient location make it a meaningful addition to
+            any Katra pilgrimage.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function ChinkaValleyGuide() {
+  return (
+    <>
+      <section className="mx-auto grid max-w-[1220px] gap-4 px-5 py-10 sm:grid-cols-3 lg:px-10 lg:py-14">
+        <InfoCard
+          icon={<MapPin className="h-5 w-5" />}
+          label="Location"
+          value="Chinka/Chinkah, Arnas, Reasi District"
+        />
+        <InfoCard
+          icon={<Compass className="h-5 w-5" />}
+          label="Classification"
+          value="Nature, Lakeside & Adventure"
+        />
+        <InfoCard icon={<CalendarDays className="h-5 w-5" />} label="Ideal trip" value="1 day" />
+      </section>
+      <section className="bg-paper px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+            Overview
+          </p>
+          <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+            Where mountains meet the waters of Chenab
+          </h2>
+          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+            <p>
+              Chinka Valley is an emerging Reasi destination around the Salal Dam backwaters on the
+              Chenab River. Mountain scenery, expansive water, rural hills, forests, and open
+              landscapes create a quieter side of Jammu &amp; Kashmir.
+            </p>
+            <p>
+              It is being developed for nature, adventure, and water-based tourism. The reservoir
+              gives the valley its signature character, appealing to photographers, families, and
+              travellers seeking scenic exploration away from crowded routes.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          History & local character
+        </p>
+        <div className="mt-4 max-w-4xl space-y-4 text-sm leading-7 text-ink-soft">
+          <p>
+            Chinka lies in Reasi&apos;s Arnas area, among mountain and rural communities. The Salal
+            Hydroelectric Project shaped the modern landscape by forming the Salal reservoir on the
+            Chenab.
+          </p>
+          <p>
+            Today the water and hills define a lesser-known Reasi attraction, alongside district
+            efforts to grow adventure, nature, and spiritual tourism.
+          </p>
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Suggested route
+            </p>
+            <h2 className="display-serif mt-2 text-3xl text-ink sm:text-4xl">
+              Jammu → Katra → Reasi → Chinka
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              Katra–Reasi is approximately 24–30 km; Reasi–Chinka about 20 km. Use an approximate
+              Katra distance of 45–50 km because viewpoints within Chinka vary. Jammu–Chinka is
+              approximately 95–105 km via Katra and Reasi, through mountain roads and rural scenery
+              to the Salal reservoir.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Top highlights
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Chinka Valley · Salal backwaters · Chenab scenery · mountains · green hills · villages
+              · photography · walks · sunsets · adventure and water-recreation potential
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Things to do
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Explore scenic areas · enjoy reservoir views · photograph mountains, water, villages,
+              roads, sunset and reflections · take suitable nature walks while respecting
+              local/private land · picnic where permitted · use only authorised water/adventure
+              activities.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Best time to visit
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              <strong className="text-ink">March–June:</strong> pleasant, green, family and
+              photography. <strong className="text-ink">July–September:</strong> lush with fuller
+              water views; check rain/road conditions.{" "}
+              <strong className="text-ink">October–November:</strong> clear, autumn, fewer crowds.{" "}
+              <strong className="text-ink">December–February:</strong> cool and peaceful with winter
+              scenery.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By air"
+            value="Jammu Airport → Jammu → Katra → Reasi → Chinka, around 100 km depending on endpoint."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By train"
+            value="Shri Mata Vaishno Devi Katra station; then Katra–Reasi–Chinka, around 45–50 km."
+          />
+          <InfoCard
+            icon={<Compass className="h-5 w-5" />}
+            label="By road"
+            value="Jammu–Katra–Reasi–Chinka. Taxis, private/rental vehicles and local transport to Reasi are available."
+          />
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <InfoCard
+            icon={<Stamp className="h-5 w-5" />}
+            label="Entry fee"
+            value="No reliably published general fee. Parking, authorised activities, water recreation, and local services may cost separately."
+          />
+          <InfoCard
+            icon={<CalendarDays className="h-5 w-5" />}
+            label="Timings"
+            value="No established valley-wide timetable; 8:00 AM–6:00 PM daylight travel is recommended."
+          />
+        </div>
+      </section>
+      <section className="bg-cream px-5 py-12 lg:px-10 lg:py-16">
+        <div className="mx-auto grid max-w-[1220px] gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Facilities & services
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              An emerging destination with local shops, small refreshment options, basic services,
+              suitable parking, and developing Reasi facilities. Katra/Reasi are more practical for
+              stays and restaurants. Services: Katra/Jammu pickup, Katra–Reasi sightseeing, Chinka
+              day trip, Salal reservoir, Shiv Khori, Vaishno Devi, Reasi, and custom tours.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Adventure & safety
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Possible regional experiences include rafting, trekking, walks, photography, water
+              activities, adventure sports, camping where permitted, and exploration. Use authorised
+              providers only and follow reservoir safety instructions.
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Nearby attractions
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Katra · Vaishno Devi · Bhim Garh Fort · Siyad Baba · Shiv Khori · Dera Baba Banda
+              Bahadur · Salal Dam &amp; Reservoir
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Food & photography
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Rajma Chawal · Kaladi · Dogri dishes · Makki di Roti · Sarson da Saag · breads · Kahwa
+              · tea · snacks. Photograph reservoir viewpoints, hills, village roads, reflections,
+              and sunset; mornings are clearer, evenings are golden.
+            </p>
+            <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+              Travel tips
+            </p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Check weather/roads; carry water, snacks, cash, and comfortable shoes; avoid
+              littering/restricted areas; respect local communities; do not enter water unless an
+              activity is officially permitted.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1220px] px-5 py-12 lg:px-10 lg:py-16">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-burgundy">
+          Frequently asked questions
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            ["Why is Chinka famous?", "Salal backwaters, mountains, and quiet Reasi scenery."],
+            ["Where is it?", "Chinka/Chinkah in Reasi's Arnas area."],
+            ["Distance from Katra?", "Approximately 45–50 km depending on the local endpoint."],
+            ["Distance from Reasi?", "Approximately 20 km."],
+            ["Can it be a day trip?", "Yes, from Katra or Reasi for sightseeing and photography."],
+            [
+              "Family-friendly?",
+              "Yes for scenery; water/adventure activities should be authorised.",
+            ],
+            ["Is it crowded?", "It is still developing and quieter than Katra/Vaishno Devi."],
+            ["Good for photos?", "Yes — reservoir, hills, villages, and water reflections."],
+          ].map(([q, a]) => (
+            <div key={q} className="border border-border bg-paper p-5">
+              <p className="font-semibold text-ink">{q}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{a}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm leading-7 text-ink-soft">
+          <strong className="text-ink">Quick facts:</strong> Chinka, Reasi · Nature &amp; Adventure
+          · Salal backwaters/mountains · nearest town Reasi · nearest rail Katra · nearest airport
+          Jammu · Katra 45–50 km · Reasi 20 km · one day · best March–June &amp; October–November.
+        </p>
+      </section>
+      <section className="bg-burgundy-deep px-5 py-12 text-primary-foreground lg:px-10 lg:py-16">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Why visit Chinka Valley?
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-primary-foreground/80">
+            Chinka is where Reasi&apos;s mountains meet Chenab water. For travellers going beyond
+            the Katra–Vaishno Devi circuit, it adds quiet villages, reservoir panoramas, mountain
+            roads, and a peaceful scenic experience.
           </p>
         </div>
       </section>
