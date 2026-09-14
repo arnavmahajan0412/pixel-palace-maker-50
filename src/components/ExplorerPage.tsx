@@ -39,9 +39,8 @@ const pageContent = {
   },
   about: {
     eyebrow: "Our story",
-    title: "Made for curious explorers",
-    description:
-      "J&K Explorer is a keepsake passport designed to help you explore slowly and remember deeply.",
+    title: "Our Story",
+    description: "From a love for mountains, travel, and the untold stories of Jammu & Kashmir.",
   },
 } as const;
 
@@ -54,25 +53,29 @@ export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
     <main className="min-h-screen bg-background pb-16 text-foreground paper-texture lg:pb-0">
       <SiteNavigation />
 
-      <section className="relative isolate overflow-hidden bg-burgundy-deep px-5 py-16 text-primary-foreground lg:px-10 lg:py-24">
-        <img
-          src={heroImage}
-          alt=""
-          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 -z-10 bg-burgundy-deep/65" />
-        <div className="mx-auto max-w-[1220px]">
-          <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-gold">
-            {content.eyebrow}
-          </p>
-          <h1 className="display-serif mt-3 text-4xl leading-[1.02] sm:text-5xl">
-            {content.title}
-          </h1>
-          <p className="mt-5 max-w-xl text-sm leading-7 text-primary-foreground/80">
-            {content.description}
-          </p>
-        </div>
-      </section>
+      {kind === "about" ? (
+        <AboutHero />
+      ) : (
+        <section className="relative isolate overflow-hidden bg-burgundy-deep px-5 py-16 text-primary-foreground lg:px-10 lg:py-24">
+          <img
+            src={heroImage}
+            alt=""
+            className="absolute inset-0 -z-20 h-full w-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 -z-10 bg-burgundy-deep/65" />
+          <div className="mx-auto max-w-[1220px]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.26em] text-gold">
+              {content.eyebrow}
+            </p>
+            <h1 className="display-serif mt-3 text-4xl leading-[1.02] sm:text-5xl">
+              {content.title}
+            </h1>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-primary-foreground/80">
+              {content.description}
+            </p>
+          </div>
+        </section>
+      )}
 
       {kind === "passport" || kind === "planner" || kind === "badges" ? (
         <MobileExplorerExperience
@@ -83,7 +86,9 @@ export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
           showOnDesktop
         />
       ) : (
-        <section className="mx-auto max-w-[1220px] px-5 py-10 lg:px-10 lg:py-16">
+        <section
+          className={kind === "about" ? "" : "mx-auto max-w-[1220px] px-5 py-10 lg:px-10 lg:py-16"}
+        >
           {kind === "journal" && <Journal />}
           {kind === "about" && <About />}
         </section>
@@ -218,25 +223,81 @@ function Journal() {
   );
 }
 
-function About() {
+function AboutHero() {
   return (
-    <div className="grid gap-6 border border-border bg-paper p-6 sm:p-10 lg:grid-cols-[0.8fr_1.2fr]">
-      <div className="grid h-20 w-20 place-items-center rounded-full border border-gold bg-burgundy-deep text-gold">
-        <Compass className="h-10 w-10" />
-      </div>
-      <div>
-        <h2 className="display-serif text-3xl text-ink sm:text-4xl">Explore. Stamp. Remember.</h2>
-        <p className="mt-5 max-w-2xl text-sm leading-7 text-ink-soft">
-          We believe the best travel memories are collected slowly. The J&amp;K Explorer Passport
-          gives every journey a place to live—one stamp, note and destination at a time.
+    <section className="relative isolate h-[190px] overflow-hidden bg-burgundy-deep px-5 text-primary-foreground sm:h-[225px] lg:h-[245px] lg:px-10">
+      <img
+        src={heroImage}
+        alt="Mountains of Jammu and Kashmir"
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-burgundy-deep/90 via-burgundy-deep/55 to-burgundy-deep/20" />
+      <div className="mx-auto flex h-full max-w-[1220px] flex-col justify-center">
+        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-gold">Our Story</p>
+        <h1 className="display-serif mt-2 text-3xl leading-none sm:text-4xl">Our Story</h1>
+        <p className="mt-3 max-w-md text-xs leading-5 text-primary-foreground/85 sm:text-sm sm:leading-6">
+          From a love for mountains, travel, and the untold stories of Jammu &amp; Kashmir.
         </p>
-        <Link
-          to="/passport-guide"
-          className="mt-7 inline-flex items-center gap-2 bg-burgundy px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-primary-foreground"
-        >
-          See the passport guide <ArrowRight className="h-4 w-4" />
-        </Link>
       </div>
-    </div>
+    </section>
+  );
+}
+
+function About() {
+  const values = [
+    [<Compass className="h-5 w-5" />, "Explore New Places"],
+    [<Stamp className="h-5 w-5" />, "Support Local Culture"],
+    [<BookOpen className="h-5 w-5" />, "Preserve Memories & Nature"],
+    [<Award className="h-5 w-5" />, "Build a Travel Community"],
+  ];
+
+  return (
+    <section className="bg-paper px-5 py-10 lg:px-10 lg:py-14">
+      <div className="mx-auto max-w-[1220px]">
+        <div className="max-w-[760px]">
+          <h2 className="display-serif text-2xl text-ink sm:text-3xl">
+            Why We Created J&amp;K Explorer Passport
+          </h2>
+          <div className="mt-4 space-y-3 text-sm leading-6 text-ink-soft">
+            <p>Jammu &amp; Kashmir is not just a destination. It is an emotion.</p>
+            <p>
+              From snow-covered mountains to serene lakes, from ancient temples to vibrant culture —
+              every corner has a story.
+            </p>
+            <p>
+              We created J&amp;K Explorer Passport to help you explore, experience, and fall in love
+              with J&amp;K, one destination at a time.
+            </p>
+          </div>
+        </div>
+        <div className="mt-9 grid border-y border-border sm:grid-cols-4">
+          {values.map(([icon, label]) => (
+            <div
+              key={label as string}
+              className="flex min-h-24 flex-col items-center justify-center gap-2 border-border px-3 text-center sm:border-r sm:last:border-r-0"
+            >
+              <span className="text-burgundy">{icon}</span>
+              <span className="text-[11px] font-semibold text-ink">{label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="relative isolate mt-10 min-h-[240px] overflow-hidden bg-burgundy-deep p-7 text-primary-foreground sm:min-h-[290px] sm:p-10">
+          <img
+            src={heroImage}
+            alt="Mountains of Jammu and Kashmir"
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-burgundy-deep/18 via-burgundy-deep/25 to-burgundy-deep/80" />
+          <div className="flex min-h-[184px] flex-col items-end justify-end text-right sm:min-h-[210px]">
+            <p className="display-serif max-w-xs text-3xl leading-tight sm:text-4xl">
+              Because every journey begins with a story.
+            </p>
+            <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
+              J&amp;K Explorer Passport
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
