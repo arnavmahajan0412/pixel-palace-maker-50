@@ -13,7 +13,6 @@ import {
   Footprints,
   Heart,
   House,
-  Instagram,
   ListChecks,
   MapPin,
   Menu,
@@ -39,6 +38,7 @@ import passportImage from "@/assets/jk-explorer-passport.png";
 import bronzeBadgeImage from "@/assets/badges/bronze-explorer.jpeg";
 import silverBadgeImage from "@/assets/badges/silver-explorer.jpeg";
 import goldBadgeImage from "@/assets/badges/gold-explorer.jpeg";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/")({
 const WHATSAPP_MESSAGE =
   "Hi J&K Explorer, I'd like to buy the J&K Explorer Passport. Please share the details.";
 const WHATSAPP_URL = `https://wa.me/919541012999?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-const INSTAGRAM_DM_URL = "https://www.instagram.com/direct/new/";
+const INSTAGRAM_DM_URL = "https://www.instagram.com/jkexplorerpassport/";
 const MEMBER_KEY = "jk-explorer-member";
 
 type Member = {
@@ -175,15 +175,9 @@ function Index() {
               <Link to="/destinations" onClick={() => setMenuOpen(false)}>
                 Destinations
               </Link>
-              <a
-                href="#mobile-explorer"
-                onClick={() => {
-                  setMobileView("passport");
-                  setMenuOpen(false);
-                }}
-              >
+              <Link to="/passport-guide" onClick={() => setMenuOpen(false)}>
                 Passport Guide
-              </a>
+              </Link>
               <button
                 type="button"
                 className="w-fit text-left"
@@ -204,25 +198,12 @@ function Index() {
               >
                 Register Yourself
               </button>
-              <a
-                href="#mobile-explorer"
-                onClick={() => {
-                  setMobileView("badges");
-                  setMenuOpen(false);
-                }}
-              >
+              <Link to="/explore-badges" onClick={() => setMenuOpen(false)}>
                 Explore Badges
-              </a>
-              <button
-                type="button"
-                className="w-fit text-left"
-                onClick={() => {
-                  setJoinOpen(true);
-                  setMenuOpen(false);
-                }}
-              >
+              </Link>
+              <Link to="/about-us" onClick={() => setMenuOpen(false)}>
                 About Us
-              </button>
+              </Link>
             </div>
           </nav>
         )}
@@ -505,45 +486,7 @@ function Index() {
           </div>
         </section>
       </main>
-      <footer
-        id="about"
-        className="hidden bg-burgundy-deep px-5 py-12 text-primary-foreground lg:block lg:px-10"
-      >
-        <div className="mx-auto flex max-w-[1220px] flex-col justify-between gap-10 sm:flex-row sm:items-end">
-          <div>
-            <a href="#home" className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full border border-gold/70 text-gold">
-                <Compass className="h-5 w-5" />
-              </span>
-              <span className="leading-none">
-                <span className="display-serif block text-lg">J&K Explorer</span>
-                <span className="text-[9px] uppercase tracking-[0.2em] text-gold">
-                  Explore · Stamp · Remember
-                </span>
-              </span>
-            </a>
-            <p className="mt-5 max-w-xs text-xs leading-5 text-primary-foreground/55">
-              One passport. Endless journeys.
-              <br />A lifetime of memories.
-            </p>
-          </div>
-          <div className="flex items-center gap-6 text-xs text-primary-foreground/60">
-            <a href="#destinations" className="hover:text-gold">
-              Destinations
-            </a>
-            <Link to="/passport-guide" className="hover:text-gold">
-              Passport
-            </Link>
-            <a href="#about" className="hover:text-gold">
-              About
-            </a>
-            <Instagram className="h-4 w-4 hover:text-gold" />
-          </div>
-        </div>
-        <div className="mx-auto mt-10 max-w-[1220px] border-t border-primary-foreground/15 pt-5 text-[10px] uppercase tracking-widest text-primary-foreground/40">
-          © 2026 J&K Explorer · Made for the curious
-        </div>
-      </footer>
+      <SiteFooter />
       <nav className="mobile-bottom-nav fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-border bg-paper/95 py-2 backdrop-blur-md lg:hidden">
         <MobileNav icon={<House />} label="Home" href="#home" />
         <MobileNav icon={<Navigation />} label="Explore" href="#destinations" />

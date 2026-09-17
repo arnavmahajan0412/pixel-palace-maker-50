@@ -11,6 +11,7 @@ import silverBadge from "@/assets/badges/silver-explorer.jpeg";
 import goldBadge from "@/assets/badges/gold-explorer.jpeg";
 import { MobileExplorerExperience } from "@/routes/index";
 import { SiteNavigation } from "@/components/SiteNavigation";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export type ExplorerPageKind = "passport" | "planner" | "badges" | "journal" | "about";
 
@@ -55,7 +56,7 @@ export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
 
       {kind === "about" ? (
         <AboutHero />
-      ) : (
+      ) : kind === "journal" ? (
         <section className="relative isolate overflow-hidden bg-burgundy-deep px-5 py-16 text-primary-foreground lg:px-10 lg:py-24">
           <img
             src={heroImage}
@@ -75,7 +76,7 @@ export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
             </p>
           </div>
         </section>
-      )}
+      ) : null}
 
       {kind === "passport" || kind === "planner" || kind === "badges" ? (
         <MobileExplorerExperience
@@ -93,6 +94,7 @@ export function ExplorerPage({ kind }: { kind: ExplorerPageKind }) {
           {kind === "about" && <About />}
         </section>
       )}
+      <SiteFooter />
     </main>
   );
 }

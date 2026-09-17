@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import { destinationSlug, destinations } from "./index";
 import { SiteNavigation } from "@/components/SiteNavigation";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/destinations")({
   head: () => ({
@@ -119,6 +120,7 @@ function DestinationsPage() {
           </div>
         )}
       </section>
+      <SiteFooter />
     </main>
   );
 }

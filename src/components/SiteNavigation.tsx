@@ -59,21 +59,21 @@ export function SiteNavigation() {
         {menuOpen && (
           <nav className="border-t border-primary-foreground/15 bg-burgundy-deep px-5 py-4 lg:hidden">
             <div className="grid gap-4 text-sm uppercase tracking-widest">
-              <Link to="/" onClick={closeMenu}>
+              <a href="/" onClick={closeMenu}>
                 Home
-              </Link>
-              <Link to="/destinations" onClick={closeMenu}>
+              </a>
+              <a href="/destinations" onClick={closeMenu}>
                 Destinations
-              </Link>
-              <Link to="/passport-guide" onClick={closeMenu}>
+              </a>
+              <a href="/passport-guide" onClick={closeMenu}>
                 Passport Guide
-              </Link>
-              <Link to="/explore-badges" onClick={closeMenu}>
+              </a>
+              <a href="/explore-badges" onClick={closeMenu}>
                 Explore Badges
-              </Link>
-              <Link to="/about-us" onClick={closeMenu}>
+              </a>
+              <a href="/about-us" onClick={closeMenu}>
                 About Us
-              </Link>
+              </a>
               <a href="/#community" onClick={closeMenu}>
                 Join Community
               </a>
