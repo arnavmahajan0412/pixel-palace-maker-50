@@ -14,6 +14,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 
 import heroImage from "@/assets/kashmir-hero.jpg";
 import contactVisitImage from "@/assets/contact-visit.jpg";
+import contactMapImage from "@/assets/contact-jk-map.jpg";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNavigation } from "@/components/SiteNavigation";
 
@@ -33,11 +34,19 @@ function ContactUsPage() {
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const subject = encodeURIComponent(`[J&K Explorer] ${form.subject}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+    const message = [
+      "Hello J&K Explorer,",
+      "",
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      `Subject: ${form.subject}`,
+      "",
+      "Message:",
+      form.message,
+    ].join("\n");
     setSent(true);
     window.setTimeout(() => {
-      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+      window.location.href = `${whatsapp}&text=${encodeURIComponent(message)}`;
     }, 350);
   };
 
@@ -181,7 +190,7 @@ function ContactUsPage() {
               className="mt-6 inline-flex items-center gap-2 bg-burgundy px-6 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-primary-foreground transition duration-300 hover:-translate-y-0.5 hover:bg-burgundy-deep hover:shadow-lg"
             >
               {sent ? <CheckCircle2 className="h-4 w-4" /> : <Send className="h-4 w-4" />}{" "}
-              {sent ? "Opening your email" : "Send Message"}
+              {sent ? "Opening WhatsApp" : "Send Message"}
             </button>
           </form>
         </div>
@@ -189,14 +198,13 @@ function ContactUsPage() {
 
       <section className="border-y border-border bg-paper px-5 py-12 lg:px-10 lg:py-16">
         <div className="mx-auto grid max-w-[1220px] items-center gap-8 md:grid-cols-[0.75fr_1fr_0.7fr]">
-          <div className="relative mx-auto grid aspect-square w-full max-w-[250px] place-items-center border border-dashed border-burgundy/45 bg-paper-deep p-7 text-center">
-            <div className="absolute left-[27%] top-[21%] h-3 w-3 rounded-full bg-burgundy shadow-[0_0_0_7px_rgba(111,24,42,0.12)]" />
-            <div className="absolute bottom-[24%] right-[20%] h-2 w-2 rounded-full bg-gold" />
-            <MapPin className="h-14 w-14 text-burgundy/50" />
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-burgundy">
-              Jammu &amp; Kashmir
-            </p>
-          </div>
+          <figure className="mx-auto w-full max-w-[300px] overflow-hidden">
+            <img
+              src={contactMapImage}
+              alt="Illustrated map of Jammu and Kashmir"
+              className="w-full object-cover"
+            />
+          </figure>
           <div>
             <SectionTitle>Visit Us</SectionTitle>
             <p className="mt-5 max-w-lg text-sm leading-7 text-ink-soft">
