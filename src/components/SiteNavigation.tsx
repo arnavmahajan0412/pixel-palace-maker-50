@@ -15,8 +15,12 @@ export function SiteNavigation({ variant = "dark" }: { variant?: "dark" | "light
         className={`relative z-30 border-b ${light ? "border-burgundy/15 bg-paper text-ink" : "border-primary-foreground/15 bg-burgundy-deep text-primary-foreground"}`}
       >
         <div className="mx-auto flex min-h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
-          <Link to="/" className="rounded-sm bg-paper px-2 py-1" aria-label="J&K Explorer home">
-            <img src={logoImage} alt="J&K Explorer Passport" className="h-11 w-28 object-contain" />
+          <Link to="/" className="inline-flex" aria-label="J&K Explorer home">
+            <img
+              src={logoImage}
+              alt="J&K Explorer Passport"
+              className="h-11 w-28 object-contain brightness-0 invert"
+            />
           </Link>
 
           <nav className="hidden items-center gap-6 text-[10px] font-semibold uppercase tracking-[0.08em] lg:flex">

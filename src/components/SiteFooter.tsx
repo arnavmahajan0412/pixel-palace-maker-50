@@ -13,12 +13,12 @@ export function SiteFooter() {
     <footer className="bg-burgundy-deep px-5 pb-24 pt-10 text-primary-foreground lg:px-10 lg:py-12">
       <div className="mx-auto grid max-w-[1220px] gap-9 sm:grid-cols-2 lg:grid-cols-[1.15fr_0.8fr_0.8fr_1fr] lg:gap-10">
         <div>
-          <Link
-            to="/"
-            className="inline-block rounded-sm bg-paper px-2 py-1"
-            aria-label="J&K Explorer home"
-          >
-            <img src={logoImage} alt="J&K Explorer Passport" className="h-12 w-32 object-contain" />
+          <Link to="/" className="inline-flex" aria-label="J&K Explorer home">
+            <img
+              src={logoImage}
+              alt="J&K Explorer Passport"
+              className="h-12 w-32 object-contain brightness-0 invert"
+            />
           </Link>
           <p className="mt-4 max-w-xs text-xs leading-5 text-primary-foreground/65">
             One passport. Endless journeys. A lifetime of memories across Jammu &amp; Kashmir.

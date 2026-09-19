@@ -36,13 +36,11 @@ import sonamargImage from "@/assets/sonamarg.jpg";
 import pahalgamImage from "@/assets/pahalgam.jpg";
 import patnitopImage from "@/assets/destinations/patnitop.jpg";
 import mansarLakeImage from "@/assets/destinations/mansar-lake.jpg";
-import mughalGardensImage from "@/assets/destinations/mughal-gardens.jpg";
 import sonamargDestinationImage from "@/assets/destinations/sonamarg.jpg";
 import pahalgamDestinationImage from "@/assets/destinations/pahalgam.jpg";
 import gurezValleyImage from "@/assets/destinations/gurez-valley.jpg";
 import peerKiGaliImage from "@/assets/destinations/peer-ki-gali.jpg";
 import bhaderwahImage from "@/assets/destinations/bhaderwah.jpg";
-import machailMataImage from "@/assets/destinations/machail-mata.jpg";
 import warwanValleyImage from "@/assets/destinations/warwan-valley.jpg";
 import verinagImage from "@/assets/destinations/verinag.jpg";
 import sanasarImage from "@/assets/destinations/sanasar.jpg";
@@ -59,6 +57,17 @@ import duduValleyImage from "@/assets/destinations/dudu-valley.jpg";
 import purthuImage from "@/assets/destinations/purthu.jpg";
 import surinsarLakeImage from "@/assets/destinations/surinsar-lake.jpg";
 import yusmargImage from "@/assets/destinations/yusmarg.jpg";
+import mughalGardensUserImage from "@/assets/destinations/mughal-gardens-user.jpeg";
+import paddarUserImage from "@/assets/destinations/paddar-user.jpeg";
+import sarthalValleyUserImage from "@/assets/destinations/sarthal-valley-user.jpeg";
+import sudhMahadevUserImage from "@/assets/destinations/sudh-mahadev-user.jpeg";
+import suchetgarhBorderUserImage from "@/assets/destinations/suchetgarh-border-user.jpeg";
+import amarnathYatraUserImage from "@/assets/destinations/amarnath-yatra-user.jpeg";
+import panchariUserImage from "@/assets/destinations/panchari-user.jpeg";
+import chinkaValleyUserImage from "@/assets/destinations/chinka-valley-user.jpeg";
+import devaMaiUserImage from "@/assets/destinations/deva-mai-user.jpeg";
+import deviPindiUserImage from "@/assets/destinations/devi-pindi-user.jpeg";
+import sukralaMataUserImage from "@/assets/destinations/sukrala-mata-user.jpeg";
 import passportImage from "@/assets/jk-explorer-passport.png";
 import bronzeBadgeImage from "@/assets/badges/bronze-explorer.jpeg";
 import silverBadgeImage from "@/assets/badges/silver-explorer.jpeg";
@@ -88,7 +97,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP_MESSAGE =
-  "Hi J&K Explorer, I'd like to buy the J&K Explorer Passport. Please share the details.";
+  "Hey! 🏔️ I’m ready to start my *J&K Explorer journey!* 📖✨\nI’d like to order my *J&K Explorer Passport*.\nPlease guide me through the next steps. 🚀";
 const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=919541012999&text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 const INSTAGRAM_DM_URL = "https://www.instagram.com/jkexplorerpassport/";
 const MEMBER_KEY = "jk-explorer-member";
@@ -135,8 +144,12 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground paper-texture">
       <header className="absolute inset-x-0 top-0 z-30 border-b border-primary-foreground/15 bg-burgundy-deep/90 text-primary-foreground backdrop-blur-sm">
         <div className="mx-auto flex h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
-          <a href="#home" className="rounded-sm bg-paper px-2 py-1" aria-label="J&K Explorer home">
-            <img src={logoImage} alt="J&K Explorer Passport" className="h-11 w-28 object-contain" />
+          <a href="#home" className="inline-flex" aria-label="J&K Explorer home">
+            <img
+              src={logoImage}
+              alt="J&K Explorer Passport"
+              className="h-11 w-28 object-contain brightness-0 invert"
+            />
           </a>
           <nav className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.08em] lg:flex">
             <a href="#home" className="text-gold transition-colors hover:text-primary-foreground">
@@ -968,7 +981,7 @@ function BuyPassportModal({ onClose }: { onClose: () => void }) {
             onClick={onClose}
             className="inline-flex min-h-12 items-center justify-center bg-burgundy px-4 text-xs font-bold uppercase tracking-[0.12em] text-primary-foreground transition-colors hover:bg-burgundy/85"
           >
-            WhatsApp DM
+            WhatsApp
           </a>
           <a
             href={INSTAGRAM_DM_URL}
@@ -977,7 +990,7 @@ function BuyPassportModal({ onClose }: { onClose: () => void }) {
             onClick={copyMessageForInstagram}
             className="inline-flex min-h-12 items-center justify-center border border-burgundy/30 px-4 text-xs font-bold uppercase tracking-[0.12em] text-burgundy transition-colors hover:border-burgundy hover:bg-burgundy/5"
           >
-            Instagram DM
+            Instagram
           </a>
         </div>
       </section>
@@ -1221,7 +1234,7 @@ export const destinations: Destination[] = [
   {
     name: "Mughal Gardens",
     place: "Srinagar",
-    image: mughalGardensImage,
+    image: mughalGardensUserImage,
     description: "Terraced gardens, spring water and centuries of Mughal design beside Dal Lake.",
     time: "Mar – Jun",
   },
@@ -1270,7 +1283,7 @@ export const destinations: Destination[] = [
   {
     name: "Paddar (Machail Mata)",
     place: "Kishtwar",
-    image: machailMataImage,
+    image: paddarUserImage,
     description:
       "A dramatic pilgrimage route through high valleys to the revered Machail Mata shrine.",
     time: "Jul – Sep",
@@ -1300,7 +1313,7 @@ export const destinations: Destination[] = [
   {
     name: "Sarthal Valley (Bani, Basohli)",
     place: "Kathua",
-    image: bhaderwahImage,
+    image: sarthalValleyUserImage,
     description: "Forest roads, hill meadows and the art-rich landscapes around Bani and Basohli.",
     time: "Apr – Oct",
   },
@@ -1372,7 +1385,7 @@ export const destinations: Destination[] = [
   {
     name: "Sudh Mahadev Temple",
     place: "Chenani",
-    image: shivKhoriImage,
+    image: sudhMahadevUserImage,
     description: "An ancient hill temple surrounded by pine forests, legend and quiet devotion.",
     time: "Apr – Oct",
   },
@@ -1400,14 +1413,14 @@ export const destinations: Destination[] = [
   {
     name: "Amarnath Yatra (Seasonal)",
     place: "Pahalgam / Baltal",
-    image: machailMataImage,
+    image: amarnathYatraUserImage,
     description: "A seasonal pilgrimage through high-altitude landscapes to the holy cave.",
     time: "Jul – Aug",
   },
   {
     name: "Chinka Valley",
     place: "Doda",
-    image: warwanValleyImage,
+    image: chinkaValleyUserImage,
     description: "A mountain valley of clear air, forest edges and peaceful rural trails.",
     time: "Apr – Oct",
   },
@@ -1421,35 +1434,35 @@ export const destinations: Destination[] = [
   {
     name: "Suchetgarh Border",
     place: "Jammu",
-    image: patnitopImage,
+    image: suchetgarhBorderUserImage,
     description: "A frontier experience with wide fields, local history and an evening retreat.",
     time: "Oct – Mar",
   },
   {
     name: "Panchari",
     place: "Udhampur",
-    image: patnitopImage,
+    image: panchariUserImage,
     description: "A forested hill escape with village life, fresh streams and slow mountain days.",
     time: "Apr – Oct",
   },
   {
     name: "Devi Pindi Trek & Mandir",
     place: "Jammu",
-    image: shivKhoriImage,
+    image: deviPindiUserImage,
     description: "A beautiful forest trek leading to a peaceful hill shrine and local traditions.",
     time: "Oct – Mar",
   },
   {
     name: "Deva Mai",
     place: "Katra",
-    image: shivKhoriImage,
+    image: devaMaiUserImage,
     description: "A serene hilltop temple trail with sweeping views and a deeply local spirit.",
     time: "Mar – Oct",
   },
   {
     name: "Sukrala Mata Mandir",
     place: "Billawar",
-    image: shivKhoriImage,
+    image: sukralaMataUserImage,
     description: "A revered hill shrine wrapped in forest, faith and panoramic foothill views.",
     time: "Mar – Oct",
   },
