@@ -34,6 +34,31 @@ import gulmargImage from "@/assets/gulmarg.jpg";
 import dalImage from "@/assets/dal-lake.jpg";
 import sonamargImage from "@/assets/sonamarg.jpg";
 import pahalgamImage from "@/assets/pahalgam.jpg";
+import patnitopImage from "@/assets/destinations/patnitop.jpg";
+import mansarLakeImage from "@/assets/destinations/mansar-lake.jpg";
+import mughalGardensImage from "@/assets/destinations/mughal-gardens.jpg";
+import sonamargDestinationImage from "@/assets/destinations/sonamarg.jpg";
+import pahalgamDestinationImage from "@/assets/destinations/pahalgam.jpg";
+import gurezValleyImage from "@/assets/destinations/gurez-valley.jpg";
+import peerKiGaliImage from "@/assets/destinations/peer-ki-gali.jpg";
+import bhaderwahImage from "@/assets/destinations/bhaderwah.jpg";
+import machailMataImage from "@/assets/destinations/machail-mata.jpg";
+import warwanValleyImage from "@/assets/destinations/warwan-valley.jpg";
+import verinagImage from "@/assets/destinations/verinag.jpg";
+import sanasarImage from "@/assets/destinations/sanasar.jpg";
+import shivKhoriImage from "@/assets/destinations/shiv-khori.jpg";
+import aharbalWaterfallImage from "@/assets/destinations/aharbal-waterfall.jpg";
+import tulipGardenImage from "@/assets/destinations/tulip-garden.jpg";
+import jammuCityWalkImage from "@/assets/destinations/jammu-city-walk.jpg";
+import doodpathriImage from "@/assets/destinations/doodpathri.jpg";
+import bangusValleyImage from "@/assets/destinations/bangus-valley.jpg";
+import keranBorderImage from "@/assets/destinations/keran-border.jpg";
+import loranValleyImage from "@/assets/destinations/loran-valley.jpg";
+import darhalWaterfallImage from "@/assets/destinations/darhal-waterfall.jpg";
+import duduValleyImage from "@/assets/destinations/dudu-valley.jpg";
+import purthuImage from "@/assets/destinations/purthu.jpg";
+import surinsarLakeImage from "@/assets/destinations/surinsar-lake.jpg";
+import yusmargImage from "@/assets/destinations/yusmarg.jpg";
 import passportImage from "@/assets/jk-explorer-passport.png";
 import bronzeBadgeImage from "@/assets/badges/bronze-explorer.jpeg";
 import silverBadgeImage from "@/assets/badges/silver-explorer.jpeg";
@@ -1175,14 +1200,14 @@ export const destinations: Destination[] = [
   {
     name: "Patnitop",
     place: "Ramban",
-    image: sonamargImage,
+    image: patnitopImage,
     description: "A pine-fringed hill station for crisp air, long walks and winter escapes.",
     time: "Apr – Jun",
   },
   {
     name: "Mansar Lake (Surinsar)",
     place: "Jammu",
-    image: dalImage,
+    image: mansarLakeImage,
     description: "Sacred twin lakes surrounded by forest, folklore and peaceful lakeside paths.",
     time: "Mar – Jun",
   },
@@ -1196,7 +1221,7 @@ export const destinations: Destination[] = [
   {
     name: "Mughal Gardens",
     place: "Srinagar",
-    image: pahalgamImage,
+    image: mughalGardensImage,
     description: "Terraced gardens, spring water and centuries of Mughal design beside Dal Lake.",
     time: "Mar – Jun",
   },
@@ -1210,42 +1235,42 @@ export const destinations: Destination[] = [
   {
     name: "Sonamarg",
     place: "Ganderbal",
-    image: sonamargImage,
+    image: sonamargDestinationImage,
     description: "The meadow of gold: glacier-fed rivers, alpine trails and wide-open skies.",
     time: "May – Sep",
   },
   {
     name: "Pahalgam",
     place: "Anantnag",
-    image: pahalgamImage,
+    image: pahalgamDestinationImage,
     description: "A river valley of pine forests, wooden cabins and unhurried mountain days.",
     time: "Apr – Nov",
   },
   {
     name: "Gurez Valley",
     place: "Bandipora",
-    image: sonamargImage,
+    image: gurezValleyImage,
     description: "A remote valley of wooden homes, rushing rivers and wide Himalayan skies.",
     time: "May – Sep",
   },
   {
     name: "Peer Ki Gali",
     place: "Mughal Road",
-    image: gulmargImage,
+    image: peerKiGaliImage,
     description: "A high mountain pass where the Mughal Road opens into sweeping alpine views.",
     time: "May – Oct",
   },
   {
     name: "Bhaderwah (Jai & Chinta Valleys)",
     place: "Doda",
-    image: pahalgamImage,
+    image: bhaderwahImage,
     description: "Green valleys, cedar forests and quiet mountain villages in the Chenab region.",
     time: "Apr – Oct",
   },
   {
     name: "Paddar (Machail Mata)",
     place: "Kishtwar",
-    image: sonamargImage,
+    image: machailMataImage,
     description:
       "A dramatic pilgrimage route through high valleys to the revered Machail Mata shrine.",
     time: "Jul – Sep",
@@ -1253,21 +1278,21 @@ export const destinations: Destination[] = [
   {
     name: "Bawa Wali Mata & Jammu City Walk",
     place: "Jammu",
-    image: vaishnoImage,
+    image: jammuCityWalkImage,
     description: "Temple bells, Gondola views, Aquarium, Bagh-e-Bahu, Hari Niwas Palace and Manda.",
     time: "Oct – Mar",
   },
   {
     name: "Warwan Valley",
     place: "Kishtwar",
-    image: sonamargImage,
+    image: warwanValleyImage,
     description: "A hidden valley of meadows, glaciers and villages for the adventurous traveller.",
     time: "Jun – Sep",
   },
   {
     name: "Doodpathri",
     place: "Budgam",
-    image: pahalgamImage,
+    image: doodpathriImage,
     description:
       "A meadowland of silver streams, wildflowers and slow afternoons in the mountains.",
     time: "May – Oct",
@@ -1275,28 +1300,28 @@ export const destinations: Destination[] = [
   {
     name: "Sarthal Valley (Bani, Basohli)",
     place: "Kathua",
-    image: gulmargImage,
+    image: bhaderwahImage,
     description: "Forest roads, hill meadows and the art-rich landscapes around Bani and Basohli.",
     time: "Apr – Oct",
   },
   {
     name: "Verinag",
     place: "Anantnag",
-    image: dalImage,
+    image: verinagImage,
     description: "A spring of clear blue water framed by an elegant Mughal-era garden.",
     time: "Mar – Oct",
   },
   {
     name: "Sanasar",
     place: "Ramban",
-    image: sonamargImage,
+    image: sanasarImage,
     description: "A peaceful cup-shaped meadow for paragliding, camping and cedar-scented walks.",
     time: "Apr – Jun",
   },
   {
     name: "Shiv Khori",
     place: "Reasi",
-    image: vaishnoImage,
+    image: shivKhoriImage,
     description:
       "A sacred cave shrine with a naturally formed lingam and a memorable forest approach.",
     time: "Feb – Apr",
@@ -1304,21 +1329,21 @@ export const destinations: Destination[] = [
   {
     name: "Aharbal Waterfall",
     place: "Kulgam",
-    image: pahalgamImage,
+    image: aharbalWaterfallImage,
     description: "The roaring Niagara of Kashmir, tucked among pine forests and mountain streams.",
     time: "Apr – Oct",
   },
   {
     name: "Darhal Waterfall & Shadra Sharief",
     place: "Rajouri",
-    image: sonamargImage,
+    image: darhalWaterfallImage,
     description: "Noori Chamb waterfall and the spiritual calm of Shadra Sharief in one journey.",
     time: "Apr – Oct",
   },
   {
     name: "Loran Valley",
     place: "Poonch",
-    image: sonamargImage,
+    image: loranValleyImage,
     description:
       "A quiet Pir Panjal valley of forest trails, village life and clear mountain streams.",
     time: "Mar – Nov",
@@ -1326,105 +1351,105 @@ export const destinations: Destination[] = [
   {
     name: "Surinsar Lake",
     place: "Jammu",
-    image: dalImage,
+    image: surinsarLakeImage,
     description: "A tranquil forest lake for birdwatching, picnics and unhurried mornings.",
     time: "Mar – Jun",
   },
   {
     name: "Tulip Garden (Seasonal)",
     place: "Srinagar",
-    image: gulmargImage,
+    image: tulipGardenImage,
     description: "Rows of colour at Asia's largest tulip garden beneath the Zabarwan range.",
     time: "Mar – Apr",
   },
   {
     name: "Purthu",
     place: "Doda",
-    image: pahalgamImage,
+    image: purthuImage,
     description: "An open highland escape where mountain air and meadow views set the pace.",
     time: "May – Oct",
   },
   {
     name: "Sudh Mahadev Temple",
     place: "Chenani",
-    image: vaishnoImage,
+    image: shivKhoriImage,
     description: "An ancient hill temple surrounded by pine forests, legend and quiet devotion.",
     time: "Apr – Oct",
   },
   {
     name: "Dudu Valley",
     place: "Udhampur",
-    image: sonamargImage,
+    image: duduValleyImage,
     description: "A lesser-known valley of streams, villages and green mountain roads.",
     time: "Apr – Oct",
   },
   {
     name: "Bangus Valley",
     place: "Kupwara",
-    image: gulmargImage,
+    image: bangusValleyImage,
     description: "A vast meadow basin of wildflowers, forest trails and open northern horizons.",
     time: "May – Sep",
   },
   {
     name: "Yusmarg",
     place: "Budgam",
-    image: pahalgamImage,
+    image: yusmargImage,
     description: "A quiet meadow retreat of tall deodars, pony trails and river-side picnics.",
     time: "Apr – Oct",
   },
   {
     name: "Amarnath Yatra (Seasonal)",
     place: "Pahalgam / Baltal",
-    image: vaishnoImage,
+    image: machailMataImage,
     description: "A seasonal pilgrimage through high-altitude landscapes to the holy cave.",
     time: "Jul – Aug",
   },
   {
     name: "Chinka Valley",
     place: "Doda",
-    image: sonamargImage,
+    image: warwanValleyImage,
     description: "A mountain valley of clear air, forest edges and peaceful rural trails.",
     time: "Apr – Oct",
   },
   {
     name: "Keran Border",
     place: "Kupwara",
-    image: gulmargImage,
+    image: keranBorderImage,
     description: "A scenic border village journey through green valleys and the Kishanganga river.",
     time: "May – Sep",
   },
   {
     name: "Suchetgarh Border",
     place: "Jammu",
-    image: vaishnoImage,
+    image: patnitopImage,
     description: "A frontier experience with wide fields, local history and an evening retreat.",
     time: "Oct – Mar",
   },
   {
     name: "Panchari",
     place: "Udhampur",
-    image: pahalgamImage,
+    image: patnitopImage,
     description: "A forested hill escape with village life, fresh streams and slow mountain days.",
     time: "Apr – Oct",
   },
   {
     name: "Devi Pindi Trek & Mandir",
     place: "Jammu",
-    image: vaishnoImage,
+    image: shivKhoriImage,
     description: "A beautiful forest trek leading to a peaceful hill shrine and local traditions.",
     time: "Oct – Mar",
   },
   {
     name: "Deva Mai",
     place: "Katra",
-    image: vaishnoImage,
+    image: shivKhoriImage,
     description: "A serene hilltop temple trail with sweeping views and a deeply local spirit.",
     time: "Mar – Oct",
   },
   {
     name: "Sukrala Mata Mandir",
     place: "Billawar",
-    image: gulmargImage,
+    image: shivKhoriImage,
     description: "A revered hill shrine wrapped in forest, faith and panoramic foothill views.",
     time: "Mar – Oct",
   },
