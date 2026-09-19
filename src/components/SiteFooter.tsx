@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Compass, Facebook, Instagram, QrCode, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, QrCode, Twitter, Youtube } from "lucide-react";
 import type { ReactNode } from "react";
+import logoImage from "@/assets/jk-explorer-logo.png";
 
 const INSTAGRAM_URL = "https://www.instagram.com/jkexplorerpassport/";
 const X_URL = "https://x.com/jkexplorerp?s=11";
@@ -12,16 +13,12 @@ export function SiteFooter() {
     <footer className="bg-burgundy-deep px-5 pb-24 pt-10 text-primary-foreground lg:px-10 lg:py-12">
       <div className="mx-auto grid max-w-[1220px] gap-9 sm:grid-cols-2 lg:grid-cols-[1.15fr_0.8fr_0.8fr_1fr] lg:gap-10">
         <div>
-          <Link to="/" className="flex items-center gap-3" aria-label="J&K Explorer home">
-            <span className="grid h-10 w-10 place-items-center rounded-full border border-gold/70 text-gold">
-              <Compass className="h-5 w-5" />
-            </span>
-            <span className="leading-none">
-              <span className="display-serif block text-lg">J&amp;K Explorer</span>
-              <span className="text-[9px] uppercase tracking-[0.2em] text-gold">
-                Explore · Stamp · Remember
-              </span>
-            </span>
+          <Link
+            to="/"
+            className="inline-block rounded-sm bg-paper px-2 py-1"
+            aria-label="J&K Explorer home"
+          >
+            <img src={logoImage} alt="J&K Explorer Passport" className="h-12 w-32 object-contain" />
           </Link>
           <p className="mt-4 max-w-xs text-xs leading-5 text-primary-foreground/65">
             One passport. Endless journeys. A lifetime of memories across Jammu &amp; Kashmir.
@@ -56,6 +53,9 @@ export function SiteFooter() {
             <Link to="/journal" className="hover:text-gold">
               Blog
             </Link>
+            <a href="/contact-us" className="hover:text-gold">
+              Contact Us
+            </a>
           </div>
         </div>
         <div>

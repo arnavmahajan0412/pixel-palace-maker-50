@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowRight, Award, BookOpen, CalendarDays, Compass, MapPin, Stamp } from "lucide-react";
 
 import heroImage from "@/assets/kashmir-hero.jpg";
+import passportImage from "@/assets/jk-explorer-passport.png";
 import vaishnoImage from "@/assets/vaishno-devi.jpg";
 import gulmargImage from "@/assets/gulmarg.jpg";
 import dalImage from "@/assets/dal-lake.jpg";
@@ -235,10 +236,15 @@ function AboutHero() {
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-burgundy-deep/90 via-burgundy-deep/55 to-burgundy-deep/20" />
       <div className="mx-auto flex h-full max-w-[1220px] flex-col justify-center">
-        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-gold">Our Story</p>
-        <h1 className="display-serif mt-2 text-3xl leading-none sm:text-4xl">Our Story</h1>
+        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-gold">About Us</p>
+        <h1 className="display-serif mt-2 text-3xl leading-tight sm:text-4xl">
+          More Than a Passport.
+          <br />
+          <em className="font-normal text-gold">Your Journey Through J&amp;K.</em>
+        </h1>
         <p className="mt-3 max-w-md text-xs leading-5 text-primary-foreground/85 sm:text-sm sm:leading-6">
-          From a love for mountains, travel, and the untold stories of Jammu &amp; Kashmir.
+          J&amp;K Explorer Passport is a travel companion created for people who want to explore the
+          beauty, culture, history and hidden gems of Jammu &amp; Kashmir.
         </p>
       </div>
     </section>
@@ -246,59 +252,148 @@ function AboutHero() {
 }
 
 function About() {
-  const values = [
-    [<Compass className="h-5 w-5" />, "Explore New Places"],
-    [<Stamp className="h-5 w-5" />, "Support Local Culture"],
-    [<BookOpen className="h-5 w-5" />, "Preserve Memories & Nature"],
-    [<Award className="h-5 w-5" />, "Build a Travel Community"],
+  const offers = [
+    [<Compass />, "Discover destinations across J&K"],
+    [<BookOpen />, "Keep your own travel journal"],
+    [<Stamp />, "Collect destination stamps"],
+    [<Award />, "Explore and unlock travel badges"],
+    [<MapPin />, "Find useful information for your journey"],
+    [<CalendarDays />, "Capture and remember your adventures"],
   ];
 
   return (
-    <section className="bg-paper px-5 py-10 lg:px-10 lg:py-14">
+    <section className="bg-paper">
       <div className="mx-auto max-w-[1220px]">
-        <div className="max-w-[760px]">
-          <h2 className="display-serif text-2xl text-ink sm:text-3xl">
-            Why We Created J&amp;K Explorer Passport
-          </h2>
-          <div className="mt-4 space-y-3 text-sm leading-6 text-ink-soft">
-            <p>Jammu &amp; Kashmir is not just a destination. It is an emotion.</p>
-            <p>
-              From snow-covered mountains to serene lakes, from ancient temples to vibrant culture —
-              every corner has a story.
-            </p>
-            <p>
-              We created J&amp;K Explorer Passport to help you explore, experience, and fall in love
-              with J&amp;K, one destination at a time.
+        <section className="grid gap-8 px-5 py-10 md:grid-cols-[0.8fr_1.2fr] md:items-center lg:px-10 lg:py-14">
+          <div className="relative mx-auto max-w-[285px]">
+            <div className="absolute inset-6 -z-10 border border-dashed border-burgundy/30" />
+            <img
+              src={passportImage}
+              alt="J&K Explorer Passport"
+              className="mx-auto w-48 -rotate-[9deg] drop-shadow-xl transition-transform duration-500 hover:rotate-[-4deg] sm:w-56"
+            />
+          </div>
+          <div>
+            <h2 className="display-serif text-3xl text-ink sm:text-4xl">
+              About J&amp;K Explorer Passport
+            </h2>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-ink-soft">
+              J&amp;K Explorer Passport is more than just a book — it&apos;s your personal travel
+              companion. From famous destinations to lesser-known places, our goal is to make every
+              journey more exciting and memorable. The passport encourages travellers to discover
+              new places, collect memories, and keep a personal record of their adventures.
             </p>
           </div>
-        </div>
-        <div className="mt-9 grid border-y border-border sm:grid-cols-4">
-          {values.map(([icon, label]) => (
-            <div
-              key={label as string}
-              className="flex min-h-24 flex-col items-center justify-center gap-2 border-border px-3 text-center sm:border-r sm:last:border-r-0"
-            >
-              <span className="text-burgundy">{icon}</span>
-              <span className="text-[11px] font-semibold text-ink">{label}</span>
+        </section>
+        <section className="grid gap-8 bg-cream px-5 py-10 md:grid-cols-[0.9fr_1.1fr] md:items-center lg:px-10">
+          <div>
+            <h2 className="display-serif text-3xl text-ink">Our Mission</h2>
+            <p className="mt-4 max-w-md text-sm leading-7 text-ink-soft">
+              To inspire people to explore Jammu &amp; Kashmir beyond the usual tourist destinations
+              and discover the stories, landscapes, traditions and experiences that make every place
+              special.
+            </p>
+          </div>
+          <div className="border-l border-burgundy/20 pl-6">
+            <p className="display-serif text-2xl italic text-burgundy">
+              Explore more than just places.
+            </p>
+            <p className="mt-3 text-sm text-ink-soft">
+              Discover the roads, valleys and stories that stay with you.
+            </p>
+          </div>
+        </section>
+        <section className="px-5 py-10 lg:px-10 lg:py-14">
+          <h2 className="display-serif text-3xl text-ink">What We Offer</h2>
+          <div className="mt-7 grid grid-cols-2 border-y border-border sm:grid-cols-3 lg:grid-cols-6">
+            {offers.map(([icon, label]) => (
+              <div
+                key={label as string}
+                className="flex min-h-36 flex-col items-center justify-center gap-3 border-border p-4 text-center sm:border-r sm:nth-[3n]:border-r-0 lg:nth-[3n]:border-r lg:last:border-r-0"
+              >
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-cream text-burgundy">
+                  {icon}
+                </span>
+                <p className="max-w-[120px] text-xs leading-5 text-ink-soft">{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="grid gap-8 bg-paper-deep px-5 py-10 md:grid-cols-[1.15fr_0.85fr] lg:px-10">
+          <div>
+            <h2 className="display-serif text-3xl text-ink">Why We Created It</h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-ink-soft">
+              We believe travelling isn&apos;t just about reaching a destination — it&apos;s about
+              the moments you collect along the way.
+            </p>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-ink-soft">
+              J&amp;K Explorer Passport was created to turn exploring J&amp;K into a personal
+              adventure. Every destination can become a new chapter, every stamp a memory, and every
+              journey a story worth keeping.
+            </p>
+          </div>
+          <p className="display-serif self-center text-2xl italic leading-tight text-burgundy">
+            The journey may end here but the mountains will call you back.
+          </p>
+        </section>
+        <section className="grid gap-8 px-5 py-10 md:grid-cols-2 lg:px-10">
+          <div>
+            <h2 className="display-serif text-2xl text-ink">How It Works</h2>
+            <div className="mt-5 flex items-start justify-between gap-2 text-center text-[10px] text-ink-soft">
+              <span>
+                Get Your
+                <br />
+                Explorer Passport
+              </span>
+              <ArrowRight className="mt-2 h-4 w-4 text-burgundy" />
+              <span>
+                Explore
+                <br />
+                Destinations
+              </span>
+              <ArrowRight className="mt-2 h-4 w-4 text-burgundy" />
+              <span>
+                Collect
+                <br />
+                Stamps &amp; Badges
+              </span>
+              <ArrowRight className="mt-2 h-4 w-4 text-burgundy" />
+              <span>
+                Record Your
+                <br />
+                Memories
+              </span>
             </div>
-          ))}
-        </div>
-        <div className="relative isolate mt-10 min-h-[240px] overflow-hidden bg-burgundy-deep p-7 text-primary-foreground sm:min-h-[290px] sm:p-10">
+          </div>
+          <div className="border-l border-border pl-6">
+            <h2 className="display-serif text-2xl text-ink">Join the Explorer Community</h2>
+            <p className="mt-3 text-sm leading-6 text-ink-soft">
+              Connect with fellow travellers, share your experiences, get tips, and be part of a
+              growing community that loves to explore J&amp;K.
+            </p>
+            <a
+              href="/#community"
+              className="mt-5 inline-flex bg-burgundy px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-primary-foreground"
+            >
+              Be a Part of It
+            </a>
+          </div>
+        </section>
+        <section className="relative isolate overflow-hidden px-5 py-12 text-center text-primary-foreground lg:px-10">
           <img
             src={heroImage}
-            alt="Mountains of Jammu and Kashmir"
+            alt="Jammu and Kashmir mountains"
             className="absolute inset-0 -z-20 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-burgundy-deep/18 via-burgundy-deep/25 to-burgundy-deep/80" />
-          <div className="flex min-h-[184px] flex-col items-end justify-end text-right sm:min-h-[210px]">
-            <p className="display-serif max-w-xs text-3xl leading-tight sm:text-4xl">
-              Because every journey begins with a story.
-            </p>
-            <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
-              J&amp;K Explorer Passport
-            </p>
-          </div>
-        </div>
+          <div className="absolute inset-0 -z-10 bg-burgundy-deep/65" />
+          <h2 className="display-serif text-3xl">Explore. Discover. Collect. Remember.</h2>
+          <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            J&amp;K Explorer Passport
+          </p>
+          <p className="mt-2 text-sm italic text-primary-foreground/85">
+            Your personal passport to exploring Jammu &amp; Kashmir.
+          </p>
+        </section>
       </div>
     </section>
   );

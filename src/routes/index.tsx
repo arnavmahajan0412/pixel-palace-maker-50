@@ -38,6 +38,7 @@ import passportImage from "@/assets/jk-explorer-passport.png";
 import bronzeBadgeImage from "@/assets/badges/bronze-explorer.jpeg";
 import silverBadgeImage from "@/assets/badges/silver-explorer.jpeg";
 import goldBadgeImage from "@/assets/badges/gold-explorer.jpeg";
+import logoImage from "@/assets/jk-explorer-logo.png";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
@@ -63,7 +64,7 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP_MESSAGE =
   "Hi J&K Explorer, I'd like to buy the J&K Explorer Passport. Please share the details.";
-const WHATSAPP_URL = `https://wa.me/919541012999?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=919541012999&text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 const INSTAGRAM_DM_URL = "https://www.instagram.com/jkexplorerpassport/";
 const MEMBER_KEY = "jk-explorer-member";
 
@@ -109,19 +110,8 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground paper-texture">
       <header className="absolute inset-x-0 top-0 z-30 border-b border-primary-foreground/15 bg-burgundy-deep/90 text-primary-foreground backdrop-blur-sm">
         <div className="mx-auto flex h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
-          <a href="#home" className="flex items-center gap-3" aria-label="J&K Explorer home">
-            <span className="relative grid h-11 w-11 place-items-center rounded-full border border-gold/70 text-gold">
-              <Compass className="h-6 w-6" strokeWidth={1.25} />
-              <span className="absolute -bottom-1 bg-burgundy-deep px-1 font-sans text-[8px] font-bold tracking-[0.18em]">
-                J&K
-              </span>
-            </span>
-            <span className="leading-none">
-              <span className="display-serif block text-[19px] tracking-wide">J&K</span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
-                Explorer
-              </span>
-            </span>
+          <a href="#home" className="rounded-sm bg-paper px-2 py-1" aria-label="J&K Explorer home">
+            <img src={logoImage} alt="J&K Explorer Passport" className="h-11 w-28 object-contain" />
           </a>
           <nav className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.08em] lg:flex">
             <a href="#home" className="text-gold transition-colors hover:text-primary-foreground">
@@ -139,6 +129,9 @@ function Index() {
             <Link to="/about-us" className="transition-colors hover:text-gold">
               About Us
             </Link>
+            <a href="/contact-us" className="transition-colors hover:text-gold">
+              Contact Us
+            </a>
           </nav>
           <div className="hidden items-center gap-4 lg:flex">
             <button
@@ -204,6 +197,9 @@ function Index() {
               <Link to="/about-us" onClick={() => setMenuOpen(false)}>
                 About Us
               </Link>
+              <a href="/contact-us" onClick={() => setMenuOpen(false)}>
+                Contact Us
+              </a>
             </div>
           </nav>
         )}
@@ -496,12 +492,7 @@ function Index() {
           href="#mobile-explorer"
           onClick={() => setMobileView("passport")}
         />
-        <MobileNav
-          icon={<UsersRound />}
-          label="Journey"
-          href="#mobile-explorer"
-          onClick={() => setMobileView("badges")}
-        />
+        <MobileNav icon={<UsersRound />} label="Contact" href="/contact-us" />
       </nav>
       <a
         href={WHATSAPP_URL}

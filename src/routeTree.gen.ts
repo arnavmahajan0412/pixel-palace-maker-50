@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as DestinationsRouteImport } from './routes/destinations'
 import { Route as ExploreBadgesRouteImport } from './routes/explore-badges'
 import { Route as JournalRouteImport } from './routes/journal'
@@ -26,6 +27,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutUsRoute = AboutUsRouteImport.update({
   id: '/about-us',
   path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DestinationsRoute = DestinationsRouteImport.update({
@@ -63,6 +69,7 @@ const DestinationDestinationSlugRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/contact-us': typeof ContactUsRoute
   '/destinations': typeof DestinationsRoute
   '/explore-badges': typeof ExploreBadgesRoute
   '/journal': typeof JournalRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/contact-us': typeof ContactUsRoute
   '/destinations': typeof DestinationsRoute
   '/explore-badges': typeof ExploreBadgesRoute
   '/journal': typeof JournalRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/contact-us': typeof ContactUsRoute
   '/destinations': typeof DestinationsRoute
   '/explore-badges': typeof ExploreBadgesRoute
   '/journal': typeof JournalRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-us'
+    | '/contact-us'
     | '/destinations'
     | '/explore-badges'
     | '/journal'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-us'
+    | '/contact-us'
     | '/destinations'
     | '/explore-badges'
     | '/journal'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-us'
+    | '/contact-us'
     | '/destinations'
     | '/explore-badges'
     | '/journal'
@@ -127,6 +139,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
+  ContactUsRoute: typeof ContactUsRoute
   DestinationsRoute: typeof DestinationsRoute
   ExploreBadgesRoute: typeof ExploreBadgesRoute
   JournalRoute: typeof JournalRoute
@@ -149,6 +162,13 @@ declare module '@tanstack/react-router' {
       path: '/about-us'
       fullPath: '/about-us'
       preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/destinations': {
@@ -199,6 +219,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
+  ContactUsRoute: ContactUsRoute,
   DestinationsRoute: DestinationsRoute,
   ExploreBadgesRoute: ExploreBadgesRoute,
   JournalRoute: JournalRoute,

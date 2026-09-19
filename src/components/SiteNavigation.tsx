@@ -1,26 +1,22 @@
 import { Link } from "@tanstack/react-router";
-import { Compass, House, MapPin, Menu, Stamp, UsersRound, X } from "lucide-react";
+import { House, MapPin, Menu, MessageCircle, Stamp, X } from "lucide-react";
 import { useState } from "react";
 import type { ReactNode } from "react";
+import logoImage from "@/assets/jk-explorer-logo.png";
 
-export function SiteNavigation() {
+export function SiteNavigation({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+  const light = variant === "light";
 
   return (
     <>
-      <header className="relative z-30 border-b border-primary-foreground/15 bg-burgundy-deep text-primary-foreground">
+      <header
+        className={`relative z-30 border-b ${light ? "border-burgundy/15 bg-paper text-ink" : "border-primary-foreground/15 bg-burgundy-deep text-primary-foreground"}`}
+      >
         <div className="mx-auto flex min-h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
-          <Link to="/" className="flex items-center gap-2" aria-label="J&K Explorer home">
-            <span className="grid h-10 w-10 place-items-center rounded-full border border-gold/70 text-gold">
-              <Compass className="h-5 w-5" strokeWidth={1.25} />
-            </span>
-            <span className="leading-none">
-              <span className="display-serif block text-lg tracking-wide">J&amp;K Explorer</span>
-              <span className="block text-[9px] font-semibold uppercase tracking-[0.2em] text-gold">
-                Passport
-              </span>
-            </span>
+          <Link to="/" className="rounded-sm bg-paper px-2 py-1" aria-label="J&K Explorer home">
+            <img src={logoImage} alt="J&K Explorer Passport" className="h-11 w-28 object-contain" />
           </Link>
 
           <nav className="hidden items-center gap-6 text-[10px] font-semibold uppercase tracking-[0.08em] lg:flex">
@@ -39,11 +35,14 @@ export function SiteNavigation() {
             <Link to="/about-us" className="transition-colors hover:text-gold">
               About Us
             </Link>
+            <a href="/contact-us" className="transition-colors hover:text-gold">
+              Contact Us
+            </a>
           </nav>
 
           <a
             href="/#community"
-            className="hidden border border-gold/60 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-gold transition-colors hover:bg-gold hover:text-burgundy-deep lg:inline-flex"
+            className={`hidden border px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors lg:inline-flex ${light ? "border-burgundy bg-burgundy text-primary-foreground hover:bg-burgundy-deep" : "border-gold/60 text-gold hover:bg-gold hover:text-burgundy-deep"}`}
           >
             Join Community
           </a>
@@ -57,7 +56,9 @@ export function SiteNavigation() {
           </button>
         </div>
         {menuOpen && (
-          <nav className="border-t border-primary-foreground/15 bg-burgundy-deep px-5 py-4 lg:hidden">
+          <nav
+            className={`border-t px-5 py-4 lg:hidden ${light ? "border-burgundy/15 bg-paper text-ink" : "border-primary-foreground/15 bg-burgundy-deep"}`}
+          >
             <div className="grid gap-4 text-sm uppercase tracking-widest">
               <a href="/" onClick={closeMenu}>
                 Home
@@ -74,6 +75,9 @@ export function SiteNavigation() {
               <a href="/about-us" onClick={closeMenu}>
                 About Us
               </a>
+              <a href="/contact-us" onClick={closeMenu}>
+                Contact Us
+              </a>
               <a href="/#community" onClick={closeMenu}>
                 Join Community
               </a>
@@ -86,11 +90,11 @@ export function SiteNavigation() {
         <MobileLink icon={<MapPin />} label="Explore" to="/destinations" />
         <MobileLink icon={<Stamp />} label="Passport" to="/passport-guide" />
         <a
-          href="/#community"
+          href="/contact-us"
           className="flex flex-col items-center gap-1 py-1 text-[9px] font-semibold text-ink-soft"
         >
-          <UsersRound className="h-4 w-4" />
-          <span>Community</span>
+          <MessageCircle className="h-4 w-4" />
+          <span>Contact</span>
         </a>
       </nav>
     </>
