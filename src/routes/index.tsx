@@ -44,7 +44,7 @@ import bhaderwahImage from "@/assets/destinations/bhaderwah.jpg";
 import warwanValleyImage from "@/assets/destinations/warwan-valley.jpg";
 import verinagImage from "@/assets/destinations/verinag.jpg";
 import sanasarImage from "@/assets/destinations/sanasar.jpg";
-import shivKhoriImage from "@/assets/destinations/shiv-khori.jpg";
+import shivKhoriV2Image from "@/assets/destinations/shiv-khori-v2.jpg";
 import aharbalWaterfallImage from "@/assets/destinations/aharbal-waterfall.jpg";
 import tulipGardenImage from "@/assets/destinations/tulip-garden.jpg";
 import jammuCityWalkImage from "@/assets/destinations/jammu-city-walk.jpg";
@@ -1334,7 +1334,7 @@ export const destinations: Destination[] = [
   {
     name: "Shiv Khori",
     place: "Reasi",
-    image: shivKhoriImage,
+    image: shivKhoriV2Image,
     description:
       "A sacred cave shrine with a naturally formed lingam and a memorable forest approach.",
     time: "Feb – Apr",
