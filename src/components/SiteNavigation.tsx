@@ -45,7 +45,7 @@ export function SiteNavigation({ variant = "dark" }: { variant?: "dark" | "light
           </nav>
 
           <a
-            href="/#community"
+            href="/?join=true"
             className={`hidden border px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] transition-colors lg:inline-flex ${light ? "border-burgundy bg-burgundy text-primary-foreground hover:bg-burgundy-deep" : "border-gold/60 text-gold hover:bg-gold hover:text-burgundy-deep"}`}
           >
             Join Community
@@ -82,7 +82,7 @@ export function SiteNavigation({ variant = "dark" }: { variant?: "dark" | "light
               <a href="/contact-us" onClick={closeMenu}>
                 Contact Us
               </a>
-              <a href="/#community" onClick={closeMenu}>
+              <a href="/?join=true" onClick={closeMenu}>
                 Join Community
               </a>
             </div>

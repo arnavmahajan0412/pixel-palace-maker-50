@@ -34,20 +34,20 @@ import gulmargImage from "@/assets/gulmarg.jpg";
 import dalImage from "@/assets/dal-lake.jpg";
 import sonamargImage from "@/assets/sonamarg.jpg";
 import pahalgamImage from "@/assets/pahalgam.jpg";
-import patnitopImage from "@/assets/destinations/patnitop.jpg";
-import mansarLakeImage from "@/assets/destinations/mansar-lake.jpg";
+import patnitopUserV2Image from "@/assets/destinations/patnitop-user-v2.png";
+import mansarLakeUserV2Image from "@/assets/destinations/mansar-lake-user-v2.png";
 import sonamargDestinationImage from "@/assets/destinations/sonamarg.jpg";
 import pahalgamDestinationImage from "@/assets/destinations/pahalgam.jpg";
-import gurezValleyImage from "@/assets/destinations/gurez-valley.jpg";
+import gurezValleyUserV2Image from "@/assets/destinations/gurez-valley-user-v2.jpeg";
 import peerKiGaliImage from "@/assets/destinations/peer-ki-gali.jpg";
-import bhaderwahImage from "@/assets/destinations/bhaderwah.jpg";
+import bhaderwahUserV2Image from "@/assets/destinations/bhaderwah-user-v2.png";
 import warwanValleyImage from "@/assets/destinations/warwan-valley.jpg";
 import verinagImage from "@/assets/destinations/verinag.jpg";
 import sanasarImage from "@/assets/destinations/sanasar.jpg";
 import shivKhoriV2Image from "@/assets/destinations/shiv-khori-v2.jpg";
 import aharbalWaterfallImage from "@/assets/destinations/aharbal-waterfall.jpg";
 import tulipGardenImage from "@/assets/destinations/tulip-garden.jpg";
-import jammuCityWalkImage from "@/assets/destinations/jammu-city-walk.jpg";
+import jammuCityWalkUserV2Image from "@/assets/destinations/jammu-city-walk-user-v2.png";
 import doodpathriImage from "@/assets/destinations/doodpathri.jpg";
 import bangusValleyImage from "@/assets/destinations/bangus-valley.jpg";
 import keranBorderImage from "@/assets/destinations/keran-border.jpg";
@@ -56,7 +56,7 @@ import darhalWaterfallImage from "@/assets/destinations/darhal-waterfall.jpg";
 import duduValleyImage from "@/assets/destinations/dudu-valley.jpg";
 import purthuImage from "@/assets/destinations/purthu.jpg";
 import surinsarLakeImage from "@/assets/destinations/surinsar-lake.jpg";
-import yusmargImage from "@/assets/destinations/yusmarg.jpg";
+import yusmargUserV2Image from "@/assets/destinations/yusmarg-user-v2.jpeg";
 import mughalGardensUserImage from "@/assets/destinations/mughal-gardens-user.jpeg";
 import paddarUserImage from "@/assets/destinations/paddar-user.jpeg";
 import sarthalValleyUserImage from "@/assets/destinations/sarthal-valley-user.jpeg";
@@ -64,7 +64,7 @@ import sudhMahadevUserImage from "@/assets/destinations/sudh-mahadev-user.jpeg";
 import suchetgarhBorderUserImage from "@/assets/destinations/suchetgarh-border-user.jpeg";
 import amarnathYatraUserImage from "@/assets/destinations/amarnath-yatra-user.jpeg";
 import panchariUserImage from "@/assets/destinations/panchari-user.jpeg";
-import chinkaValleyUserImage from "@/assets/destinations/chinka-valley-user.jpeg";
+import chinkaValleyUserV2Image from "@/assets/destinations/chinka-valley-user-v2.jpeg";
 import devaMaiUserImage from "@/assets/destinations/deva-mai-user.jpeg";
 import deviPindiUserImage from "@/assets/destinations/devi-pindi-user.jpeg";
 import sukralaMataUserImage from "@/assets/destinations/sukrala-mata-user.jpeg";
@@ -107,6 +107,7 @@ type Member = {
   email: string;
   instagram: string;
   phone: string;
+  passportNo: string;
   city: string;
   dreamDestination: string;
   dob: string;
@@ -132,12 +133,34 @@ function Index() {
 
   useEffect(() => {
     setMember(loadMember());
+    const search = new URLSearchParams(window.location.search);
+    if (search.get("join") === "true") {
+      setJoinOpen(true);
+      window.history.replaceState({}, "", `${window.location.pathname}${window.location.hash}`);
+    }
   }, []);
 
   const joinCommunity = (m: Member) => {
     window.localStorage.setItem(MEMBER_KEY, JSON.stringify(m));
     setMember(m);
+    setRegistered(true);
     setJoinOpen(false);
+    const message = [
+      "New J&K Explorer Community registration",
+      "",
+      `Name: ${m.name}`,
+      `Email: ${m.email}`,
+      `Phone: ${m.phone}`,
+      `Passport No.: ${m.passportNo || "Not provided"}`,
+      `Instagram: ${m.instagram || "Not provided"}`,
+      `City: ${m.city}`,
+      `Dream destination: ${m.dreamDestination}`,
+      `Date of birth: ${m.dob}`,
+      `How they found us: ${m.howFound}`,
+    ].join("\n");
+    window.location.assign(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent("jkexplorerpassport@gmail.com")}&su=${encodeURIComponent("New Explorer Community registration")}&body=${encodeURIComponent(message)}`,
+    );
   };
 
   return (
@@ -174,7 +197,7 @@ function Index() {
           <div className="hidden items-center gap-4 lg:flex">
             <button
               className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors hover:text-gold"
-              onClick={() => setRegistered(true)}
+              onClick={() => setJoinOpen(true)}
             >
               <UserRound className="h-4 w-4" /> Join Community
             </button>
@@ -1011,6 +1034,7 @@ function JoinModal({
   const [email, setEmail] = useState(existing?.email ?? "");
   const [instagram, setInstagram] = useState(existing?.instagram ?? "");
   const [phone, setPhone] = useState(existing?.phone ?? "");
+  const [passportNo, setPassportNo] = useState(existing?.passportNo ?? "");
   const [city, setCity] = useState(existing?.city ?? "");
   const [dreamDestination, setDreamDestination] = useState(existing?.dreamDestination ?? "");
   const [dob, setDob] = useState(existing?.dob ?? "");
@@ -1024,6 +1048,7 @@ function JoinModal({
       email: email.trim().slice(0, 120),
       instagram: instagram.trim().slice(0, 60),
       phone: phone.trim().slice(0, 20),
+      passportNo: passportNo.trim().slice(0, 40),
       city: city.trim().slice(0, 60),
       dreamDestination: dreamDestination.trim().slice(0, 100),
       dob: dob.trim().slice(0, 10),
@@ -1121,6 +1146,18 @@ function JoinModal({
           </label>
           <label className="block">
             <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+              Passport No.
+            </span>
+            <input
+              className={inputCls}
+              value={passportNo}
+              onChange={(e) => setPassportNo(e.target.value)}
+              placeholder="JEX-000123"
+              maxLength={40}
+            />
+          </label>
+          <label className="block">
+            <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-ink-soft">
               City you belong to *
             </span>
             <input
@@ -1213,14 +1250,14 @@ export const destinations: Destination[] = [
   {
     name: "Patnitop",
     place: "Ramban",
-    image: patnitopImage,
+    image: patnitopUserV2Image,
     description: "A pine-fringed hill station for crisp air, long walks and winter escapes.",
     time: "Apr – Jun",
   },
   {
     name: "Mansar Lake (Surinsar)",
     place: "Jammu",
-    image: mansarLakeImage,
+    image: mansarLakeUserV2Image,
     description: "Sacred twin lakes surrounded by forest, folklore and peaceful lakeside paths.",
     time: "Mar – Jun",
   },
@@ -1262,7 +1299,7 @@ export const destinations: Destination[] = [
   {
     name: "Gurez Valley",
     place: "Bandipora",
-    image: gurezValleyImage,
+    image: gurezValleyUserV2Image,
     description: "A remote valley of wooden homes, rushing rivers and wide Himalayan skies.",
     time: "May – Sep",
   },
@@ -1276,7 +1313,7 @@ export const destinations: Destination[] = [
   {
     name: "Bhaderwah (Jai & Chinta Valleys)",
     place: "Doda",
-    image: bhaderwahImage,
+    image: bhaderwahUserV2Image,
     description: "Green valleys, cedar forests and quiet mountain villages in the Chenab region.",
     time: "Apr – Oct",
   },
@@ -1291,7 +1328,7 @@ export const destinations: Destination[] = [
   {
     name: "Bawa Wali Mata & Jammu City Walk",
     place: "Jammu",
-    image: jammuCityWalkImage,
+    image: jammuCityWalkUserV2Image,
     description: "Temple bells, Gondola views, Aquarium, Bagh-e-Bahu, Hari Niwas Palace and Manda.",
     time: "Oct – Mar",
   },
@@ -1406,7 +1443,7 @@ export const destinations: Destination[] = [
   {
     name: "Yusmarg",
     place: "Budgam",
-    image: yusmargImage,
+    image: yusmargUserV2Image,
     description: "A quiet meadow retreat of tall deodars, pony trails and river-side picnics.",
     time: "Apr – Oct",
   },
@@ -1420,7 +1457,7 @@ export const destinations: Destination[] = [
   {
     name: "Chinka Valley",
     place: "Doda",
-    image: chinkaValleyUserImage,
+    image: chinkaValleyUserV2Image,
     description: "A mountain valley of clear air, forest edges and peaceful rural trails.",
     time: "Apr – Oct",
   },

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, QrCode, Twitter, Youtube } from "lucide-react";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { toDataURL } from "qrcode";
 import logoImage from "@/assets/jk-explorer-logo.png";
 
 const INSTAGRAM_URL = "https://www.instagram.com/jkexplorerpassport/";
@@ -9,6 +10,16 @@ const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61594089672478";
 const YOUTUBE_URL = "https://www.youtube.com/@Jkexplorerpassport";
 
 export function SiteFooter() {
+  const [instagramQr, setInstagramQr] = useState("");
+
+  useEffect(() => {
+    void toDataURL(INSTAGRAM_URL, {
+      errorCorrectionLevel: "M",
+      margin: 1,
+      color: { dark: "#3b0a14", light: "#f7f0df" },
+    }).then(setInstagramQr);
+  }, []);
+
   return (
     <footer className="bg-burgundy-deep px-5 pb-24 pt-10 text-primary-foreground lg:px-10 lg:py-12">
       <div className="mx-auto grid max-w-[1220px] gap-9 sm:grid-cols-2 lg:grid-cols-[1.15fr_0.8fr_0.8fr_1fr] lg:gap-10">
@@ -73,11 +84,25 @@ export function SiteFooter() {
             Scan to join
           </p>
           <div className="mt-4 flex items-center gap-3">
-            <span className="grid h-16 w-16 place-items-center bg-paper text-burgundy-deep">
-              <QrCode className="h-11 w-11" />
-            </span>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open J&K Explorer Passport on Instagram"
+              className="grid h-16 w-16 place-items-center bg-paper p-1 transition-transform hover:scale-105"
+            >
+              {instagramQr ? (
+                <img
+                  src={instagramQr}
+                  alt="Scan to open J&K Explorer Passport on Instagram"
+                  className="h-full w-full"
+                />
+              ) : (
+                <QrCode className="h-11 w-11 text-burgundy-deep" />
+              )}
+            </a>
             <p className="text-xs leading-5 text-primary-foreground/70">
-              Join the Explorer Community
+              Scan to follow us on Instagram
             </p>
           </div>
         </div>

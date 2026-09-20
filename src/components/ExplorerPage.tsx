@@ -370,7 +370,7 @@ function About() {
               growing community that loves to explore J&amp;K.
             </p>
             <a
-              href="/#community"
+              href="/?join=true"
               className="mt-5 inline-flex bg-burgundy px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-primary-foreground"
             >
               Be a Part of It
