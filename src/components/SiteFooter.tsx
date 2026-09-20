@@ -17,7 +17,7 @@ export function SiteFooter() {
             <img
               src={logoImage}
               alt="J&K Explorer Passport"
-              className="h-12 w-32 object-contain brightness-0 invert"
+              className="site-logo-gold h-12 w-32 object-contain"
             />
           </Link>
           <p className="mt-4 max-w-xs text-xs leading-5 text-primary-foreground/65">

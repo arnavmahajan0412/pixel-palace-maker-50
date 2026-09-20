@@ -185,6 +185,11 @@
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
+.site-logo-gold {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(41%) saturate(617%) hue-rotate(356deg)
+    brightness(88%) contrast(88%);
+}
+
 .destination-carousel {
   overflow: hidden;
 }

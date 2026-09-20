@@ -148,7 +148,7 @@ function Index() {
             <img
               src={logoImage}
               alt="J&K Explorer Passport"
-              className="h-11 w-28 object-contain brightness-0 invert"
+              className="site-logo-gold h-11 w-28 object-contain"
             />
           </a>
           <nav className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.08em] lg:flex">
