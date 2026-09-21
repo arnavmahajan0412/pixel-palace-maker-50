@@ -101,6 +101,8 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=919541012999&text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 const INSTAGRAM_DM_URL = "https://www.instagram.com/jkexplorerpassport/";
 const MEMBER_KEY = "jk-explorer-member";
+const GOOGLE_FORM_RESPONSE_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfUBt0S4c3-U0CVdkGOMnFKG57OZSHKBjzciO9e3K9KGM1Qaw/formResponse";
 
 type Member = {
   name: string;
@@ -140,27 +142,35 @@ function Index() {
     }
   }, []);
 
-  const joinCommunity = (m: Member) => {
+  const joinCommunity = async (m: Member) => {
+    const responseData = new URLSearchParams({
+      "entry.2099632433": m.name,
+      "entry.1466991247": m.email,
+      "entry.375017773": m.instagram,
+      "entry.7878656": m.phone,
+      "entry.1120395366": m.passportNo,
+      "entry.126269357": m.city,
+      "entry.1319033104": m.dreamDestination,
+      "entry.927228034": m.dob,
+      "entry.907299581": m.howFound,
+    });
+
+    try {
+      await fetch(GOOGLE_FORM_RESPONSE_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: responseData,
+      });
+    } catch {
+      throw new Error(
+        "We could not save your registration. Please check your connection and try again.",
+      );
+    }
+
     window.localStorage.setItem(MEMBER_KEY, JSON.stringify(m));
     setMember(m);
     setRegistered(true);
     setJoinOpen(false);
-    const message = [
-      "New J&K Explorer Community registration",
-      "",
-      `Name: ${m.name}`,
-      `Email: ${m.email}`,
-      `Phone: ${m.phone}`,
-      `Passport No.: ${m.passportNo || "Not provided"}`,
-      `Instagram: ${m.instagram || "Not provided"}`,
-      `City: ${m.city}`,
-      `Dream destination: ${m.dreamDestination}`,
-      `Date of birth: ${m.dob}`,
-      `How they found us: ${m.howFound}`,
-    ].join("\n");
-    window.location.assign(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent("jkexplorerpassport@gmail.com")}&su=${encodeURIComponent("New Explorer Community registration")}&body=${encodeURIComponent(message)}`,
-    );
   };
 
   return (
@@ -1027,7 +1037,7 @@ function JoinModal({
   existing,
 }: {
   onClose: () => void;
-  onJoin: (m: Member) => void;
+  onJoin: (m: Member) => Promise<void>;
   existing: Member | null;
 }) {
   const [name, setName] = useState(existing?.name ?? "");
@@ -1041,7 +1051,7 @@ function JoinModal({
   const [howFound, setHowFound] = useState(existing?.howFound ?? "");
   const [error, setError] = useState("");
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const clean = {
       name: name.trim().slice(0, 60),
@@ -1062,7 +1072,11 @@ function JoinModal({
     if (!clean.dreamDestination) return setError("Tell us your dream destination.");
     if (!clean.dob) return setError("Please add your date of birth.");
     if (!clean.howFound) return setError("Please tell us how you found us.");
-    onJoin(clean);
+    try {
+      await onJoin(clean);
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : "Please try again.");
+    }
   };
 
   const inputCls =
@@ -1217,7 +1231,7 @@ function JoinModal({
           Join the community <ArrowRight className="h-4 w-4" />
         </button>
         <p className="mt-3 text-center text-[10px] text-ink-soft/70">
-          Your details stay on this device — no account needed.
+          Your registration is saved securely with J&amp;K Explorer.
         </p>
       </form>
     </div>
